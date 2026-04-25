@@ -3,7 +3,7 @@
 @php
 $currentUrl = request()->path();
 $links = [
-['href' => 'dashboard', 'label' => 'Dashboard', 'icon_active' => 'dashboard_icon.svg', 'icon' => 'dashboardWhite_icon.svg'],
+['href' => '', 'label' => 'Dashboard', 'icon_active' => 'dashboard_icon.svg', 'icon' => 'dashboardWhite_icon.svg'],
 ['href' => 'payware', 'label' => 'Payware', 'icon_active' => 'paywareBlack_icon.svg', 'icon' => 'paywareWhite_icon.svg'],
 ['href' => 'freeware', 'label' => 'Freeware', 'icon_active' => 'freewareBlack_icon.svg','icon' => 'freewareWhite_icon.svg'],
 ['href' => 'terms&condition','label' => 'Terms & Condition','icon_active' => 'tncBlack_icon.svg', 'icon' => 'tncWhite_icon.svg'],

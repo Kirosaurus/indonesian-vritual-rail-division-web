@@ -22,13 +22,13 @@
     </div>
 
     {{-- New Products --}}
-    <div>
+    <div>   
         <h2>New Product</h2>
     </div>
 
     <div class="list-product">
 
-        {{-- 
+        {{--
             Replace this static loop with a dynamic @foreach when
             you pass $products from your controller, e.g.:
             Route::get('dashboard', [DashboardController::class, 'index'])->name('dashboard');
@@ -39,7 +39,7 @@
         --}}
 
         @for ($i = 0; $i < 4; $i++)
-        <div class="product">
+            <div class="product">
             <div class="thumbnail-product">
                 <p style="color: black;">Ini Thumbnail Produk</p>
             </div>
@@ -48,9 +48,9 @@
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                 sed do eiusmod tempor (Maksimal 120 karakter spasi juga ikut)
             </p>
-        </div>
-        @endfor
-
     </div>
+    @endfor
+
+</div>
 </div>
 @endsection
