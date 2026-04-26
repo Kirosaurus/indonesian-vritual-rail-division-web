@@ -521,3 +521,36 @@ h2 {
     font-weight: 200;
     color: white;
 }
+
+
+/* ============================================================
+   Freeware  (freeware.blade.php)
+   ============================================================ */
+
+
+.main-freeware {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    flex: 1;
+    padding: 30px 54px 54px 54px;
+    z-index: 1;
+    height: 100vh;
+    /* overflow-y: auto; */
+    scroll-behavior: smooth;
+}
+
+.list-product-freeware {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(4, 335px);
+    grid-auto-rows: 363px;
+    gap: 29px;
+    padding: 10px 25px;
+    /* flex-shrink: 0; */
+    /* scrollbar-width: none; */
+    overflow-y: auto;
+}
+.list-product-freeware::-webkit-scrollbar {
+    display: none;
+}
