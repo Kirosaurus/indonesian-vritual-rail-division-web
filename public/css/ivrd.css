@@ -5,15 +5,15 @@
 
 /* ---------- Nexa font ---------- */
 @font-face {
-    font-family: 'Nexa';
-    src: url('/fonts/nexa/Nexa-ExtraLight.ttf') format('truetype');
+    font-family: "Nexa";
+    src: url("/fonts/nexa/Nexa-ExtraLight.ttf") format("truetype");
     font-weight: 200;
     font-style: normal;
 }
 
 @font-face {
-    font-family: 'Nexa';
-    src: url('/fonts/nexa/Nexa-Heavy.ttf') format('truetype');
+    font-family: "Nexa";
+    src: url("/fonts/nexa/Nexa-Heavy.ttf") format("truetype");
     font-weight: 800;
     font-style: normal;
 }
@@ -43,7 +43,7 @@ ul {
    ============================================================ */
 .app-root {
     min-height: 100vh;
-    background: linear-gradient(150deg, #25343F, #545454);
+    background: linear-gradient(150deg, #25343f, #545454);
     position: relative;
 }
 
@@ -75,7 +75,7 @@ ul {
    SIDEBAR  (newSidebar.tsx → partials/sidebar.blade.php)
    ============================================================ */
 .sidebar {
-    font-family: 'Nexa', sans-serif;
+    font-family: "Nexa", sans-serif;
     position: relative;
     overflow: hidden;
     z-index: 1;
@@ -85,7 +85,7 @@ ul {
     width: 327px;
     min-height: 100vh;
     height: 100vh;
-    background: linear-gradient(180deg, #25343F 0%, #FF9B51 100%);
+    background: linear-gradient(180deg, #25343f 0%, #ff9b51 100%);
     border-radius: 0px 60px 60px 0px;
     box-shadow: 6px 4px 26px 0px rgba(0, 0, 0, 0.25);
     color: white;
@@ -151,7 +151,7 @@ ul {
 
 /* Active nav link */
 .icons-active {
-    color: #25343F;
+    color: #25343f;
     background-color: white;
     width: 292px;
     height: 52px;
@@ -223,17 +223,17 @@ ul {
 }
 
 h1 {
-    font-family: 'Nexa', sans-serif;
+    font-family: "Nexa", sans-serif;
     font-weight: 700;
     font-size: 46px;
     color: white;
 }
 
 h2 {
-    font-family: 'Nexa', sans-serif;
+    font-family: "Nexa", sans-serif;
     font-weight: 700;
     font-size: 32px;
-    background: linear-gradient(90deg, #FF9B51, #FFAA6B);
+    background: linear-gradient(90deg, #ff9b51, #ffaa6b);
     background-clip: text;
     -webkit-background-clip: text;
     color: transparent;
@@ -255,15 +255,14 @@ h2 {
 .list-product {
     font-family: "Nexa";
     width: 100%;
-    display: flex;
-    gap: 34px;
+    display: grid;
+    grid-template-columns: repeat(4, 335px);
+    grid-auto-rows: 363px;
+    gap: 29px;
     overflow-x: auto;
     padding: 10px 25px;
     flex-shrink: 0;
     scrollbar-width: none;
-    -ms-overflow-style: none;
-    mask-image: linear-gradient(90deg, transparent, black 50px, black calc(100% - 50px), transparent);
-    -webkit-mask-image: linear-gradient(90deg, transparent, black 50px, black calc(100% - 50px), transparent);
 }
 
 .list-product::-webkit-scrollbar {
@@ -272,7 +271,7 @@ h2 {
 
 /* Product card */
 .product {
-    background: linear-gradient(225deg, #78838B, #C07944);
+    background: linear-gradient(225deg, #78838b, #c07944);
     padding: 15px;
     width: 335px;
     height: 363px;
@@ -312,7 +311,9 @@ h2 {
     display: flex;
     justify-content: center;
     align-items: center;
-    transition: transform 0.1s ease, background-color 100ms ease;
+    transition:
+        transform 0.1s ease,
+        background-color 100ms ease;
 }
 
 .sidebar-button:hover {
@@ -349,6 +350,181 @@ h2 {
 }
 
 /* Product text */
+.nama-produk {
+    font-size: 20px;
+    font-family: "Nexa", sans-serif;
+    font-weight: 800;
+    color: white;
+}
+
+.deskripsi-singkat-produk {
+    font-size: 15px;
+    font-family: "Nexa", sans-serif;
+    font-weight: 200;
+    color: white;
+}
+
+/* ============================================================
+   PAYWARE  (payware.blade.php)
+   ============================================================ */
+
+.main-payware {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    flex: 1;
+    padding: 30px 54px 54px 54px;
+    z-index: 1;
+    height: 100vh;
+    /* overflow-y: auto; */
+    scroll-behavior: smooth;
+}
+
+.list-sortir {
+    display: flex;
+    font-family: "Nexa", sans-serif;
+    font-weight: 800;
+    gap: 20px;
+}
+
+.sort-button {
+    min-width: 60px;
+    min-height: 30px;
+    padding: 5px;
+    background: white;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition:
+        transform 0.1s ease-in-out,
+        background-color 100ms ease-in-out;
+}
+
+.sort-button:hover {
+    transform: scale(1.1);
+    background-color: #f0f0f0;
+}
+
+.sortir {
+    display: flex;
+    gap: 20px;
+}
+
+.sort {
+    font-family: "Nexa", sans-serif;
+    font-size: 20px;
+    font-weight: 800;
+    background-color: #7a7a7a;
+    color: rgb(255, 255, 255);
+    border: 2px solid;
+    padding: 10px 23px;
+    border-radius: 15px;
+    border-width: 0px;
+    cursor: pointer;
+    transition: 0.1s ease-in-out;
+}
+
+.sort:hover {
+    scale: 1.05;
+}
+
+.sort:active {
+    scale: 0.95;
+    background-color: #ff9b51;
+    color: black;
+}
+
+.sortir button.active:hover {
+    scale: 1.05;
+}
+
+.sortir button.active:active {
+    scale: 0.95;
+}
+
+.ascend-descend-button {
+    font-family: "Nexa", sans-serif;
+    font-size: 20px;
+    font-weight: 800;
+    border: 2px solid;
+    padding: 15px;
+    border-radius: 15px;
+    border-width: 0px;
+    cursor: pointer;
+    transition: 0.1s ease-in-out;
+    background-color: #ff9b51;
+    color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.ascend-descend-button:hover {
+    scale: 1.05;
+}
+
+.ascend-descend-button:active {
+    scale: 0.95;
+    background-color: #ff7a24;
+}
+
+.arrow-sort {
+    transition: 0.2s ease-in-out;
+}
+
+.arrow-sort:active {
+    transform: rotate(180deg);
+}
+
+.list-product-payware {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(4, 335px);
+    grid-auto-rows: 363px;
+    gap: 29px;
+    padding: 10px 25px;
+    /* flex-shrink: 0; */
+    /* scrollbar-width: none; */
+    overflow-y: auto;
+}
+.list-product-payware::-webkit-scrollbar {
+    display: none;
+}
+
+/* Product card */
+.product {
+    background: linear-gradient(225deg, #78838b, #c07944);
+    padding: 15px;
+    width: 335px;
+    height: 363px;
+    border-radius: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    transition: 0.3s ease-in-out;
+    flex-shrink: 0;
+}
+.product:hover {
+    scale: 1.05;
+}
+
+/* Product thumbnail area */
+.thumbnail-product {
+    background-color: white;
+    width: 305px;
+    height: 171px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
 .nama-produk {
     font-size: 20px;
     font-family: "Nexa", sans-serif;

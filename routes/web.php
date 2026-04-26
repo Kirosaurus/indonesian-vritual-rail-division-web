@@ -6,6 +6,10 @@ Route::get('/', function () {
     return view('dashboard');
 });
 
-Route::get('/contact', function () {
-    return view('contact');
+Route::get('/payware', function () {
+    return view('payware');
+});
+
+Route::get('/freeware', function () {
+    return view('freeware');
 });
