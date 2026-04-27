@@ -13,3 +13,7 @@ Route::get('/payware', function () {
 Route::get('/freeware', function () {
     return view('freeware');
 });
+
+Route::get('/contact', function() {
+    return view('contact');
+});

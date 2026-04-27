@@ -2,31 +2,35 @@
 
 @section('title', 'Dashboard')
 
+@push('scripts')
+    @vite('resources/js/dashboard.js')
+@endpush
+
 @section('content')
 <div class="main-dashboard">
 
     {{-- Top bar --}}
     <div style="display: flex; align-items: center; gap: 10px;">
-        <button class="sidebar-button">
+        <button class="top-bar-element" id="sidebar-button">
             <img src="{{ asset('menu.svg') }}" height="30" width="30" alt="Menu" />
         </button>
-        <h1>Dashboard</h1>
-        <div style="width: 100%; display: flex; flex-direction: column; align-items: flex-end;">
+        <h1 class="top-bar-element">Dashboard</h1>
+        <div class="top-bar-element" style="width: 100%; display: flex; flex-direction: column; align-items: flex-end;">
             <button class="login-button">Login</button>
         </div>
     </div>
 
     {{-- Announcement banner --}}
-    <div class="announce">
+    <div class="body-element" id="announce">
         <p>Ini Buat Announcement</p>
     </div>
 
     {{-- New Products --}}
-    <div>   
+    <div class="body-element">   
         <h2>New Product</h2>
     </div>
 
-    <div class="list-product">
+    <div class="body-element" id="list-product">
 
         {{--
             Replace this static loop with a dynamic @foreach when

@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>IVRD – @yield('title', 'Dashboard')</title>
     <link rel="stylesheet" href="{{ asset('css/ivrd.css') }}" />
+    <link rel="stylesheet" href="{{ asset('css/animation.css') }}" />
 </head>
 <body>
 
@@ -22,6 +23,6 @@
         </div>
     </div>
 </main>
-
+@stack('scripts')
 </body>
 </html>

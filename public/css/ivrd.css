@@ -240,7 +240,7 @@ h2 {
 }
 
 /* Announcement banner */
-.announce {
+#announce {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -252,7 +252,7 @@ h2 {
 }
 
 /* Horizontal product scroller */
-.list-product {
+#list-product {
     font-family: "Nexa";
     width: 100%;
     display: grid;
@@ -265,7 +265,7 @@ h2 {
     scrollbar-width: none;
 }
 
-.list-product::-webkit-scrollbar {
+#list-product::-webkit-scrollbar {
     display: none;
 }
 
@@ -300,7 +300,7 @@ h2 {
 }
 
 /* Top-bar buttons */
-.sidebar-button {
+#sidebar-button {
     min-width: 50px;
     min-height: 50px;
     padding: 5px;
@@ -316,12 +316,12 @@ h2 {
         background-color 100ms ease;
 }
 
-.sidebar-button:hover {
+#sidebar-button:hover {
     transform: scale(1.05);
     background-color: #f0f0f0;
 }
 
-.sidebar-button:active {
+#sidebar-button:active {
     transform: scale(0.9);
     background-color: #f0f0f0;
 }
@@ -481,7 +481,7 @@ h2 {
     transform: rotate(180deg);
 }
 
-.list-product-payware {
+#list-product-payware {
     width: 100%;
     display: grid;
     grid-template-columns: repeat(4, 335px);
@@ -492,7 +492,8 @@ h2 {
     /* scrollbar-width: none; */
     overflow-y: auto;
 }
-.list-product-payware::-webkit-scrollbar {
+
+#list-product-payware::-webkit-scrollbar {
     display: none;
 }
 
@@ -509,6 +510,7 @@ h2 {
     transition: 0.3s ease-in-out;
     flex-shrink: 0;
 }
+
 .product:hover {
     scale: 1.05;
 }
@@ -543,6 +545,12 @@ h2 {
    CONTACT 
    ============================================================ */
 
+p {
+    font-family: "Nexa";
+    font-size: 26px;
+    color: white;
+}
+
 .main-contact {
     display: flex;
     flex-direction: column;
@@ -555,15 +563,129 @@ h2 {
     scroll-behavior: smooth;
 }
 
+.body-container {
+    padding: 0px 120px;
+    height: 100%;
+    display: flex;
+    gap: 105px;
+}
+
 .top-container {
     display: flex;
     align-items: center;
     gap: 10px;
 }
 
-.social-media-section{
+.left-contact-section {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.right-contact-section {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+.social-media-section {
     display: flex;
     gap: 40px;
+
+}
+
+.mail-message {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    gap: 7px;
+    background: linear-gradient(225deg, #78838B, #C07944);
+    padding: 30px;
+    border-radius: 30px;
+    box-shadow: 0px 8px 15px 0px rgba(0, 0, 0, 0.25);
+}
+
+.mail-message form {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+.mail-message input {
+    font-family: "Nexa";
+    font-size: 20px;
+    border-radius: 15px;
+    border: none;
+    width: 100%;
+    height: 52px;
+    padding: 10px 22px;
+    transition: all 0.1s ease-in-out;
+    outline-color: white;
+}
+
+.mail-message input:focus {
+    outline-color: #FF9B51;
+    box-shadow: 0px 8px 15px 0px rgba(0, 0, 0, 0.25);
+}
+
+.mail-message textarea {
+    font-family: "Nexa";
+    font-size: 20px;
+    border-radius: 15px;
+    border: none;
+    width: 100%;
+    height: 177px;
+    resize: none;
+    padding: 10px 22px;
+    transition: all 0.1s ease-in-out;
+    outline-color: white;
+}
+
+.mail-message textarea:focus {
+    outline-color: #FF9B51;
+    box-shadow: 0px 8px 15px 0px rgba(0, 0, 0, 0.25);
+}
+
+.mail-message label {
+    font-family: "Nexa";
+    font-weight: 800;
+    font-size: 24px;
+    color: white;
+}
+
+.mail-message button {
+    font-weight: 800;
+    width: 130px;
+    height: 52px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3px;
+    font-size: 20px;
+    color: black;
+    border: none;
+    background-color: white;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: 0.1s ease-in-out;
+}
+
+.mail-message button:hover {
+    scale: 1.05;
+    background-color: rgb(224, 224, 224);
+}
+
+.mail-message button:active {
+    scale: 0.95;
+}
+
+.mail-message p {
+    font-size: 20px;
+    color: black;
 }
 
 .social-media-contact {
@@ -581,6 +703,14 @@ h2 {
     color: white;
     border: none;
     transition: 0.1s ease-in-out;
+    box-shadow: 0px 8px 15px 0px rgba(0, 0, 0, 0.25);
+}
+
+.social-media-contact a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 6px;
 }
 
 .social-media-contact:hover {
