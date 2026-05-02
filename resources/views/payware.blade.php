@@ -2,6 +2,16 @@
 
 @section('title', 'Payware')
 
+@push('scripts')
+@vite('resources/js/toolbar-functional.js')
+@endpush
+
+@section('css')
+<link rel="stylesheet" href="{{ asset('css/main.css') }}" />
+<link rel="stylesheet" href="{{ asset('css/payware.css') }}" />
+<link rel="stylesheet" href="{{ asset('css/animation.css') }}" />
+@endsection
+
 @section('content')
 <div class="main-payware">
 
@@ -18,19 +28,35 @@
     </div>
 
     {{-- New Products --}}
-    <div class="list-sortir">
-        <button class="sort-button">
-            <img src="{{ asset('sort.svg') }}" height="30" width="40" alt="Filter" />
-        </button>
-        <div class="sortir">
-            <button class="sort">Price</button>
-            <button class="sort">Name</button>
-            <button class="sort">Rating</button>
+    <div id="toolbar">
+        <div class="list-sortir">
+            <div style="position: relative;">
+                <button class="sort-button">
+                    <img src="{{ asset('sort.svg') }}" height="30" width="30" alt="Filter" />
+                </button>
+                <!-- <div class="sortir">
+                    <button class="sort"><img src="{{asset('dollarWhite.svg')}}" height="20" width="20"/></button>
+                    <button class="sort">Name</button>
+                    <button class="sort">Rating</button>
+                </div> -->
+                <div class="sortir">
+                    <button class="sort">Price</button>
+                    <button class="sort">Name</button>
+                    <button class="sort">Rating</button>
+                </div>
+            </div>
             <button class="ascend-descend-button">
                 <img class="arrow-sort" src="{{ asset('asc-dsc.svg') }}" height="25" width="25" alt="Ascending" />
-                Ascending</button>
-            <div id="search-container">
-                <input type="text" class="search-input" placeholder="Search a product " />
+                <span>
+                    Ascending
+                </span>
+            </button>
+        </div>
+        <div id="search-container" style="position: relative; display: flex; align-items: center;">
+            {{-- Give the input an id --}}
+            <div class="search-bar">
+                <input type="text" id="search-box" class="search-input" placeholder="Search a product " />
+                <img class="search-icon" src="{{ asset('search-icon.svg') }}" height="25" width="25" />
             </div>
         </div>
     </div>

@@ -1,0 +1,57 @@
+/* ============================================================
+   DASHBOARD  (dashboard.tsx → dashboard.blade.php)
+   ============================================================ */
+.main-dashboard {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    flex: 1;
+    padding: 30px 54px 54px 54px;
+    z-index: 1;
+    height: 100vh;
+    overflow-y: auto;
+    scroll-behavior: smooth;
+}
+
+/* Announcement banner */
+#announce {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: black;
+    max-width: 100%;
+    min-height: 473px;
+    border-radius: 30px;
+    background-color: white;
+}
+
+/* Horizontal product scroller */
+#list-product {
+    width: 100%;
+    height: auto;
+    font-family: "Nexa";
+    display: grid;
+    grid-template-columns: repeat(4, auto);
+    grid-auto-rows: 363px;
+    gap: 29px;
+    overflow-y: auto;
+    padding: 10px 25px;
+    flex-shrink: 0;
+    scrollbar-width: none;
+}
+
+#list-product::-webkit-scrollbar {
+    display: none;
+}
+
+/* Product thumbnail area */
+.thumbnail-product {
+    background-color: white;
+    width: auto;
+    height: 171px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}

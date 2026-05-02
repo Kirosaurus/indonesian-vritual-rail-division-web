@@ -2,24 +2,10 @@
 
 @section('title', 'Freeware')
 
-<<<<<<< HEAD
 @push('scripts')
 @vite('resources/js/dashboard.js')
+@vite('resources/js/dashboard.js')
 @endpush
-=======
-@section('content')
-    <div class="main-freeware">
-        {{-- Top bar --}}
-        <div style="display: flex; align-items: center; gap: 10px;">
-            <button id="sidebar-button">
-                <img src="{{ asset('menu.svg') }}" height="30" width="30" alt="Menu" />
-            </button>
-            <h1>Freeware</h1>
-            <div style="width: 100%; display: flex; flex-direction: column; align-items: flex-end;">
-                <button class="login-button">Login</button>
-            </div>
-        </div>
->>>>>>> 1b410c3f523d623507a53e9ee14d8594253e528f
 
 @section('content')
 <div class="main-freeware">
