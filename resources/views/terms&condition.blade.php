@@ -7,7 +7,7 @@
         {{-- Top bar --}}
         <div style="display: flex; align-items: center; gap: 10px;">
             <button id="sidebar-button">
-                <img src="{{ asset('menu.svg') }}" height="30" width="30" alt="Menu" />
+                <img src="{{ asset('menu.svg') }}" height="25" width="25" alt="Menu" />
             </button>
             <h1 class="title-terms">Terms & Condition</h1>
             <div style="width: 100%; display: flex; flex-direction: column; align-items: flex-end;">

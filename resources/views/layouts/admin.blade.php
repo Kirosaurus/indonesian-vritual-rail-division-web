@@ -12,8 +12,6 @@
 <body>
 
     <main class="app-root">
-        {{-- Fixed background texture --}}
-        <img class="background-img-login" src="{{ asset('background_login.png') }}" alt="" />
 
         <div class="app-wrapper">
             {{-- Page content --}}

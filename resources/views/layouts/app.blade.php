@@ -11,7 +11,7 @@
 
 <main class="app-root">
     {{-- Fixed background texture --}}
-    <img class="background-img" src="{{ asset('body_background.png') }}" alt="" />
+    <img class="background-img-main" src="{{ asset('body_background.png') }}" alt="" />
 
     <div class="app-wrapper">
         <div id="sidebar-backdrop" class="sidebar-backdrop"></div>

@@ -6,7 +6,7 @@
 <div class="main-contact">
     <div class="top-container">
         <button id="sidebar-button">
-            <img src="{{ asset('menu.svg') }}" height="30" width="30" alt="Menu" />
+            <img src="{{ asset('menu.svg') }}" height="25" width="25" alt="Menu" />
         </button>
         <h1 style="white-space: nowrap;">Contact Us</h1>
         <div style="width: 100%; display: flex; flex-direction: column; align-items: flex-end;">

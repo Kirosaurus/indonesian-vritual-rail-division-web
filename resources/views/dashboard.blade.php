@@ -13,37 +13,37 @@
 @endsection
 
 @section('content')
-<div class="main-dashboard">
+    <div class="main-dashboard">
 
-    {{-- Top bar --}}
-    <div style="display: flex; align-items: center; gap: 10px;">
-        <button class="top-bar-element" id="sidebar-button">
-            <img src="{{ asset('menu.svg') }}" height="30" width="30" alt="Menu" />
-        </button>
-        <h1 class="top-bar-element">Dashboard</h1>
-        <div class="top-bar-element" style="width: 100%; display: flex; flex-direction: column; align-items: flex-end;">
-            <button class="login-button">Login</button>
+        {{-- Top bar --}}
+        <div style="display: flex; align-items: center; gap: 10px;">
+            <button class="top-bar-element" id="sidebar-button">
+                <img src="{{ asset('menu.svg') }}" height="25" width="25" alt="Menu" />
+            </button>
+            <h1 class="top-bar-element">Dashboard</h1>
+            <div class="top-bar-element" style="width: 100%; display: flex; flex-direction: column; align-items: flex-end;">
+                <button class="login-button">Login</button>
+            </div>
         </div>
-    </div>
 
-    {{-- Announcement banner --}}
-    <div class="body-element" id="announce">
-        <p>Ini Buat Announcement</p>
-    </div>
+        {{-- Announcement banner --}}
+        <div class="body-element" id="announce">
+            <p>Ini Buat Announcement</p>
+        </div>
 
-    {{-- New Products --}}
-    <div class="body-element">
-        <h2>New Product</h2>
-    </div>
+        {{-- New Products --}}
+        <div class="body-element">
+            <h2>New Product</h2>
+        </div>
 
-    <div class="body-element" id="list-product">
+        <div class="body-element" id="list-product">
 
-        {{--
+            {{--
 
             @foreach ($products as $product)
-                <!-- <div class="" id="product"> ... </div> -->
+            <!-- <div class="" id="product"> ... </div> -->
             @endforeach
-        --}}
+            --}}
 
         @for ($i = 0; $i < 8; $i++)
             <div class="" id="product">
@@ -58,6 +58,6 @@
     </div>
     @endfor
 
-</div>
-</div>
+        </div>
+    </div>
 @endsection
