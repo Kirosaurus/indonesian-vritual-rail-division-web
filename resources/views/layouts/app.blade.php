@@ -6,6 +6,7 @@
     <title>IVRD – @yield('title', 'Dashboard')</title>
     @yield('css')
     <link rel="stylesheet" href="{{ asset('css/animation.css') }}" />
+    <link rel="stylesheet" href="{{ asset('css/layout.css') }}" />
 </head>
 <body>
 
