@@ -5,7 +5,7 @@
 @push('scripts')
     @vite('resources/js/toolbar-functional.js')
     @vite('resources/js/sidebar-functional.js')
-    @vite('resources/js/animation/freeware.js')
+    @vite('resources/js/animation/pay-free.js')
 @endpush
 
 @section('css')
@@ -15,7 +15,7 @@
 @endsection
 
 @section('content')
-    <div class="main-freeware">
+    <div class="main-pay-free">
         {{-- Top bar --}}
         <div class="top-bar-element" style="display: flex; align-items: center; gap: 10px;">
             <button id="sidebar-button">
@@ -61,7 +61,7 @@
             </div>
         </div>
 
-        <div id="list-product-freeware">
+        <div id="list-product-pay-free">
 
             {{--
             @foreach ($products as $product)

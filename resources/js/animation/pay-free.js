@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
     const topBarItems = document.querySelectorAll('.top-bar-element');
     const toolbarItems = document.querySelectorAll('.sort-button, .search-bar, .ascend-descend-button');
-    const productCards = document.querySelectorAll('#list-product-freeware > div[id="product"]');
+    const productCards = document.querySelectorAll('#list-product-pay-free > div[id="product"]');
 
     topBarItems.forEach((item, index) => {
         item.style.opacity = '0';
@@ -46,7 +46,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 });
 
-const productList = document.querySelector('#list-product-freeware');
+const productList = document.querySelector('#list-product-pay-free');
 if (productList) {
     productList.addEventListener('mouseover', (event) => {
         const card = event.target.closest('#product');

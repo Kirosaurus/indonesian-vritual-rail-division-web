@@ -2,18 +2,6 @@
    PAYWARE  (payware.blade.php)
    ============================================================ */
 
-.main-payware {
-    display: flex;
-    flex-direction: column;
-    gap: 18px;
-    flex: 1;
-    padding: 30px 54px 30px 54px;
-    z-index: 1;
-    min-height: 100vh;
-    /*overflow-y: auto;*/
-    scroll-behavior: smooth;
-
-}
 
 .list-sortir {
     height: 40px;
@@ -243,28 +231,6 @@
     transform: rotate(0deg);
 }
 
-#list-product-payware {
-    width: 100%;
-    height: auto;
-    display: grid;
-    grid-template-columns: repeat(4, auto);
-    grid-auto-rows: 363px;
-    gap: 29px;
-    padding: 20px 25px;
-    /* flex-shrink: 0; */
-    /* scrollbar-width: none; */
-    overflow-y: auto;
-    mask-image: linear-gradient(to bottom,
-            transparent 0%,
-            black 5%,
-            black 95%,
-            transparent 100%);
-}
-
-#list-product-payware::-webkit-scrollbar {
-    display: none;
-}
-
 /* Product thumbnail area */
 .thumbnail-product {
     background-color: white;
@@ -290,28 +256,3 @@
     font-weight: 200;
     color: white;
 }
-
-@media screen and (max-width : 1900px) {
-    #list-product-payware {
-        grid-template-columns: repeat(3, auto);
-    }
-}
-
-@media screen and (max-width : 1550px) {
-    #list-product-payware {
-        grid-template-columns: repeat(2, auto);
-    }
-}
-
-@media screen and (max-width : 1200px) {
-    #list-product-payware {
-        grid-template-columns: repeat(1, auto);
-    }
-}
-
-@media screen and (max-width : 940px) {
-    .main-payware {
-        padding: 30px 30px 30px 30px;
-    }
-}
-
