@@ -3,18 +3,19 @@
 @section('title', 'Payware')
 
 @push('scripts')
-@vite('resources/js/sidebar-functional.js')
-@vite('resources/js/toolbar-functional.js')
+    @vite('resources/js/toolbar-functional.js')
+    @vite('resources/js/sidebar-functional.js')
+    @vite('resources/js/animation/payware.js')
 @endpush
 
 @section('css')
-<link rel="stylesheet" href="{{ asset('css/main.css') }}" />
-<link rel="stylesheet" href="{{ asset('css/payware.css') }}" />
-<link rel="stylesheet" href="{{ asset('css/animation.css') }}" />
+    <link rel="stylesheet" href="{{ asset('css/main.css') }}" />
+    <link rel="stylesheet" href="{{ asset('css/payware.css') }}" />
+    <link rel="stylesheet" href="{{ asset('css/animation.css') }}" />
 @endsection
 
 @section('content')
-<div class="main-payware">
+    <div class="main-payware">
 
     {{-- Top bar --}}
     <div class="top-container">
@@ -66,30 +67,30 @@
     {{-- New Products --}}
 
 
-    <div id="list-product-payware">
+        <div id="list-product-payware">
 
-        {{--
+            {{--
             @foreach ($products as $product)
             <div class="product"> ... </div>
             @endforeach
             --}}
 
-        @for ($i = 0; $i < 12; $i++)
-            <div class="" id="product">
-            <div class="thumbnail-product">
-                <p style="color: black;">Ini Thumbnail Produk</p>
-            </div>
-            <p class="nama-produk">Nama Produk</p>
-            <p class="deskripsi-singkat-produk">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                sed do eiusmod tempor (Maksimal 120 karakter spasi juga ikut)
-            </p>
-            <div class="container-harga">
-                <span><br>Rp.-</span>
-            </div>
-    </div>
-    @endfor
+            @for ($i = 0; $i < 12; $i++)
+                <div class="" id="product">
+                    <div class="thumbnail-product">
+                        <p style="color: black;">Ini Thumbnail Produk</p>
+                    </div>
+                    <p class="nama-produk">Nama Produk</p>
+                    <p class="deskripsi-singkat-produk">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                        sed do eiusmod tempor (Maksimal 120 karakter spasi juga ikut)
+                    </p>
+                    <div class="container-harga">
+                        <span><br>Rp.-</span>
+                    </div>
+                </div>
+            @endfor
 
-</div>
-</div>
+        </div>
+    </div>
 @endsection

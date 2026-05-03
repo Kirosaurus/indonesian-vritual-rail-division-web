@@ -27,21 +27,20 @@
         {{-- Terms & Condition Content --}}
         <div class="terms-condition-wrapper">
             <div class="terms-condition-content">
-                <p><b>Dengan melakukan pembelian konten mod game dari Indonesia  <span>Virtual Railway Division</span> (IVRD), pembeli
-                    dianggap telah  <span>membaca, memahami, dan menyetujui</span> seluruh ketentuan berikut:</p>
+                <p><b>By purchasing game mod content from Indonesia <span>Virtual Railway Division</span> (IVRD), the buyer is considered to have <span>read, understood, and agreed</span> to the following terms:</p>
                 
                 <ul class="terms-list">
-                    <li>Pembeli <span>Wajib</span> memberikan data yang  <span>benar, jujur, dan dapat dipertanggungjawabkan</span> dalam proses transaksi.</li>
-                    <li>Setiap pembelian bersifat final dan tidak dapat dikembalikan atau ditukar, kecuali terdapat kesalahan dari pihak IVRD.</li>
-                    <li>Konten mod yang telah dibeli hanya diperuntukkan bagi penggunaan pribadi dan tidak diperbolehkan untuk diperjualbelikan kembali, dibagikan, atau didistribusikan tanpa izin resmi dari pihak IVRD.</li>
-                    <li>Pembeli bertanggung jawab penuh atas penggunaan konten mod, termasuk risiko yang mungkin timbul pada perangkat atau sistem yang digunakan.</li>
-                    <li>Tidak terdapat batasan usia dalam melakukan pembelian, namun pembeli dianggap telah memiliki kemampuan untuk memahami dan menyetujui ketentuan ini secara sadar.</li>
-                    <li>Pembeli diharapkan bersikap amanah serta menjaga kepercayaan dengan tidak menyalahgunakan konten yang telah dibeli.</li>
-                    <li>Pihak IVRD berhak melakukan pembaruan, perubahan, atau penyesuaian terhadap konten maupun ketentuan ini sewaktu-waktu tanpa pemberitahuan terlebih dahulu.</li>
-                    <li>Segala bentuk pelanggaran terhadap ketentuan ini dapat mengakibatkan pembatasan atau penghentian akses terhadap layanan IVRD.</li></b>
+                    <li>The buyer <span>must</span> provide information that is <span>accurate, honest, and accountable</span> during the transaction process.</li>
+                    <li>All purchases are final and cannot be refunded or exchanged, unless an error is made by IVRD.</li>
+                    <li>Purchased mod content is for personal use only and may not be resold, shared, or distributed without official permission from IVRD.</li>
+                    <li>The buyer is fully responsible for the use of mod content, including any risks that may affect the device or system used.</li>
+                    <li>There is no age restriction for making a purchase, but the buyer is assumed to have the ability to understand and agree to these terms consciously.</li>
+                    <li>The buyer is expected to act in good faith and respect trust by not misusing purchased content.</li>
+                    <li>IVRD reserves the right to update, change, or adjust the content and these terms at any time without prior notice.</li>
+                    <li>Any violation of these terms may result in restriction or termination of access to IVRD services.</li></b>
                 </ul>
 
-                <p><b>Dengan melanjutkan transaksi, pembeli dianggap menyetujui seluruh syarat dan ketentuan yang berlaku.</b></p>
+                <p><b>By continuing the transaction, the buyer is deemed to agree to all applicable terms and conditions.</b></p>
             </div>
         </div>
     </div>
