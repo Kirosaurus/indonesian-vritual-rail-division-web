@@ -1,0 +1,95 @@
+/* ============================================================
+   Terms * Condition
+   ============================================================ */
+.main-terms-condition {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    flex: 1;
+    padding: 30px 54px 54px 54px;
+    z-index: 1;
+    height: 100vh;
+    /* overflow-y: auto; */
+    scroll-behavior: smooth;
+}
+
+.title-terms {
+    white-space: nowrap;
+}
+
+.terms-condition-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex: 1;
+    padding: 40px 20px;
+    overflow-y: auto;
+}
+
+.terms-condition-content {
+    width: 100%;
+    max-width: 1268px;
+    background: linear-gradient(225deg, #78838b, #c07944);
+    border-radius: 30px;
+    padding: 10px 50px;
+    color: white;
+    font-family: "Nexa", sans-serif;
+    font-size: 32px;
+    line-height: 1.8;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+    overflow-y: auto;
+    max-height: 683px;
+    text-align: justify;
+    text-shadow: black;
+}
+
+.terms-condition-content p {
+    font-size: 32px;
+    margin-top: 20px;
+    margin-bottom: 15px;
+    color: white;
+}
+
+.terms-condition-content span {
+    color: #ff9b51;
+}
+
+.terms-condition-content h2:first-child {
+    margin-top: 0;
+}
+
+.terms-condition-content p {
+    margin-bottom: 20px;
+    font-weight: 400;
+}
+
+.terms-condition-content::-webkit-scrollbar {
+    display: none;
+
+    overflow-y: auto;
+    scroll-behavior: smooth;
+}
+
+/* Terms List Styling */
+.terms-list {
+    list-style: none;
+    padding-left: 0;
+    margin: 20px 0;
+}
+
+.terms-list li {
+    font-size: 32px;
+    margin-left: 30px;
+    margin-bottom: 15px;
+    position: relative;
+    line-height: 50px;
+}
+
+.terms-list li:before {
+    content: "•";
+    position: absolute;
+    left: -20px;
+    color: #f7f7f7;
+    font-weight: bold;
+    font-size: 32px;
+}

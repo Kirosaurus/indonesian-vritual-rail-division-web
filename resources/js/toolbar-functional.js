@@ -130,4 +130,20 @@ document.addEventListener("DOMContentLoaded", () =>{
     })
 })
 
+//Top Container - Dengarkan scroll pada .page-content
+const top_container = document.querySelector(".top-container");
+const pageContent = document.querySelector(".main-payware");
+
+if (pageContent) {
+    pageContent.addEventListener("scroll", () => {
+        if (pageContent.scrollTop > 0) {
+            console.log("Scrolled");
+            top_container.classList.add("scrolled");
+        } else {
+            console.log("Not scrolled");
+            top_container.classList.remove("scrolled");
+        }
+    });
+}
+
 

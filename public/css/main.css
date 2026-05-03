@@ -85,7 +85,7 @@ h2 {
 .page-content {
     flex: 1;
     min-height: 100vh;
-    overflow: hidden;
+    overflow-y: auto;  /* Ganti dari overflow: hidden */
 }
 
 .login-button {
@@ -167,7 +167,7 @@ h2 {
         background-color 100ms ease;
 }
 
-#sidebar-button.active{
+#sidebar-button.active {
     min-width: 50px;
     min-height: 50px;
     padding: 5px;
@@ -348,7 +348,7 @@ h2 {
     background: linear-gradient(225deg, #78838b, #c07944);
     padding: 15px;
     min-width: 200px;
-    height: 363px;
+    height: 400px;
     border-radius: 30px;
     display: flex;
     flex-direction: column;
@@ -366,4 +366,30 @@ h2 {
 #product:active {
     scale: 0.95;
     transition: 0.1s ease-in-out;
+}
+
+.top-container {
+    border-radius: 10px ;
+    padding: 10px;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    position: sticky;
+    gap: 10px;
+    z-index: 10;
+    transition: 0.2s ease-in-out;
+}
+
+.top-container.scrolled{
+    width: 100%;
+    background-color: #25343fe1;
+    backdrop-filter: blur(10px);
+}
+
+.heading {
+    gap: 10px;
+    display: flex;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
 }

@@ -2,10 +2,19 @@
 
 @section('title', 'Terms & Condition')
 
+@push('scripts')
+@vite('resources/js/sidebar-functional.js')
+@endpush
+
+@section('css')
+<link rel="stylesheet" href="{{ asset('css/terms&condition.css') }}">
+<link rel="stylesheet" href="{{ asset('css/main.css') }}" />
+@endsection
+
 @section('content')
     <div class="main-terms-condition">
         {{-- Top bar --}}
-        <div style="display: flex; align-items: center; gap: 10px;">
+        <div class="top-container">
             <button id="sidebar-button">
                 <img src="{{ asset('menu.svg') }}" height="25" width="25" alt="Menu" />
             </button>

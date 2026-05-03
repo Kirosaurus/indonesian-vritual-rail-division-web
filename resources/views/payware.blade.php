@@ -3,6 +3,7 @@
 @section('title', 'Payware')
 
 @push('scripts')
+@vite('resources/js/sidebar-functional.js')
 @vite('resources/js/toolbar-functional.js')
 @endpush
 
@@ -16,50 +17,54 @@
 <div class="main-payware">
 
     {{-- Top bar --}}
-    <div style="display: flex; align-items: center; gap: 10px;">
-        <button id="sidebar-button">
-            <img src="{{ asset('menu.svg') }}" height="25" width="25" alt="Menu" />
-        </button>
-        <h1>Payware</h1>
-        <div
-            style="width: 100%; display: flex; flex-direction: row; align-items: center; justify-content: flex-end; gap: 15px;">
-            <button class="login-button">Login</button>
+    <div class="top-container">
+        <div class="heading">
+            <button id="sidebar-button">
+                <img src="{{ asset('menu.svg') }}" height="25" width="25" alt="Menu" />
+            </button>
+            <h1>Payware</h1>
+            <div
+                style="width: 100%; display: flex; flex-direction: row; align-items: center; justify-content: flex-end; gap: 15px;">
+                <button class="login-button">Login</button>
+            </div>
         </div>
-    </div>
 
-    {{-- New Products --}}
-    <div id="toolbar">
-        <div class="list-sortir">
-            <div style="position: relative;">
-                <button class="sort-button">
-                    <img src="{{ asset('sort.svg') }}" height="30" width="30" alt="Filter" />
-                </button>
-                <!-- <div class="sortir">
+        <div id="toolbar">
+            <div class="list-sortir">
+                <div style="position: relative;">
+                    <button class="sort-button">
+                        <img src="{{ asset('sort.svg') }}" height="30" width="30" alt="Filter" />
+                    </button>
+                    <!-- <div class="sortir">
                     <button class="sort"><img src="{{asset('dollarWhite.svg')}}" height="20" width="20"/></button>
                     <button class="sort">Name</button>
                     <button class="sort">Rating</button>
                 </div> -->
-                <div class="sortir">
-                    <button class="sort">Price</button>
-                    <button class="sort">Name</button>
-                    <button class="sort">Rating</button>
+                    <div class="sortir">
+                        <button class="sort">Price</button>
+                        <button class="sort">Name</button>
+                        <button class="sort">Rating</button>
+                    </div>
                 </div>
+                <button class="ascend-descend-button">
+                    <img class="arrow-sort" src="{{ asset('asc-dsc.svg') }}" height="25" width="25" alt="Ascending" />
+                    <span>
+                        Ascending
+                    </span>
+                </button>
             </div>
-            <button class="ascend-descend-button">
-                <img class="arrow-sort" src="{{ asset('asc-dsc.svg') }}" height="25" width="25" alt="Ascending" />
-                <span>
-                    Ascending
-                </span>
-            </button>
-        </div>
-        <div id="search-container" style="position: relative; display: flex; align-items: center;">
-            {{-- Give the input an id --}}
-            <div class="search-bar">
-                <input type="text" id="search-box" class="search-input" placeholder="Search a product " />
-                <img class="search-icon" src="{{ asset('search-icon.svg') }}" height="25" width="25" />
+            <div id="search-container" style="position: relative; display: flex; align-items: center;">
+                {{-- Give the input an id --}}
+                <div class="search-bar">
+                    <input type="text" id="search-box" class="search-input" placeholder="Search a product " />
+                    <img class="search-icon" src="{{ asset('search-icon.svg') }}" height="25" width="25" />
+                </div>
             </div>
         </div>
     </div>
+
+    {{-- New Products --}}
+
 
     <div id="list-product-payware">
 

@@ -2,6 +2,16 @@
 
 @section('title', 'Contact')
 
+@push('scripts')
+@vite('resources/js/sidebar-functional.js')
+@vite('resources/js/responsive-helper/contact.js')
+@endpush
+
+@section("css")
+<link rel="stylesheet" href="{{ asset('css/main.css') }}" />
+<link rel="stylesheet" href="{{ asset('css/contact.css') }}" />
+@endsection
+
 @section('content')
 <div class="main-contact">
     <div class="top-container">
@@ -16,7 +26,7 @@
     <div class="body-container">
         <div class="left-contact-section">
             <h2>Send us a Message!</h2>
-            <p>If you have any trouble, feel free to contact usLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <p>If you have any trouble, feel free to contact us</p>
         </div>
         <div class="right-contact-section">
             <div class="social-media-section">
