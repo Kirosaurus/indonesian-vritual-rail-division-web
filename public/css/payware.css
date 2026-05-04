@@ -1,19 +1,6 @@
 /* ============================================================
    PAYWARE  (payware.blade.php)
    ============================================================ */
-
-.main-payware {
-    display: flex;
-    flex-direction: column;
-    gap: 18px;
-    flex: 1;
-    padding: 0px 54px 30px 54px;
-    z-index: 1;
-    height: 100vh;
-    overflow-y: auto;
-    scroll-behavior: smooth;
-}
-
 .list-sortir {
     height: 40px;
     display: flex;
@@ -26,10 +13,11 @@
     transition: 0.5s ease-in-out;
 }
 
-.list-sortir.hide{
+.list-sortir.hide {
     scale: 0.9;
     filter: blur(10px);
     position: absolute;
+    top: 85px;
     opacity: 0%;
 }
 
@@ -125,99 +113,11 @@
     font-weight: 800;
 }
 
-#search-container {
-    display: flex;
-    justify-content: flex-end;
-    align-content: center;
-    flex: 1;
-}
-
-.login-container{
-    display: flex; 
-    flex-direction: row; 
-    align-items: center; 
-    justify-content: flex-end; 
-    gap: 15px;
-}
-
-.search-bar {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: white;
-    border-radius: 50px;
-    padding: 8px 12px;  
-    gap: 5px;
-    transition: all 1s linear(0 0%, 0 1.8%, 0.01 3.6%, 0.03 6.35%, 0.07 9.1%, 0.13 11.4%, 0.19 13.4%, 0.27 15%, 0.34 16.1%, 0.54 18.35%, 0.66 20.6%, 0.72 22.4%, 0.77 24.6%, 0.81 27.3%, 0.85 30.4%, 0.88 35.1%, 0.92 40.6%, 0.94 47.2%, 0.96 55%, 0.98 64%, 0.99 74.4%, 1 86.4%, 1 100%);
-}
-
-.toolbar{
-    width: 100%;
-    display: flex;
-    align-content:center ;
-    align-items: center;
-    gap: 20px;
-    transition: all 0.5s ease-in-out;
-}
-
-.toolbar.hide{
-    display: none;
-    scale: 0.9;
-    filter: blur(10px);
-    opacity: 0;
-}
-
-.search-bar.focus{
-    transition: all 1s linear(0 0%, 0 1.8%, 0.01 3.6%, 0.03 6.35%, 0.07 9.1%, 0.13 11.4%, 0.19 13.4%, 0.27 15%, 0.34 16.1%, 0.54 18.35%, 0.66 20.6%, 0.72 22.4%, 0.77 24.6%, 0.81 27.3%, 0.85 30.4%, 0.88 35.1%, 0.92 40.6%, 0.94 47.2%, 0.96 55%, 0.98 64%, 0.99 74.4%, 1 86.4%, 1 100%);
-    box-shadow: 0px 0px 20px 0px #ff9b51;
-}
-
-.search-input {
-    margin: 0px;
-    inset: 0;
-    font-family: "Nexa", sans-serif;
-    font-size: 20px;
-    font-weight: 200;
-    border-radius: 5px;
-    border: none;
-    width: 180px; 
-    padding: 0px;
-    background-color: transparent;
-    color: black;
-    outline: none;
-    transition: all 1s linear(0 0%, 0 1.8%, 0.01 3.6%, 0.03 6.35%, 0.07 9.1%, 0.13 11.4%, 0.19 13.4%, 0.27 15%, 0.34 16.1%, 0.54 18.35%, 0.66 20.6%, 0.72 22.4%, 0.77 24.6%, 0.81 27.3%, 0.85 30.4%, 0.88 35.1%, 0.92 40.6%, 0.94 47.2%, 0.96 55%, 0.98 64%, 0.99 74.4%, 1 86.4%, 1 100%);
-}
-
-.search-input.focus.compact {
-    width: 30vh;
-    padding: 0px 10px;
-}
-
-.search-input.focus {
-    width: 30vh;
-    padding: 0px 10px;
-}
-
-.search-input.compact{
-    width: 0px;
-}
-
-.search-icon {
-    position: relative;
-
-    transition: 0.1s ease-in-out;
-}
-
-.search-icon:active {
-    scale: 0.9;
-}
-
 .sort:hover {
     scale: 1.05;
 }
 
-.sort:active{
+.sort:active {
     scale: 0.95;
 }
 
@@ -234,47 +134,6 @@
     scale: 0.95;
 }
 
-.ascend-descend-button {
-    font-family: "Nexa", sans-serif;
-    font-size: 20px;
-    font-weight: 800;
-    /* width: 122px; */
-    height: 40px;
-    border: 2px solid;
-    padding: 15px;
-    border-radius: 15px;
-    border-width: 0px;
-    cursor: pointer;
-    transition: 0.1s ease-in-out;
-    background-color: #ff9b51;
-    color: black;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-}
-
-.ascend-descend-button:hover {
-    scale: 1.05;
-}
-
-.ascend-descend-button:active {
-    scale: 0.95;
-    background-color: #ff7a24;
-}
-
-.arrow-sort {
-    transition: 0.2s ease-in-out;
-}
-
-.arrow-sort.descending {
-    transform: rotate(180deg);
-}
-
-.arrow-sort.ascending {
-    transform: rotate(0deg);
-}
-
 #list-product-payware {
     width: 100%;
     height: auto;
@@ -283,8 +142,11 @@
     grid-auto-rows: 400px;
     gap: 30px;
     padding: 20px 25px;
-    /* flex-shrink: 0; */
-    /* scrollbar-width: none; */
+}
+
+.list-product-container{
+    container-type: inline-size;
+    container-name: listProduct;
 }
 
 #list-product-payware::-webkit-scrollbar {
@@ -315,4 +177,22 @@
     font-family: "Nexa", sans-serif;
     font-weight: 200;
     color: white;
+}
+
+@container listProduct (max-width : 1000px) {
+    #list-product-payware {
+        grid-template-columns: repeat(3, auto);
+    }
+}
+
+@container listProduct (max-width : 750px) {
+    #list-product-payware {
+        grid-template-columns: repeat(2, auto);
+    }
+}
+
+@container listProduct (max-width : 500px) {
+    #list-product-payware {
+        grid-template-columns: repeat(1, auto);
+    }
 }

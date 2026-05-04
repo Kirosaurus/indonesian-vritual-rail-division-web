@@ -8,35 +8,10 @@ p {
     color: white;
 }
 
-.main-contact {
-    display: flex;
-    flex-direction: column;
-    gap: 18px;
-    flex: 1;
-    padding: 30px 54px 54px 54px;
-    z-index: 1;
-    width: 100%;
-    height: 100vh;
-    /* overflow-y: auto; */
-    scroll-behavior: smooth;
-}
-
-p {
-    font-family: "Nexa";
-    font-size: 26px;
-    color: white;
-}
-
-.list-product-freeware::-webkit-scrollbar {
-    display: none;
-    overflow-y: auto;
-    scroll-behavior: smooth;
-}
-
 .body-container {
-    padding: 0px 120px;
+    padding: 0px 50px;
     width: 100%;
-    height: 100%;
+    height: auto;
     display: flex;
     gap: 105px;
 }
@@ -54,6 +29,7 @@ p {
     height: 100%;
     display: flex;
     flex-direction: column;
+    justify-content: center;
     gap: 32px;
 }
 
@@ -197,6 +173,5 @@ p {
         padding: 0px 20px;
         display: flex;
         flex-direction: column;
-        overflow-y: auto;
     }
 }

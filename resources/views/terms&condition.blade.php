@@ -13,7 +13,7 @@
 @endsection
 
 @section('content')
-<div class="main-page">
+<div class="main-terms">
     {{-- Top bar --}}
     <div id="top-container">
         <div class="heading">

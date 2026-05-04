@@ -14,16 +14,25 @@
 @endsection
 
 @section('content')
-<div class="main-contact">
+<div class="main-page">
     <div id="top-container">
-        <button id="sidebar-button">
-            <img src="{{ asset('menu.svg') }}" height="25" width="25" alt="Menu" />
-        </button>
-        <h1 style="white-space: nowrap;">Contact Us</h1>
-        <div style="width: 100%; display: flex; flex-direction: column; align-items: flex-end;">
-            <a href="{{ url('login') }}">
-                <button class="login-button">Login</button>
-            </a>
+        <div class="heading">
+            <div class="title">
+                <button id="sidebar-button">
+                    <img src="{{ asset('menu.svg') }}" height="25" width="25" alt="Menu" />
+                </button>
+                <h1 style="white-space: nowrap;">Contact Us</h1>
+                <img
+                        src="{{asset('contactWhite_icon.svg')}}"
+                        width="30"
+                        height="30">
+
+            </div>
+            <div style="width: 100%; display: flex; flex-direction: column; align-items: flex-end;">
+                <a href="{{ url('login') }}">
+                    <button class="login-button">Login</button>
+                </a>
+            </div>
         </div>
     </div>
     <div class="body-container">

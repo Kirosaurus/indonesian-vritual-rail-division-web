@@ -23,3 +23,22 @@ window.addEventListener("resize", () => {
         textTitle.style.display = 'flex';
     }
 })
+
+//Top Container - Dengarkan scroll pada .page-content
+const top_container = document.getElementById("top-container");
+const pageContent = document.querySelectorAll(".main-page");
+
+if (pageContent) {
+    pageContent.forEach((item, i) => {
+        pageContent[i].addEventListener("scroll", () => {
+            console.log("Masuk")    
+            if (pageContent[i].scrollTop > 0) {
+                console.log("Scrolled");
+                top_container.classList.add("scrolled");
+            } else {
+                console.log("Not scrolled");
+                top_container.classList.remove("scrolled");
+            }
+        });
+    })
+}
