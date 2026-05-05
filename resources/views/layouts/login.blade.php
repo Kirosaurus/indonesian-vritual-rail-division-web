@@ -7,6 +7,7 @@
     <title>IVRD – @yield('title', 'Login Page')</title>
     <link rel="stylesheet" href="{{ asset('css/ivrd.css') }}" />
     <link rel="stylesheet" href="{{ asset('css/animation.css') }}" />
+    <link rel="stylesheet" href="{{ asset('css/main.css') }}" />
 </head>
 
 <body>

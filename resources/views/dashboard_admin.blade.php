@@ -81,11 +81,12 @@
             color: #fff;
         }
     </style>
-
-    <div class="admin-table-body">
         <div class="container">
-            <h2>Welcome $name</h2>
-            <a href="" class="tambah">Tambah</a>
+            @auth
+
+            <h2>Welcome {{auth()->user()->name }}</h2>
+            @endauth
+            <a href="/admin/create" class="tambah">Tambah</a>
 
             <table>
                 <thead>
@@ -112,5 +113,4 @@
                 </tbody>
             </table>
         </div>
-    </div>
 @endsection

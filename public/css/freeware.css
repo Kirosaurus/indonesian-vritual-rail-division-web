@@ -125,9 +125,7 @@
     border-radius: 15px;
     padding: 8px 12px;
     gap: 5px;
-    transition: all 1s
-        linear(
-            0 0%,
+    transition: all 1s linear(0 0%,
             0 1.8%,
             0.01 3.6%,
             0.03 6.35%,
@@ -149,8 +147,7 @@
             0.98 64%,
             0.99 74.4%,
             1 86.4%,
-            1 100%
-        );
+            1 100%);
 }
 
 #toolbar {
@@ -161,9 +158,7 @@
 }
 
 .search-bar.focus {
-    transition: all 1s
-        linear(
-            0 0%,
+    transition: all 1s linear(0 0%,
             0 1.8%,
             0.01 3.6%,
             0.03 6.35%,
@@ -185,8 +180,7 @@
             0.98 64%,
             0.99 74.4%,
             1 86.4%,
-            1 100%
-        );
+            1 100%);
     box-shadow: 0px 0px 20px 0px #ff9b51;
 }
 
@@ -201,9 +195,7 @@
     background-color: transparent;
     color: black;
     outline: none;
-    transition: all 1s
-        linear(
-            0 0%,
+    transition: all 1s linear(0 0%,
             0 1.8%,
             0.01 3.6%,
             0.03 6.35%,
@@ -225,8 +217,7 @@
             0.98 64%,
             0.99 74.4%,
             1 86.4%,
-            1 100%
-        );
+            1 100%);
 }
 
 .search-input.focus {
@@ -309,11 +300,9 @@
     height: auto;
     display: grid;
     grid-template-columns: repeat(4, auto);
-    grid-auto-rows: 400px;
+    grid-auto-rows :auto;
     gap: 30px;
     padding: 20px 25px;
-    /* flex-shrink: 0; */
-    /* scrollbar-width: none; */
 }
 
 #list-product-freeware::-webkit-scrollbar {
@@ -325,6 +314,7 @@
     background-color: white;
     width: auto;
     height: 171px;
+    aspect-ratio: 16/9;
     border-radius: 20px;
     display: flex;
     flex-direction: column;
@@ -346,7 +336,7 @@
     color: white;
 }
 
-.list-product-container{
+.list-product-container {
     container-type: inline-size;
     container-name: listProduct;
 }

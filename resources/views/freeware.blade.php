@@ -44,7 +44,6 @@
                         <div class="sortir">
                             <button class="sort">Price</button>
                             <button class="sort">Name</button>
-                            <button class="sort">Rating</button>
                         </div>
                     </div>
                     <button class="ascend-descend-button">

@@ -2,9 +2,9 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProductController;
-use App\Http\Controllers\produtcs_freeware;
-
-
+use App\Http\Controllers\ProductsFreewareController;
+use App\Http\Controllers\AuthController;
+use App\Models\ProductFreeware;
 
 Route::get('/', function () {
     return view('dashboard', [ProductController::class, 'index']);
@@ -18,7 +18,7 @@ Route::get('/admin/create', function () {
 
 Route::get('/payware', [ProductController::class, 'index']);
 
-Route::get('/freeware', [produtcs_freeware::class, 'index']);
+Route::get('/freeware', [ProductsFreewareController::class, 'index']);
 
 Route::get('/terms&condition', function () {
     return view('terms&condition');
@@ -31,3 +31,11 @@ Route::get('/contact', function () {
 Route::get('/login', function () {
     return view('loginpage');
 });
+
+Route::get('/login', [AuthController::class, 'showLogin'])->name('login');
+Route::post('/login', [AuthController::class, 'login']);
+Route::post('/logout', [AuthController::class, 'logout'])->middleware('auth');
+
+Route::get('/admin', function () {
+    return view('dashboard_admin');
+})->middleware('auth');

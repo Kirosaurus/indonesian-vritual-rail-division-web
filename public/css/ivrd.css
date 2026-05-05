@@ -242,6 +242,7 @@
 }
 
 .login-button-submit {
+    font-family: "Nexa";
     height: 50px;
     font-size: 24px;
     background-color: #e76400;
@@ -250,6 +251,16 @@
     padding: 7px;
     border-radius: 15px;
     cursor: pointer;
+    transition: 0.1s ease-in-out;
+
+}
+
+.login-button-submit:hover{
+    scale: 1.1;
+}
+
+.login-button-submit:active{
+    scale: 0.9;
 }
 
 .signup-link a {

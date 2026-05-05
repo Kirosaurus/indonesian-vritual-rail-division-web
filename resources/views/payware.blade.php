@@ -17,7 +17,6 @@
 
 @section('content')
 <div class="main-page">
-
     {{-- Top bar --}}
     <div id="top-container" class="top-bar-element">
         <div class="heading">
@@ -45,7 +44,6 @@
                         <div class="sortir">
                             <button class="sort">Price</button>
                             <button class="sort">Name</button>
-                            <button class="sort">Rating</button>
                         </div>
                     </div>
                     <button class="ascend-descend-button">
@@ -64,9 +62,21 @@
                         <img class="search-icon" src="{{ asset('search-icon.svg') }}" height="25" width="25" />
                     </div>
                 </div>
+                @auth
+                <div class="top-bar-element" id="user-card">
+                    <div class="user-avatar">
+                        <img src="{{ asset('user_icon.svg') }}" alt="User" />
+                    </div>
+                    <div class="user-info">
+                        <p class="user-name">{{ auth()->user()->name }}</p>
+                        <p class="user-email">{{ auth()->user()->email }}</p>
+                    </div>
+                </div>
+                @else
                 <a href="{{ url('login') }}">
                     <button class="login-button">Login</button>
                 </a>
+                @endauth
             </div>
         </div>
     </div>
@@ -74,8 +84,7 @@
     {{-- New Products --}}
 
     <div class="list-product-container">
-
-        <div id="list-product-payware">
+        <div id="list-product-pay-free" class="list-product-payware">
             @foreach ($products as $product)
             <div class="" id="product">
                 <div class="thumbnail-product">
@@ -86,17 +95,17 @@
                     {{$product->description}}
                 </p>
                 <div class="container-harga">
-                    <span><br>Rp. {{$product->price}}</span>
+                    <span>Rp. {{$product->price}}</span>
                 </div>
             </div>
             @endforeach
-
-            @for ($i = 0; $i < 12; $i++)
-                <div class="" id="product">
-                <div class="thumbnail-product">
-                    <p style="color: black;">Ini Thumbnail Produk</p>
-                </div>
-                <p class="nama-produk">Nama Produk</p>
+            {{--
+@for ($i = 0; $i < 12; $i++)
+<div class="" id="product">
+    <div class="thumbnail-product">
+        <p style="color: black;">Ini Thumbnail Produk</p>
+    </div>
+    <p class="nama-produk">Nama Produk</p>
                 <p class="deskripsi-singkat-produk">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                     sed do eiusmod tempor (Maksimal 120 karakter spasi juga ikut)
@@ -104,10 +113,11 @@
                 <div class="container-harga">
                     <span><br>Rp.-</span>
                 </div>
-        </div>
-        @endfor
+            </div>
+            @endfor
+            --}}
 
+        </div>
     </div>
-</div>
 </div>
 @endsection

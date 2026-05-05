@@ -62,12 +62,11 @@ document.querySelector(".sort-button").addEventListener("click", () => {
     }
 })
 
-const ascdscButton = document.querySelectorAll(".ascend-descend-button");
+const ascdscButton = document.querySelector(".ascend-descend-button");
 const ascdscImg = document.querySelector(".arrow-sort");
 
-ascdscButton.forEach((item, i) =>{
-    item.addEventListener("click", () => {
-    const ascdscText = ascdscButton[i].querySelectorAll("span");
+ascdscButton.addEventListener("click", () => {
+    const ascdscText = ascdscButton.querySelector("span");
     is_ascending = !is_ascending;
     ascdscText.textContent = is_ascending ? "Ascending" : "Descending";
     if (is_ascending) {
@@ -79,7 +78,6 @@ ascdscButton.forEach((item, i) =>{
         ascdscImg.classList.remove("ascending")
     }
 });
-})
 
 
 //SEARCH BARRR

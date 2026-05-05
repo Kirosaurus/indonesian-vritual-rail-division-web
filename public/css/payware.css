@@ -107,10 +107,15 @@
 }
 
 .container-harga {
+    height: 100%;
+    width: 100%;
     font-family: "Nexa";
     color: white;
     font-size: 20px;
     font-weight: 800;
+    display: flex;
+    justify-items: flex-start;
+    align-items: flex-end;
 }
 
 .sort:hover {
@@ -134,7 +139,7 @@
     scale: 0.95;
 }
 
-#list-product-payware {
+.list-product-payware {
     width: 100%;
     height: auto;
     display: grid;
@@ -157,7 +162,7 @@
 .thumbnail-product {
     background-color: white;
     width: auto;
-    height: 100%;
+    height: 171px;
     aspect-ratio: 16/9;
     border-radius: 20px;
     display: flex;
@@ -181,19 +186,19 @@
 }
 
 @container listProduct (max-width : 1000px) {
-    #list-product-payware {
+    .list-product-payware {
         grid-template-columns: repeat(3, auto);
     }
 }
 
 @container listProduct (max-width : 750px) {
-    #list-product-payware {
+    .list-product-payware {
         grid-template-columns: repeat(2, auto);
     }
 }
 
 @container listProduct (max-width : 500px) {
-    #list-product-payware {
+    .list-product-payware {
         grid-template-columns: repeat(1, auto);
     }
 }

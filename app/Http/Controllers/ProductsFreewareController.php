@@ -2,14 +2,15 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Product;
 use Illuminate\Http\Request;
-use App\Models\products_freeware; 
+use App\Models\ProductsFreeware; 
 
-class produtcs_freeware extends Controller
+class ProductsFreewareController extends Controller
 {
     public function index()
     {
-        $products_freeware = products_freeware::all();
+        $products_freeware = ProductsFreeware::all();
 
         return view('freeware', [
             'products' => $products_freeware
