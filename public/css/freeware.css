@@ -1,7 +1,6 @@
 /* ============================================================
-   PAYWARE  (payware.blade.php)
+   FREEWARE  (freeware.blade.php)
    ============================================================ */
-
 
 .list-sortir {
     height: 40px;
@@ -15,7 +14,7 @@
     transition: 0.5s ease-in-out;
 }
 
-.list-sortir.hide{
+.list-sortir.hide {
     position: absolute;
     opacity: 0%;
 }
@@ -105,7 +104,7 @@
     transition: 0.1s ease-in-out;
 }
 
-.container-harga {
+.container-harga-freeware {
     font-family: "Nexa";
     color: white;
     font-size: 20px;
@@ -121,24 +120,74 @@
 
 .search-bar {
     display: flex;
-    justify-content: flex-end   ;
+    justify-content: flex-end;
     align-items: center;
     background-color: white;
     border-radius: 15px;
-    padding: 8px 12px;  
+    padding: 8px 12px;
     gap: 5px;
-    transition: all 1s linear(0 0%, 0 1.8%, 0.01 3.6%, 0.03 6.35%, 0.07 9.1%, 0.13 11.4%, 0.19 13.4%, 0.27 15%, 0.34 16.1%, 0.54 18.35%, 0.66 20.6%, 0.72 22.4%, 0.77 24.6%, 0.81 27.3%, 0.85 30.4%, 0.88 35.1%, 0.92 40.6%, 0.94 47.2%, 0.96 55%, 0.98 64%, 0.99 74.4%, 1 86.4%, 1 100%);
+    transition: all 1s
+        linear(
+            0 0%,
+            0 1.8%,
+            0.01 3.6%,
+            0.03 6.35%,
+            0.07 9.1%,
+            0.13 11.4%,
+            0.19 13.4%,
+            0.27 15%,
+            0.34 16.1%,
+            0.54 18.35%,
+            0.66 20.6%,
+            0.72 22.4%,
+            0.77 24.6%,
+            0.81 27.3%,
+            0.85 30.4%,
+            0.88 35.1%,
+            0.92 40.6%,
+            0.94 47.2%,
+            0.96 55%,
+            0.98 64%,
+            0.99 74.4%,
+            1 86.4%,
+            1 100%
+        );
 }
 
-#toolbar{
+#toolbar {
     display: flex;
-    align-content:center ;
+    align-content: center;
     align-items: center;
     gap: 20px;
 }
 
-.search-bar.focus{
-    transition: all 1s linear(0 0%, 0 1.8%, 0.01 3.6%, 0.03 6.35%, 0.07 9.1%, 0.13 11.4%, 0.19 13.4%, 0.27 15%, 0.34 16.1%, 0.54 18.35%, 0.66 20.6%, 0.72 22.4%, 0.77 24.6%, 0.81 27.3%, 0.85 30.4%, 0.88 35.1%, 0.92 40.6%, 0.94 47.2%, 0.96 55%, 0.98 64%, 0.99 74.4%, 1 86.4%, 1 100%);
+.search-bar.focus {
+    transition: all 1s
+        linear(
+            0 0%,
+            0 1.8%,
+            0.01 3.6%,
+            0.03 6.35%,
+            0.07 9.1%,
+            0.13 11.4%,
+            0.19 13.4%,
+            0.27 15%,
+            0.34 16.1%,
+            0.54 18.35%,
+            0.66 20.6%,
+            0.72 22.4%,
+            0.77 24.6%,
+            0.81 27.3%,
+            0.85 30.4%,
+            0.88 35.1%,
+            0.92 40.6%,
+            0.94 47.2%,
+            0.96 55%,
+            0.98 64%,
+            0.99 74.4%,
+            1 86.4%,
+            1 100%
+        );
     box-shadow: 0px 0px 20px 0px #ff9b51;
 }
 
@@ -148,12 +197,37 @@
     font-weight: 200;
     border-radius: 5px;
     border: none;
-    width: 0px; 
+    width: 0px;
     padding: 0px;
     background-color: transparent;
     color: black;
     outline: none;
-    transition: all 1s linear(0 0%, 0 1.8%, 0.01 3.6%, 0.03 6.35%, 0.07 9.1%, 0.13 11.4%, 0.19 13.4%, 0.27 15%, 0.34 16.1%, 0.54 18.35%, 0.66 20.6%, 0.72 22.4%, 0.77 24.6%, 0.81 27.3%, 0.85 30.4%, 0.88 35.1%, 0.92 40.6%, 0.94 47.2%, 0.96 55%, 0.98 64%, 0.99 74.4%, 1 86.4%, 1 100%);
+    transition: all 1s
+        linear(
+            0 0%,
+            0 1.8%,
+            0.01 3.6%,
+            0.03 6.35%,
+            0.07 9.1%,
+            0.13 11.4%,
+            0.19 13.4%,
+            0.27 15%,
+            0.34 16.1%,
+            0.54 18.35%,
+            0.66 20.6%,
+            0.72 22.4%,
+            0.77 24.6%,
+            0.81 27.3%,
+            0.85 30.4%,
+            0.88 35.1%,
+            0.92 40.6%,
+            0.94 47.2%,
+            0.96 55%,
+            0.98 64%,
+            0.99 74.4%,
+            1 86.4%,
+            1 100%
+        );
 }
 
 .search-input.focus {
@@ -173,7 +247,7 @@
     scale: 1.05;
 }
 
-.sort:active{
+.sort:active {
     scale: 0.95;
 }
 
@@ -230,6 +304,7 @@
 .arrow-sort.ascending {
     transform: rotate(0deg);
 }
+
 
 /* Product thumbnail area */
 .thumbnail-product {
