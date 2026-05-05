@@ -6,30 +6,36 @@ document.addEventListener("DOMContentLoaded", () => {
     topBarItems.forEach((item, index) => {
         item.style.opacity = '0';
         item.style.transform = 'translateY(-18px)';
+        item.style.filter = 'blur(5px)';
         setTimeout(() => {
             item.style.transition = 'all 0.35s ease-out';
             item.style.opacity = '1';
             item.style.transform = 'translateY(0)';
+            item.style.filter = 'blur(0px)';
         }, index * 120);
     });
 
     toolbarItems.forEach((item, index) => {
         item.style.opacity = '0';
         item.style.transform = 'translateY(-18px)';
+        item.style.filter = 'blur(5px)';
         setTimeout(() => {
             item.style.transition = 'all 0.35s ease-out';
             item.style.opacity = '1';
             item.style.transform = 'translateY(0)';
+            item.style.filter = 'blur(0px)';
         }, 180 + index * 110);
     });
 
     productCards.forEach((card, index) => {
         card.style.opacity = '0';
         card.style.transform = 'translateY(24px)';
+        card.style.filter = 'blur(5px)'
         setTimeout(() => {
             card.style.transition = 'all 0.45s ease-out';
             card.style.opacity = '1';
             card.style.transform = 'translateY(0)';
+                    card.style.filter = 'blur(0px)';
         }, 340 + index * 70);
     });
 });

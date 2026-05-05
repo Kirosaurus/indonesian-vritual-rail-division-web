@@ -1,7 +1,6 @@
 /* ============================================================
    FREEWARE  (freeware.blade.php)
    ============================================================ */
-
 .list-sortir {
     height: 40px;
     display: flex;
@@ -305,6 +304,21 @@
     transform: rotate(0deg);
 }
 
+#list-product-freeware {
+    width: 100%;
+    height: auto;
+    display: grid;
+    grid-template-columns: repeat(4, auto);
+    grid-auto-rows: 400px;
+    gap: 30px;
+    padding: 20px 25px;
+    /* flex-shrink: 0; */
+    /* scrollbar-width: none; */
+}
+
+#list-product-freeware::-webkit-scrollbar {
+    display: none;
+}
 
 /* Product thumbnail area */
 .thumbnail-product {
@@ -330,4 +344,27 @@
     font-family: "Nexa", sans-serif;
     font-weight: 200;
     color: white;
+}
+
+.list-product-container{
+    container-type: inline-size;
+    container-name: listProduct;
+}
+
+@container listProduct (max-width : 1000px) {
+    #list-product-freeware {
+        grid-template-columns: repeat(3, auto);
+    }
+}
+
+@container listProduct (max-width : 750px) {
+    #list-product-freeware {
+        grid-template-columns: repeat(2, auto);
+    }
+}
+
+@container listProduct (max-width : 500px) {
+    #list-product-freeware {
+        grid-template-columns: repeat(1, auto);
+    }
 }
