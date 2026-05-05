@@ -426,16 +426,14 @@ h2 {
 }
 
 .main-page {
-    font-family: "Nexa";
     display: flex;
     flex-direction: column;
     gap: 18px;
     flex: 1;
-    padding: 41px 90px;
+    padding: 0px 30px 30px 30px;
     z-index: 1;
     height: 100vh;
-    overflow-y: hidden;
-    overflow-x: hidden;
+    overflow-y: auto;
     scroll-behavior: smooth;
 }
 

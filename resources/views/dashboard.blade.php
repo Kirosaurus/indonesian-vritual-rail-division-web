@@ -65,7 +65,7 @@
 
         @foreach ($products as $product)
         <!-- <div class="" id="product"> ... </div> -->
-        <div class="" id="product">
+        <div class="product-card" id="product">
             <div class="thumbnail-product">
                 <p style="color: black;">Ini Thumbnail Produk</p>
             </div>
@@ -78,7 +78,7 @@
         <!-- --}} -->
 
         @for ($i = 0; $i < 8; $i++)
-                <div class="" id="product">
+                <div class="product-card" id="product">
                     <div class="thumbnail-product">
                         <p style="color: black;">Ini Thumbnail Produk</p>
                     </div>

@@ -72,7 +72,7 @@
         <div id="list-product-freeware">
 
             @foreach ($products as $product)
-            <div class="" id="product">
+            <div class="product-card" id="product">
                 <div class="thumbnail-product"> 
                     <p style="color: black;">Ini Thumbnail Produk</p>
                 </div>
