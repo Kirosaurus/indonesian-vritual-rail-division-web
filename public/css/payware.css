@@ -186,6 +186,8 @@
 }
 
 .modal.hidden {
+    filter: blur(30px); 
+    scale: 0.9;
     opacity: 0;
     z-index: -1;
 }
@@ -195,13 +197,21 @@
     position: fixed;
     inset: 0;
     z-index: 999;
-    transition: opacity 0.3s ease-in-out;
+    transition: all 0.5s ease-in-out;
 }
 
 .modal-overlay {
+    transition: all 0.5s ease-in-out;
+    backdrop-filter: blur(10px);
     position: absolute;
+    z-index: -1;
     inset: 0;
-    background-color: rgba(255, 0, 0, 0.267);
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-overlay.hidden{
+    backdrop-filter: blur(0px);
+    background-color: rgba(0, 0, 0, 0);
 }
 
 .modal-card {
@@ -284,10 +294,17 @@
     gap: 15px;
 }
 
+.right-modal span a{
+    font-family: "Nexa", sans-serif;
+    font-weight: 800;
+    color: #FF9B51;
+    text-decoration: underline;
+}
+
 .tag-products{
-    gap: 16px;
     display: flex;
     flex-direction: row;
+    gap: 15px;
 }
 
 .tag{
@@ -300,10 +317,16 @@
     height: 47px;
 }
 
+.S&K{
+    font-family: "Nexa", sans-serif;
+    font-weight: 200;
+    font-size: 12px;
+    color: white;
+}
+
 .action-container {
     height: 100%;
     width: 100%;
-    background-color: red;
     justify-content: flex-end;
     display: flex;
     flex-direction: column;
@@ -342,6 +365,47 @@
 
 .social-media-contact:active {
     scale: 0.9;
+}
+
+.whatsapp-order-button{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    font-family: "Nexa";
+    font-weight: 800;
+    font-size: 20px;
+    padding: 14px 30px;
+    border-radius: 30px;
+    background-color: #FF9B51;
+    color: white;
+    border: none;
+    transition: 0.1s ease-in-out;
+    box-shadow: 0px 8px 15px 0px rgba(0, 0, 0, 0.25);
+}
+
+.whatsapp-order-button:hover {
+    scale: 1.05;
+}
+
+.whatsapp-order-button:active {
+    scale: 0.95;
+}
+
+.whatsapp-order-button a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 6px;
+}
+
+
+.whatsapp-contact{
+    gap: 10px;
+    display: flex;
+    justify-content: space-between;
 }
 
 
