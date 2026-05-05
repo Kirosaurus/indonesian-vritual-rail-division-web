@@ -1,9 +1,23 @@
 @extends('layouts.admin')
 
-@section('title', 'Dashboard Admin')
+@section('title', 'Dashboard Admin Payware')
 
 @section('content')
     <style>
+        .main-page-admin {
+            font-family: "Nexa";
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+            flex: 1;
+            padding: 41px 90px;
+            z-index: 1;
+            height: 100vh;
+            overflow-y: hidden;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+
         .admin-header {
             display: flex;
             align-items: center;
@@ -171,59 +185,13 @@
         table tr:nth-child(even) {
             background-color: #f2f2f2;
         }
-
-        .tambah,
-        .edit,
-        .hapus {
-            padding: 8px 15px;
-            border-radius: 5px;
-            text-decoration: none;
-            display: inline-block;
-            margin: 2px;
-        }
-
-        .tambah {
-            background-color: #007bff;
-            color: #fff;
-        }
-
-        .edit {
-            background-color: #ffc107;
-            color: #000;
-            padding: 8px 15px;
-            border-radius: 5px;
-            text-decoration: none;
-            display: inline-block;
-            margin: 2px;
-        }
     </style>
-    <div class="main-page">
-        <div class="admin-header">
-            <a href="/" class="back-btn">Back to Site</a>
-            <div class="header-center">
-                <div class="search-card">
-                    <img src="{{ asset('paywareBlack_icon.svg') }}" alt="Payware" style="width: 40px; height: 40px;">
-                    <img src="{{ asset('freewareBlack_icon.svg') }}" alt="Freeware" style="width: 40px; height: 40px;">
-                    <img src="{{ asset('announcBlack_icon.svg') }}" alt="Announcement" style="width: 40px; height: 40px;">
-
-                    <!-- <div class="search-icon">buat gambar</div>  -->
-                </div>
-            </div>
-            <div class="header-right">
-                <div class="profile-card">
-                    <div class="profile-avatar"><img src="{{ asset('person_icon.svg') }}" alt="Announcement"
-                            style="width: 24px; height: 25px;"></div>
-                    <div class="profile-info">
-                        <div class="name">{{ auth()->user()->name ?? 'Admin' }}</div>
-                        <div class="email">{{ auth()->user()->email ?? 'example@email.com' }}</div>
-                    </div>
-                </div>
-            </div>
-        </div>
+    <div class="main-page-admin">
+       
 
         <div class="container">
             <div class="top-card">
-                <h2 class="page-title">Product</h2>
+                <h2 class="page-title">Product Payware</h2>
                 <div class="create-product">
                     <img src="{{ asset('plus_icon.svg') }}" alt="Icon Plus" style="width: 32px; height: 32px;">
                     <a href="/admin/create" class="btn-add"> Add Product</a>
@@ -233,6 +201,7 @@
             <table>
                 <thead>
                     <tr>
+                        <th>Image</th>
                         <th>Product Name</th>
                         <th>Product ID</th>
                         <th>Price</th>
@@ -246,15 +215,17 @@
                 <tbody>
                     <tr>
                         <td>database</td>
+                        <td>Database</td>
                         <td>database</td>
                         <td>database</td>
                         <td>database</td>
                         <td>database</td>
                         <td>database</td>
                         <td>
-                            <a href="" class="edit">Edit</a>
+                            <a href="" class="edit"><img src="{{ asset('edit_icon.svg') }}" alt="Icon Edit"
+                                    style="width: 30px; height: 30px; "></a>
                             <a href="" class="hapus"><img src="{{ asset('trash_icon.svg') }}" alt="Icon Trash"
-                                    style="width: 30px; height: 30px;"></a>
+                                    style="width: 30px; height: 30px; "></a>
                         </td>
                     </tr>
                 </tbody>
