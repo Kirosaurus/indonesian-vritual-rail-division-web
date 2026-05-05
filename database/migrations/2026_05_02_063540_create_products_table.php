@@ -18,6 +18,8 @@ return new class extends Migration
             $table->decimal('price', 8, 2);
             $table->integer('rating')->nullable();
             $table->string('category');
+            $table->boolean('active')->default(0);
+            $table->binary('image');
             $table->timestamps();
         });
     }
