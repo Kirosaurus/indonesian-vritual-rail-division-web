@@ -36,7 +36,13 @@ Route::post('/logout', [AuthController::class, 'logout'])->middleware('auth');
 
 Route::get('/admin/payware', function () {
     return view('dashboard_admin_payware');
-})->middleware('auth');
+})->middleware('auth')->name('admin.payware.index');
+
+Route::get('/admin/payware/create', function () {
+    return view('dashboard_admin_payware_create');
+})->middleware('auth')->name('admin.payware.create');
+
+Route::post('/admin/payware', [ProductsPaywareController::class, 'store'])->middleware('auth')->name('admin.payware.store');
 
 Route::get('/admin/freeware', function () {
     return view('dashboard_admin_freeware');

@@ -79,7 +79,7 @@
         .profile-card {
             display: flex;
             align-items: center;
-            gap: 14px;
+            gap: 14p x;
             border-radius: 24px;
             padding: 14px 16px;
             background: rgba(255, 255, 255, 0.16);
@@ -187,14 +187,14 @@
         }
     </style>
     <div class="main-page-admin">
-       
+
 
         <div class="container">
             <div class="top-card">
                 <h2 class="page-title">Product Payware</h2>
                 <div class="create-product">
                     <img src="{{ asset('plus_icon.svg') }}" alt="Icon Plus" style="width: 32px; height: 32px;">
-                    <a href="/admin/create" class="btn-add"> Add Product</a>
+                    <a href="{{ route('admin.payware.create') }}" class="btn-add"> Add Product</a>
                 </div>
             </div>
 

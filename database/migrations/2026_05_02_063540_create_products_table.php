@@ -35,16 +35,7 @@ return new class extends Migration
             $table->string('tag3')->nullable();          
             $table->timestamps();
         }); 
-         Schema::create('products_freeware', function (Blueprint $table) {
-            $table->id();
-            $table->string('name');
-            $table->string('image')->nullable();
-            $table->text('description');
-            $table->decimal('price', 8, 2);
-            $table->string('category');
-            $table->boolean('active')->default(1);
-            $table->timestamps();
-        }); 
+
     }
 
     /**

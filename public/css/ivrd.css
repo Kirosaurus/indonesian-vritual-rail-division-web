@@ -208,6 +208,7 @@
     gap: 30px;
 }
 
+
 .input-group input {
     font-family: "Nexa", sans-serif;
     font-size: 20px;
@@ -271,4 +272,82 @@
 .signup-link {
     color: red;
     text-align: start;
+}
+
+@media (max-width: 980px) {
+    .main-login-page {
+        padding: 0 40px;
+    }
+
+    .login-content {
+        gap: 40px;
+    }
+
+    .login-container {
+        width: 100%;
+        max-width: 520px;
+        padding: 36px 32px;
+        height: auto;
+    }
+
+    .login-container h2 {
+        font-size: 32px;
+    }
+
+    .input-group input {
+        font-size: 18px;
+    }
+
+    .login-button-submit {
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 680px) {
+    .main-login-page {
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        padding: 40px 20px;
+        min-height: 100vh;
+    }
+
+    .login-content {
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+        gap: 24px;
+        text-align: center;
+    }
+
+    .login-container {
+        padding: 28px 20px;
+        border-radius: 18px;
+        width: 100%;
+        max-width: 420px;
+    }
+
+    .login-container p,
+    .greet p,
+    .login-content h4 {
+        font-size: 14px;
+    }
+
+    .login-form {
+        gap: 24px;
+    }
+
+    .input-group input {
+        font-size: 16px;
+        height: 48px;
+    }
+
+    .login-button-submit {
+        font-size: 18px;
+        height: 48px;
+    }
+
+    .signup-link {
+        text-align: center;
+    }
 }
