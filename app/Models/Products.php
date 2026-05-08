@@ -4,8 +4,8 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class ProductsPayware extends Model
+class Products extends Model
 {
-    protected $table = 'products_payware';
+    protected $table = 'products';
     protected $guarded = [];
 }

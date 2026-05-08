@@ -3,22 +3,30 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\ProductsPayware;
+use App\Models\Products;
+use App\Models\Categories;
+use App\Models\Images;
 use Illuminate\Support\Facades\Storage;
 
-class ProductsPaywareController extends Controller
+class ProductsController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        $products = ProductsPayware::all();
+        $viewName = $request->is('admin/payware') ? 'dashboard_admin_payware' : 'payware';
+        if ($viewName == 'dashboard_admin_payware') {
+            $products = Products::paginate(10);
+        } else {
+            $products = Products::all();
+        }
 
-        return view('payware', [
+        return view($viewName, [
             'products' => $products
         ]);
     }
 
-    public function store(Request $request)
+    public function store(Request $request, string $type)
     {
+        $type = $request->is('admin/payware') ? 'payware' : 'freeware';
         $request->validate([
             'name' => 'required|string|max:255',
             'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
@@ -33,13 +41,18 @@ class ProductsPaywareController extends Controller
             $imagePath = $request->file('image')->store('image-products', 'public');
         }
 
-        ProductsPayware::create([
+        $product = Products::create([
             'name' => $request->name,
-            'image' => $imagePath,
+            'type' => $type,
             'description' => $request->description,
             'price' => $request->price,
-            'category' => $request->category,
-            'active' => $request->active ?? 1
+            'category_id' => $request->category,
+            'active' => $request->active ?? 1,
+        ]);
+
+        Images::create([
+            'product_id' => $product->id,
+            'path' => $imagePath,
         ]);
 
         return redirect()->route('admin.payware.index')->with('success', 'Product created successfully!');

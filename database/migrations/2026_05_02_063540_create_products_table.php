@@ -11,31 +11,18 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('products_payware', function (Blueprint $table) {
+        Schema::create('products', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('image')->nullable();
+            $table->enum('type', ['payware', 'freeware']);
             $table->text('description');
-            $table->decimal('price', 8, 2);
-            $table->string('category');
-            $table->boolean('active')->default(1);
+            $table->decimal('price', 8, 2)->nullable();
+            $table->unsignedBigInteger('category_id')->nullable();
+            $table->boolean('active')->default(true);
             $table->timestamps();
+
+            $table->index(['type', 'active']);
         });
-
-        Schema::create('products_freeware', function (Blueprint $table) {
-            $table->id();
-            $table->string('name');
-            $table->string('image')->nullable();
-            $table->text('description');
-            $table->decimal('price', 8, 2);
-            $table->string('category');
-            $table->boolean('active')->default(1);
-            $table->string('tag1')->nullable();
-            $table->string('tag2')->nullable();
-            $table->string('tag3')->nullable();          
-            $table->timestamps();
-        }); 
-
     }
 
     /**
@@ -44,6 +31,5 @@ return new class extends Migration
     public function down(): void
     {
         Schema::dropIfExists('products');
-        Schema::dropIfExists('products_freeware');
     }
 };

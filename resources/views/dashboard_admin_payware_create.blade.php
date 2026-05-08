@@ -259,7 +259,7 @@
                 <h2>Create New Payware Product</h2>
             </div>
 
-            <form action="{{ route('admin.payware.store') }}" method="POST" enctype="multipart/form-data">
+            <form action="/admin/payware" method="POST" enctype="multipart/form-data">
                 @csrf
                 <div class="form-group">
                     <label for="name">Product Name</label>
@@ -284,13 +284,10 @@
                 <div class="form-group">
                     <label for="category">Category</label>
                     <select id="category" name="category" required>
-                        <option value="">Select Category</option>
-                        <option value="Train Simulator">Train Simulator</option>
-                        <option value="Route">Route</option>
-                        <option value="Locomotive">Locomotive</option>
-                        <option value="Wagon">Wagon</option>
-                        <option value="Scenery">Scenery</option>
-                        <option value="Other">Other</option>
+                        <option value="">Select a Category</option>
+                        @foreach($categories as $category)
+                        <option value="{{ $category->id }}">{{ $category->name }}</option>
+                        @endforeach
                     </select>
                 </div>
 

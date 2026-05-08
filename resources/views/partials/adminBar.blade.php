@@ -3,7 +3,7 @@
     $links = [
         ['href' => '/admin/payware', 'label' => 'Payware', 'icon_active' => 'paywareOrange_icon.svg', 'icon' => 'paywareBlack_icon.svg'],
         ['href' => '/admin/freeware', 'label' => 'Freeware', 'icon_active' => 'freewareOrange_icon.svg', 'icon' => 'freewareBlack_icon.svg'],
-        ['href' => '/admin/announcement', 'label' => 'Announcement', 'icon_active' => 'announcOrange_icon.svg', 'icon' => 'announceBlack_icon.svg'],
+        ['href' => '/admin/announcement', 'label' => 'Announcement', 'icon_active' => 'announceOrange_icon.svg', 'icon' => 'announceBlack_icon.svg'],
     ];
 @endphp
 
@@ -11,14 +11,19 @@
     <a href="/" class="back-btn">Back to Site</a>
     <div class="header-center">
         <div class="search-card">
-            <a href="/admin/payware"><img src="{{ asset('paywareOrange_icon.svg') }}" alt="Payware"
-                    style="width: 40px; height: 40px;"></a>
-            <a href="/admin/freeware"><img src="{{ asset('freewareOrange_icon.svg') }}" alt="Freeware"
-                    style="width: 40px; height: 40px;"></a>
-            <a href="/admin/announcement"><img src="{{ asset('announcOrange_icon.svg') }}" alt="Announcement"
-                    style="width: 35px; height: 35px;"></a>
-
-            <!-- <div class="search-icon">buat gambar</div>  -->
+            @foreach ($links as $link)
+                @php
+                $isActive = $currentUrl === ltrim($link['href'], '/');
+                @endphp
+                <a href="{{ url($link['href']) }}"
+                    class="header-icon">
+                    <img
+                        src="{{ asset($isActive ? $link['icon_active'] : $link['icon']) }}"
+                        alt="{{ $link['label'] }} Icon"
+                        width="30"
+                        height="30" />
+                </a>
+                @endforeach
         </div>
     </div>
     <div class="header-right">
