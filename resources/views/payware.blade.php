@@ -173,24 +173,6 @@
                 </div>
             </div>
             @endforeach
-            {{--
-            @for ($i = 0; $i < 12; $i++)
-            <div class="product-card" id="product">
-                <div class="thumbnail-product">
-                    <p style="color: black;">Ini Thumbnail Produk</p>
-                </div>
-                <p class="nama-produk">Nama Produk</p>
-                <p class="deskripsi-singkat-produk">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                    sed do eiusmod tempor (Maksimal 120 karakter spasi juga ikut)
-                </p>
-                <div class="container-harga">
-                    <span><br>Rp.-</span>
-                </div>
-            </div>
-            @endfor
-        --}}
-
         </div>
     </div>
 </div>

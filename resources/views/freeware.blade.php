@@ -12,6 +12,7 @@
 @section('css')
 <link rel="stylesheet" href="{{ asset('css/main.css') }}" />
 <link rel="stylesheet" href="{{ asset('css/freeware.css') }}" />
+<link rel="stylesheet" href="{{ asset('css/payware.css') }}" />
 <link rel="stylesheet" href="{{ asset('css/animation.css') }}" />
 @endsection
 
@@ -69,28 +70,31 @@
         </div>
     </div>
     <div class="list-product-container">
-        <div id="list-product-freeware">
-
-            @foreach ($products as $product)
-            <div class="product-card" id="product">
-                @php
-                $imagePath = optional($product->images->first())->path;
-                $imageSrc = $imagePath ? asset('storage/' . $imagePath) : asset('storage/image-products/unknownThumbnail.png');
-                @endphp
-                <div class="thumbnail-product">
-                    <img src="{{ $imageSrc }}" class="thumbnail-img" alt="">
-                </div>
-                <div class="rolling-text">
+            <div  id="list-product-pay-free" class="list-product-payware">
+                @foreach ($products as $product)
+                <div class="product-card" id="product"
+                    data-name="{{ $product->name }}"
+                    data-desc="{{ $product->description }}"
+                    data-price="Rp. {{ $product->price }}"
+                    data-img="{{ asset('storage/' . optional($product->images->first())->path) }}">
+                    @php
+                    $imagePath = optional($product->images->first())->path;
+                    $imageSrc = $imagePath ? asset('storage/' . $imagePath) : asset('storage/image-products/unknownThumbnail.png');
+                    @endphp
+                    <div class="thumbnail-product">
+                        <img src="{{ $imageSrc }}" class="thumbnail-img" alt="">
+                    </div>
                     <p class="nama-produk">{{$product->name}}</p>
+                    <p class="deskripsi-singkat-produk">
+                        {{$product->description}}
+                    </p>
+                    <div class="container-harga">
+                        <span>Rp. {{$product->price}}</span>
+                    </div>
                 </div>
-                <p class="deskripsi-singkat-produk">
-                {{$product->description}} 
-                </p>
-                <div class="container-harga-freeware">
-                    <span><br>FREE</span>
-                </div>
+                @endforeach
+            </div>
         </div>
-            @endforeach
             {{--
             @for ($i = 0; $i < 12; $i++)
             <div class="" id="product">

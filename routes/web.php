@@ -1,12 +1,16 @@
 <?php
 
+
+use Illuminate\Support\Facades\Route;
+
 use App\Http\Controllers\AdminCategoriesController;
 use App\Http\Controllers\AdminProductsController;
 use App\Http\Controllers\AdminAnnouncementsController;
-use Illuminate\Support\Facades\Route;
+
 use App\Http\Controllers\ProductsPaywareController;
 use App\Http\Controllers\ProductsFreewareController;
 use App\Http\Controllers\AnnouncementsController;
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\CategoriesController;
 
@@ -21,7 +25,10 @@ Route::post('/logout', [AuthController::class, 'logout'])->middleware('auth');
 
 
 // Routing buat Client / Public / Pengguna
-Route::get('/', [AnnouncementsController::class, 'index']);
+// Route::get('/', [AnnouncementsController::class, 'index']);
+Route::get('/', [DashboardController::class, 'index']);
+
+
 Route::get('/admin/create', function () {
     return view('dashboard_admin_payware_create');
     });
