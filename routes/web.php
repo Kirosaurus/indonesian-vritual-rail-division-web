@@ -3,6 +3,7 @@
 use App\Http\Controllers\AdminCategoriesController;
 use App\Http\Controllers\AdminProductsController;
 use App\Http\Controllers\AdminAnnouncementsController;
+use App\Http\Controllers\AdminUsersController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProductsPaywareController;
 use App\Http\Controllers\ProductsFreewareController;
@@ -24,18 +25,18 @@ Route::post('/logout', [AuthController::class, 'logout'])->middleware('auth');
 Route::get('/', [AnnouncementsController::class, 'index']);
 Route::get('/admin/create', function () {
     return view('dashboard_admin_payware_create');
-    });
-    
+});
+
 Route::get('/payware', [ProductsPaywareController::class, 'get']);
 
 Route::get('/freeware', [ProductsFreewareController::class, 'index']);
 
 Route::get('/terms&condition', function () {
     return view('terms&condition');
-    });
-    
-    Route::get('/contact', function () {
-        return view('contact');
+});
+
+Route::get('/contact', function () {
+    return view('contact');
 });
 
 
@@ -45,13 +46,14 @@ Route::get('/terms&condition', function () {
 
 
 //Routing Buat Admin
-Route::prefix('admin')->middleware('auth')->name('admin.')->group(function(){
+Route::prefix('admin')->middleware('auth')->name('admin.')->group(function () {
     Route::resource('products', AdminProductsController::class);
     Route::resource('categories', AdminCategoriesController::class);
     Route::resource('announcements', AdminAnnouncementsController::class);
+    Route::resource('user', AdminUsersController::class);
 });
 
-Route::get('/admin', function() {
+Route::get('/admin', function () {
     return redirect('/admin/products');
 })->middleware('auth')->name('admin.payware.index');
 

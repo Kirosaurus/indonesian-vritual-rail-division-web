@@ -17,66 +17,6 @@
         scroll-behavior: smooth;
     }
 
-    .admin-header {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        gap: 28px;
-        width: 100%;
-    }
-
-    .back-btn {
-        display: inline-block;
-        padding: 6px 31px;
-        border-radius: 999px;
-        color: #000000;
-        background-color: #fff;
-        text-decoration: none;
-        font-weight: 800;
-        font-size: 30px;
-        font-family: "Nexa";
-    }
-
-    .header-right {
-        display: flex;
-        align-items: center;
-        gap: 16px;
-        justify-content: flex-end;
-        min-width: 260px;
-    }
-
-    .profile-card {
-        display: flex;
-        align-items: center;
-        gap: 14px;
-        border-radius: 24px;
-        padding: 14px 16px;
-        background: rgba(255, 255, 255, 0.16);
-        backdrop-filter: blur(12px);
-        border: 1px solid rgba(255, 255, 255, 0.18);
-        color: #ffffff;
-        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.16);
-    }
-
-    .profile-avatar {
-        width: 52px;
-        height: 52px;
-        border-radius: 50%;
-        background-color: #ffffff;
-        display: grid;
-        place-items: center;
-        color: #25343f;
-        font-weight: 700;
-        font-size: 18px;
-        box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.04);
-    }
-
-    .profile-info .name {
-        font-size: 16px;
-        font-weight: 700;
-        color: #ffffff;
-    }
-
     .container {
         background-color: #fff;
         padding: 40px;
@@ -247,7 +187,7 @@
         transition: opacity 0.25s ease, backdrop-filter 0.25s ease;
     }
 
-    @media (max-width: 980px) {
+    @media screen and (max-width: 980px) {
         .main-page-admin {
             padding: 30px 30px 50px;
         }
@@ -278,7 +218,7 @@
         }
     }
 
-    @media (max-width: 680px) {
+    @media screen and (max-width: 680px) {
         .main-page-admin {
             padding: 24px 18px 36px;
         }

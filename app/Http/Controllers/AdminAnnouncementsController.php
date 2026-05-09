@@ -15,4 +15,9 @@ class AdminAnnouncementsController extends Controller
             'announcements' => $announcements
         ]);
     }
+
+    public function create()
+    {
+        return view('admin.announcements.create');
+    }
 }
