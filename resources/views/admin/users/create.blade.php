@@ -1,22 +1,9 @@
 @extends('layouts.admin')
 
-@section('title', 'Dashboard Admin Create Payware')
+@section('title', 'Dashboard Admin Create User')
 
 @section('content')
     <style>
-        .main-page-admin {
-            font-family: "Nexa";
-            display: flex;
-            flex-direction: column;
-            gap: 18px;
-            flex: 1;
-            padding: 41px 90px;
-            z-index: 1;
-            min-height: 100vh;
-            overflow: visible;
-            scroll-behavior: smooth;
-        }
-
         .container {
             background-color: #fff;
             padding: 40px;
@@ -55,7 +42,6 @@
         }
 
         .form-group input,
-        .form-group textarea,
         .form-group select {
             width: 100%;
             padding: 12px 16px;
@@ -67,16 +53,11 @@
         }
 
         .form-group input:focus,
-        .form-group textarea:focus,
         .form-group select:focus {
             outline: none;
             border-color: #FF9B51;
         }
 
-        .form-group textarea {
-            resize: vertical;
-            min-height: 100px;
-        }
 
         .button-group {
             display: flex;
@@ -220,9 +201,6 @@
         }
 
         @media screen and (max-width: 680px) {
-            .main-page-admin {
-                padding: 24px 18px 36px;
-            }
 
             .container {
                 width: 100%;
@@ -241,12 +219,16 @@
                 font-size: 32px;
             }
 
+            .button-group {
+                flex-direction: column;
+                text-align: center;
+            }
+
             .form-group label {
                 font-size: 15px;
             }
 
             .form-group input,
-            .form-group textarea,
             .form-group select {
                 font-size: 15px;
                 padding: 12px 14px;
@@ -256,42 +238,14 @@
                 flex-direction: column;
                 align-items: stretch;
             }
-
-            .btn {
-                width: 100%;
-                font-size: 16px;
-            }
         }
     </style>
 
     <div class="main-page-admin">
-        <div id="popup-category" class="popup-category hidden">
-            <div id="popup-container">
-                <div class="top-card">
-                    <h2>Create New Category</h2>
-                </div>
-                <form action="{{ route('admin.categories.store') }}" method="POST">
-                    @csrf
-                    <div class="form-group">
-                        <label for="name">Category Name</label>
-                        <input type="text" id="newCategory" name="newCategory" required>
-                    </div>
-
-                    <div class="button-group">
-                        <button type="button" id="cancel-popup" class="btn btn-cancel">Cancel</button>
-                        <button type="submit" class="btn btn-save">Save Category</button>
-                    </div>
-                </form>
-                <div class="popup-overlay"></div>
-            </div>
-        </div>
         <div class="container">
             <div class="top-card">
                 <h2>Create New User</h2>
             </div>
-
-
-
             <form action="{{ route('admin.users.store') }}" method="POST" enctype="multipart/form-data">
                 @csrf
                 <div class="form-group">
@@ -302,6 +256,11 @@
                 <div class="form-group">
                     <label for="email">Email</label>
                     <input type="email" id="email" name="email" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" required>
                 </div>
 
                 @if ($errors->any())

@@ -46,6 +46,10 @@ Route::get('/contact', function () {
     return view('contact');
 });
 
+Route::get('/how2order', function () {
+    return view('h20');
+});
+
 
 
 

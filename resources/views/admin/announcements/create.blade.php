@@ -4,19 +4,6 @@
 
 @section('content')
     <style>
-        .main-page-admin {
-            font-family: "Nexa";
-            display: flex;
-            flex-direction: column;
-            gap: 18px;
-            flex: 1;
-            padding: 41px 90px;
-            z-index: 1;
-            min-height: 100vh;
-            overflow: visible;
-            scroll-behavior: smooth;
-        }
-
         .container {
             background-color: #fff;
             padding: 40px;
@@ -178,9 +165,6 @@
         }
 
         @media screen and (max-width: 980px) {
-            .main-page-admin {
-                padding: 30px 30px 50px;
-            }
 
             .container {
                 max-width: 680px;
@@ -208,9 +192,6 @@
         }
 
         @media screen and (max-width: 680px) {
-            .main-page-admin {
-                padding: 24px 18px 36px;
-            }
 
             .container {
                 width: 100%;
@@ -234,7 +215,6 @@
             }
 
             .form-group input,
-            .form-group textarea,
             .form-group select {
                 font-size: 15px;
                 padding: 12px 14px;
@@ -242,7 +222,7 @@
 
             .button-group {
                 flex-direction: column;
-                align-items: stretch;
+                text-align: center;
             }
 
             .btn {
@@ -286,5 +266,5 @@
                 </div>
             </form>
         </div>
-    </div>  
+    </div>
 @endsection
