@@ -1,9 +1,9 @@
 @php
     $currentUrl = request()->path();
     $links = [
-        ['href' => '/admin/payware', 'label' => 'Payware', 'icon_active' => 'paywareOrange_icon.svg', 'icon' => 'paywareBlack_icon.svg'],
-        ['href' => '/admin/freeware', 'label' => 'Freeware', 'icon_active' => 'freewareOrange_icon.svg', 'icon' => 'freewareBlack_icon.svg'],
-        ['href' => '/admin/announcement', 'label' => 'Announcement', 'icon_active' => 'announceOrange_icon.svg', 'icon' => 'announceBlack_icon.svg'],
+        ['href' => '/admin/products', 'label' => 'Payware', 'icon_active' => 'productDashboardOrange_icon.svg', 'icon' => 'productDashboardBlack_icon.svg'],
+        ['href' => '/admin/announcements', 'label' => 'Announcement', 'icon_active' => 'announceOrange_icon.svg', 'icon' => 'announceBlack_icon.svg'],
+        ['href' => '/admin/user', 'label' => 'User', 'icon_active' => 'userOrange_icon.svg', 'icon' => 'userBlack_icon.svg'],
     ];
 @endphp
 

@@ -1,6 +1,16 @@
 /* ============================================================
    FREEWARE  (freeware.blade.php)
    ============================================================ */
+
+@keyframes scrollLeft {
+    0% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
 .list-sortir {
     height: 40px;
     display: flex;
@@ -313,13 +323,14 @@
 .thumbnail-product {
     background-color: white;
     width: auto;
-    height: 171px;
+    min-height: 171px;
     aspect-ratio: 16/9;
     border-radius: 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    overflow: hidden;
 }
 
 .nama-produk {
@@ -339,6 +350,30 @@
 .list-product-container {
     container-type: inline-size;
     container-name: listProduct;
+}
+
+.thumbnail-img{
+    width: 100%;
+    height: auto;
+    border-radius: 30px;
+    object-fit: cover;
+    display: block;
+}
+
+.rolling-text{
+    mask-image: linear-gradient(
+        to right,
+        transparent 0%,
+        black 5%,
+        black 95%,
+        transparent 100%
+    );
+}
+
+.rolling-text p{
+    overflow: hidden;
+    white-space: nowrap;
+    animation: scrollLeft 15s linear infinite;
 }
 
 @container listProduct (max-width : 1000px) {

@@ -73,12 +73,18 @@
 
             @foreach ($products as $product)
             <div class="product-card" id="product">
-                <div class="thumbnail-product"> 
-                    <p style="color: black;">Ini Thumbnail Produk</p>
+                @php
+                $imagePath = optional($product->images->first())->path;
+                $imageSrc = $imagePath ? asset('storage/' . $imagePath) : asset('storage/image-products/unknownThumbnail.png');
+                @endphp
+                <div class="thumbnail-product">
+                    <img src="{{ $imageSrc }}" class="thumbnail-img" alt="">
                 </div>
-                <p class="nama-produk">{{$product->name}}</p>
+                <div class="rolling-text">
+                    <p class="nama-produk">{{$product->name}}</p>
+                </div>
                 <p class="deskripsi-singkat-produk">
-                   {{$product->description}} 
+                {{$product->description}} 
                 </p>
                 <div class="container-harga-freeware">
                     <span><br>FREE</span>

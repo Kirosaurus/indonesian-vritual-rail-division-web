@@ -29,14 +29,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
     productCards.forEach((card, index) => {
         card.style.opacity = '0';
-        card.style.transform = 'translateY(24px)';
-        card.style.filter = 'blur(5px)'
+        card.style.transform = 'translateY(48px)';
+        card.style.filter = 'blur(20px)'
+        card.style.scale = '0.8'
         setTimeout(() => {
-            card.style.transition = 'all 0.45s ease-out';
             card.style.opacity = '1';
             card.style.transform = 'translateY(0)';
-                    card.style.filter = 'blur(0px)';
-        }, 340 + index * 70);
+            card.style.filter = 'blur(0px)';
+            card.style.scale = '1';
+        },  800 + index * 70);
     });
 });
 

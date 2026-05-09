@@ -156,10 +156,13 @@
                 data-name="{{ $product->name }}"
                 data-desc="{{ $product->description }}"
                 data-price="Rp. {{ $product->price }}"
-                data-img="{{ asset('storage/Payware/(DAOP YK-SGU Android) Trainz  (120.3) 16_11_2025 11_48_40.png') }}">
-                <!-- data-img="{{ asset('storage/' . $product->image) }}"> -->
+                data-img="{{ asset('storage/' . optional($product->images->first())->path) }}">
+                @php
+                $imagePath = optional($product->images->first())->path;
+                $imageSrc = $imagePath ? asset('storage/' . $imagePath) : asset('storage/image-products/unknownThumbnail.png');
+                @endphp
                 <div class="thumbnail-product">
-                    <p style="color: black;">Ini Thumbnail Produk</p>
+                    <img src="{{ $imageSrc }}" class="thumbnail-img" alt="">
                 </div>
                 <p class="nama-produk">{{$product->name}}</p>
                 <p class="deskripsi-singkat-produk">

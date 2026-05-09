@@ -162,13 +162,14 @@
 .thumbnail-product {
     background-color: white;
     width: auto;
-    height: 171px;
+    min-height: 171px;
     aspect-ratio: 16/9;
     border-radius: 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    overflow: hidden;
 }
 
 .nama-produk {
@@ -186,8 +187,8 @@
 }
 
 .modal.hidden {
+    scale: 1.1;
     filter: blur(30px); 
-    scale: 0.9;
     opacity: 0;
     z-index: -1;
 }
@@ -200,19 +201,18 @@
     transition: all 0.5s ease-in-out;
 }
 
+.modal-overlay.hidden{
+    background-color: rgba(0, 0, 0, 0);
+}
+
 .modal-overlay {
     transition: all 0.5s ease-in-out;
-    backdrop-filter: blur(10px);
     position: absolute;
     z-index: -1;
     inset: 0;
     background-color: rgba(0, 0, 0, 0.5);
 }
 
-.modal-overlay.hidden{
-    backdrop-filter: blur(0px);
-    background-color: rgba(0, 0, 0, 0);
-}
 
 .modal-card {
     font-family: "Nexa", sans-serif;
@@ -406,6 +406,14 @@
     gap: 10px;
     display: flex;
     justify-content: space-between;
+}
+
+.thumbnail-img{
+    width: 100%;
+    height: auto;
+    border-radius: 30px;
+    object-fit: cover;
+    display: block;
 }
 
 

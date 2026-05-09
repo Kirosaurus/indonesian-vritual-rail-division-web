@@ -5,8 +5,6 @@
 @section('content')
 <style>
     .container {
-        display: flex;
-        flex-direction: column;
         background-color: #fff;
         padding: 30px 40px;
         border-radius: 10px;
@@ -14,7 +12,6 @@
         height: 100%;
         /* max-width: 1738px; */
         max-height: 891px;
-        overflow-y: auto;
 
     }
 
@@ -99,51 +96,6 @@
         font-weight: bold;
     }
 
-    #pagination-section {
-        display: flex;
-        justify-content: center;
-        height: auto;
-        margin-top: auto;
-        height: auto;
-    }
-
-    .pagination {
-        display: flex;
-        gap: 8px;
-        list-style: none;
-        padding: 0;
-        margin: 12px 0 0;
-        justify-content: center;
-    }
-
-    .page-link {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        min-width: 34px;
-        height: 34px;
-        padding: 0 10px;
-        border-radius: 8px;
-        background: #f3f3f3;
-        color: #333;
-        text-decoration: none;
-    }
-
-    .page-item.active .page-link {
-        background: #ff9b51;
-        color: #fff;
-    }
-
-    .page-link svg {
-        width: 14px;
-        height: 14px;
-    }
-
-    #pagination-section .pagination .page-item:first-child,
-    #pagination-section .pagination .page-item:last-child {
-        display: none;
-    }
-
     /* table tr:nth-child(even) {
         color: black    ;
         background-color: #f2f2f2;
@@ -152,11 +104,11 @@
 <div class="main-page-admin">
     <div class="container">
         <div class="top-card">
-            <h2 class="page-title">Product Payware</h2>
+            <h2 class="page-title">List Announcements</h2>
             <a href="{{ route('admin.products.create')}}" class="btn-add">
                 <button class="create-product">
                     <img src="{{ asset('plus_icon.svg') }}" alt="Icon Plus" style="width: 32px; height: 32px;">
-                    Add Product
+                    Add Announcement
                 </button>
             </a>
         </div>
@@ -165,45 +117,14 @@
             <thead>
                 <tr>
                     <th>Image</th>
-                    <th>Product Name</th>
-                    <th>Product ID</th>
-                    <th>Price</th>
-                    <th>Category</th>
-                    <th>Description</th>
+                    <th>Announcement ID</th>
                     <th>Status</th>
-                    <th>Actions</th>
-
+                    <th>Action</th>
                 </tr>
             </thead>
             <tbody>
-                @foreach ($products as $product)
+                @for ($i = 0;$i< 10;$i++)
                 <tr>
-                    <td>
-                        <a href="">
-                            View
-                            {{$product->image}}
-                        </a>
-                    </td>
-                    <td>{{$product->name}}</td>
-                    <td>{{$product->id}}</td>
-                    <td>{{$product->price ? 'Rp '. $product->price : 'FREE'}}</td>
-                    <td>{{$product->category->name ?? '-' }}</td>
-                    <td>{{$product->description}}</td>
-                    <td>{{$product->active ? "Aktif" : "Tidak Aktif"}}</td>
-                    <td>
-                        <a href="" class="edit"><img src="{{ asset('edit_icon.svg') }}" alt="Icon Edit"
-                                style="width: 30px; height: 30px; "></a>
-                        <a href="" class="hapus"><img src="{{ asset('trash_icon.svg') }}" alt="Icon Trash"
-                                style="width: 30px; height: 30px; "></a>
-                    </td>
-                </tr>
-                @endforeach
-                <!-- @for ($i = 0;$i< 10;$i++)
-                <tr>
-                    <td>database</td>
-                    <td>database</td>
-                    <td>database</td>
-                    <td>database</td>
                     <td>database</td>
                     <td>database</td>
                     <td>database</td>
@@ -214,11 +135,9 @@
                                 style="width: 30px; height: 30px; "></a>
                     </td>
                 </tr>
-                @endfor -->
+                @endfor
             </tbody>
         </table>
-        <div id="pagination-section">
-            {{ $products->links('pagination::bootstrap-5') }}
-        </div>
+        
     </div>
     @endsection

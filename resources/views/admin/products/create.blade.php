@@ -398,13 +398,24 @@
             </div>
 
             <div class="form-group">
+                <label for="tags">Tags (pisahkan dengan koma)</label>
+                <textarea id="tags" name="tags" placeholder="Android Version, Android Only, All Support,..."></textarea>
+            </div>
+
+            <div class="form-group">
                 <label for="active">Active</label>
                 <select id="active" name="active">
                     <option value="1">Yes</option>
                     <option value="0">No</option>
                 </select>
             </div>
-
+            @if ($errors->any())
+            <div>
+                @foreach ($errors->all() as $error)
+                <p>{{ $error }}</p>
+                @endforeach
+            </div>
+            @endif
             <div class="button-group">
                 <a href="{{ route('admin.products.index') }}" class="btn btn-cancel">Cancel</a>
                 <button type="submit" class="btn btn-save">Save Product</button>

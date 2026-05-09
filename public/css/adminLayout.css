@@ -48,12 +48,16 @@
     width: 100%;
 }
 
+.header-icon{
+    transition: 0.1s ease-in-out;
+}
+
 .header-icon:hover {
     scale: 1.2;
 }
 
 .header-icon:active {
-    scale: 0.95;
+    scale: 0.90;
 }
 
 
