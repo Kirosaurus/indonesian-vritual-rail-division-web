@@ -91,19 +91,8 @@
                 <div id="modal-thumb-viewer">
                     <img class="modal-thumb" alt="Product image" />
                 </div>
-                <div class="list-thumbnail">
-                    <div class="additional-thumbnails">
-                        <img class="modal-thumb" alt="Product image" />
-                    </div>
-                    <div class="additional-thumbnails">
-                        <img class="modal-thumb" alt="Product image" />
-                    </div>
-                    <div class="additional-thumbnails">
-                        <img class="modal-thumb" alt="Product image" />
-                    </div>
-                    <div class="additional-thumbnails">
-                        <img class="modal-thumb" alt="Product image" />
-                    </div>
+                <div class="list-thumbnail" id="list-thumbnail">
+                    {{-- Generated dinamis via JavaScript --}}
                 </div>
             </div>
             <div class="right-modal">
@@ -112,21 +101,13 @@
                     <span id="modal-price"></span>
                 </div>
                 <p id="modal-desc"></p>
-                <div class="tag-products">
-                    <div class="tag">
-                        <span>Tag 1</span>
-                    </div>
-                    <div class="tag">
-                        <span>Tag 2</span>
-                    </div>
-                    <div class="tag">
-                        <span>Tag 3</span>
-                    </div>
+                <div class="tag-products" id="tag-products">
+                    
                 </div>
                 <div class="action-container">
                     <span>Mau tanya-tanya atau mau beli produknya? Hubungi kontak di bawah ini.</span>
                     <div class="whatsapp-contact">
-                        <a href="https://wa.me/+6282131520905">
+                        <a href="https://wa.me/+6281366950138"> {{--  NOMERNYA MASIH PAKE PUNYA GANDHII --}}
                             <button class="whatsapp-order-button">
                                 <img src="{{ asset('whatsapp-icon.svg') }}">
                                 <p>WhatsApp 1</p>
@@ -152,15 +133,23 @@
     <div class="list-product-container">
         <div id="list-product-pay-free" class="list-product-payware">
             @foreach ($products as $product)
+            @php
+            $text = "Halo minn, saya tertarik untuk melakukan pembelian dari katalog dengan nama item '$product->name' Mau tanya-tanya dulu dong minn 🙌🙌";
+
+            $tags = $product->tags->pluck('name')->toArray();
+
+            $imagePaths = $product->images->pluck('path')->map(fn($path) => asset('storage/' . $path))->toArray();
+            $imageSrc = count($imagePaths) > 0 ? $imagePaths[0] : asset('storage/image-products/unknownThumbnail.png');
+            @endphp
             <div class="product-card" id="product"
                 data-name="{{ $product->name }}"
                 data-desc="{{ $product->description }}"
-                data-price="Rp. {{ $product->price }}"
-                data-img="{{ asset('storage/' . optional($product->images->first())->path) }}">
-                @php
-                $imagePath = optional($product->images->first())->path;
-                $imageSrc = $imagePath ? asset('storage/' . $imagePath) : asset('storage/image-products/unknownThumbnail.png');
-                @endphp
+                data-price="{{ 'Rp '. $product->price ? $product->price : 'FREE' }}"
+                data-img="{{ json_encode($imagePaths) }}"
+                data-tags=" {{json_encode($tags)}} "
+                data-text="{{ $text }}"
+                >
+
                 <div class="thumbnail-product">
                     <img src="{{ $imageSrc }}" class="thumbnail-img" alt="">
                 </div>
@@ -173,24 +162,6 @@
                 </div>
             </div>
             @endforeach
-            {{--
-            @for ($i = 0; $i < 12; $i++)
-            <div class="product-card" id="product">
-                <div class="thumbnail-product">
-                    <p style="color: black;">Ini Thumbnail Produk</p>
-                </div>
-                <p class="nama-produk">Nama Produk</p>
-                <p class="deskripsi-singkat-produk">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                    sed do eiusmod tempor (Maksimal 120 karakter spasi juga ikut)
-                </p>
-                <div class="container-harga">
-                    <span><br>Rp.-</span>
-                </div>
-            </div>
-            @endfor
-        --}}
-
         </div>
     </div>
 </div>

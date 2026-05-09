@@ -9,7 +9,6 @@ class AnnouncementsController extends Controller
 {
     public function index()
     {
-        $announcements = Announcements::where('active', true)->get();
-        return view('dashboard', compact('announcements'));
+        return Announcements::where('active', true)->get();
     }
 }

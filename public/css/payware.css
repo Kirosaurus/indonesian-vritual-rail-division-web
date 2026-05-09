@@ -411,9 +411,20 @@
 .thumbnail-img{
     width: 100%;
     height: auto;
-    border-radius: 30px;
     object-fit: cover;
     display: block;
+}
+
+.additional-thumbnails img {
+    width: 100%;
+    height: 175px;
+    cursor: pointer;
+    opacity: 0.6;
+    transition: opacity 0.3s;
+}
+
+.additional-thumbnails img:hover {
+    opacity: 1;
 }
 
 

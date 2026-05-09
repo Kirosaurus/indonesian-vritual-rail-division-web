@@ -237,12 +237,13 @@
             <div class="top-card">
                 <h2>Create New Announcement</h2>
             </div>
+
             <form action="{{ route('admin.announcements.store') }}" method="POST" enctype="multipart/form-data">
                 @csrf
 
                 <div class="form-group">
                     <label for="image">Product Image</label>
-                    <input type="file" id="images" name="image[]" accept="image/*" multiple>
+                    <input type="file" id="image" name="image" accept="image/" >
                 </div>
 
                 <div class="form-group">
