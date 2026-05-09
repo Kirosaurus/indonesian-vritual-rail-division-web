@@ -191,30 +191,13 @@
                     <td>{{$product->description}}</td>
                     <td>{{$product->active ? "Aktif" : "Tidak Aktif"}}</td>
                     <td>
-                        <a href="" class="edit"><img src="{{ asset('edit_icon.svg') }}" alt="Icon Edit"
+                        <a href="{{ route('admin.products.edit', $product->id) }}" class="edit"><img src="{{ asset('edit_icon.svg') }}" alt="Icon Edit"
                                 style="width: 30px; height: 30px; "></a>
-                        <a href="" class="hapus"><img src="{{ asset('trash_icon.svg') }}" alt="Icon Trash"
+                        <a href="#" class="hapus"><img src="{{ asset('trash_icon.svg') }}" alt="Icon Trash"
                                 style="width: 30px; height: 30px; "></a>
                     </td>
                 </tr>
                 @endforeach
-                <!-- @for ($i = 0;$i< 10;$i++)
-                <tr>
-                    <td>database</td>
-                    <td>database</td>
-                    <td>database</td>
-                    <td>database</td>
-                    <td>database</td>
-                    <td>database</td>
-                    <td>database</td>
-                    <td>
-                        <a href="" class="edit"><img src="{{ asset('edit_icon.svg') }}" alt="Icon Edit"
-                                style="width: 30px; height: 30px; "></a>
-                        <a href="" class="hapus"><img src="{{ asset('trash_icon.svg') }}" alt="Icon Trash"
-                                style="width: 30px; height: 30px; "></a>
-                    </td>
-                </tr>
-                @endfor -->
             </tbody>
         </table>
         <div id="pagination-section">

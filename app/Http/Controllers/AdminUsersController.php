@@ -10,4 +10,8 @@ class AdminUsersController extends Controller
     {
         return view('admin.users.index');
     }
+    public function create()
+    {
+        return view('admin.users.create');
+    }
 }

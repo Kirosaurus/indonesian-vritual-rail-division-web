@@ -84,7 +84,7 @@
             <div class="product-card" id="product"
                 data-name="{{ $product->name }}"
                 data-desc="{{ $product->description }}"
-                data-price="Rp. {{ $product->price }}"
+                data-price=" {{ 'Rp '. $product->price ? $product->price : 'FREE' }}"
                 data-img="{{ asset('storage/' . optional($product->images->first())->path) }}">
                 @php
                 $imagePath = optional($product->images->first())->path;
@@ -98,7 +98,7 @@
                     {{$product->description}}
                 </p>
                 <div class="container-harga">
-                    <span>Rp. {{$product->price}}</span>
+                    <span>{{ $product->price ? 'Rp '.$product->price : 'FREE'}}</span>
                 </div>
             </div>
             @endforeach

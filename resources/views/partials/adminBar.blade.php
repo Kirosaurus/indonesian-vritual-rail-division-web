@@ -3,7 +3,7 @@
     $links = [
         ['href' => '/admin/products', 'label' => 'Payware', 'icon_active' => 'productDashboardOrange_icon.svg', 'icon' => 'productDashboardBlack_icon.svg'],
         ['href' => '/admin/announcements', 'label' => 'Announcement', 'icon_active' => 'announceOrange_icon.svg', 'icon' => 'announceBlack_icon.svg'],
-        ['href' => '/admin/user', 'label' => 'User', 'icon_active' => 'userOrange_icon.svg', 'icon' => 'userBlack_icon.svg'],
+        ['href' => '/admin/users', 'label' => 'User', 'icon_active' => 'userOrange_icon.svg', 'icon' => 'userBlack_icon.svg'],
     ];
 @endphp
 
@@ -13,17 +13,13 @@
         <div class="search-card">
             @foreach ($links as $link)
                 @php
-                $isActive = $currentUrl === ltrim($link['href'], '/');
+                    $isActive = $currentUrl === ltrim($link['href'], '/');
                 @endphp
-                <a href="{{ url($link['href']) }}"
-                    class="header-icon">
-                    <img
-                        src="{{ asset($isActive ? $link['icon_active'] : $link['icon']) }}"
-                        alt="{{ $link['label'] }} Icon"
-                        width="30"
-                        height="30" />
+                <a href="{{ url($link['href']) }}" class="header-icon">
+                    <img src="{{ asset($isActive ? $link['icon_active'] : $link['icon']) }}" alt="{{ $link['label'] }} Icon"
+                        width="30" height="30" />
                 </a>
-                @endforeach
+            @endforeach
         </div>
     </div>
     <div class="header-right">

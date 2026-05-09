@@ -36,7 +36,7 @@ class AdminProductsController extends Controller
         $request->validate([
             'name' => 'required|string|max:255',
             'image' => 'nullable|array',
-            'image.*' => 'image|mimes:jpeg,png,jpg,gif|max:2048',
+            'image.*' => 'image|mimes:jpeg,png,jpg,gif',
             'type' => 'string|in:payware,freeware',
             'description' => 'required|string',
             'price' => 'required_if:type,payware|numeric|min:0',
@@ -77,5 +77,14 @@ class AdminProductsController extends Controller
         $tagIds = $names->map(fn($name) => Tags::firstOrCreate(['name' => $name])->id);
         $product->tags()->sync($tagIds->all());
         return redirect()->route('admin.products.index')->with('success', 'Product created successfully!');
+    }
+
+    public function edit(Products $product){
+        $categories = Categories::all();    
+
+        return view ('admin.products.edit', [
+            'product' => $product,
+            'categories' => $categories
+        ]);
     }
 }
