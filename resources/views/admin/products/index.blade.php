@@ -1,6 +1,6 @@
 @extends('layouts.admin')
 
-@section('title', 'Dashboard Admin Payware')
+@section('title', 'Dashboard Admin')
 
 @section('content')
 <style>
@@ -152,7 +152,7 @@
 <div class="main-page-admin">
     <div class="container">
         <div class="top-card">
-            <h2 class="page-title">Product Payware</h2>
+            <h2 class="page-title">Product</h2>
             <a href="{{ route('admin.products.create')}}" class="btn-add">
                 <button class="create-product">
                     <img src="{{ asset('plus_icon.svg') }}" alt="Icon Plus" style="width: 32px; height: 32px;">

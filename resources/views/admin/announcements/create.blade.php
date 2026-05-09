@@ -4,19 +4,6 @@
 
 @section('content')
     <style>
-        .main-page-admin {
-            font-family: "Nexa";
-            display: flex;
-            flex-direction: column;
-            gap: 18px;
-            flex: 1;
-            padding: 41px 90px;
-            z-index: 1;
-            min-height: 100vh;
-            overflow: visible;
-            scroll-behavior: smooth;
-        }
-
         .container {
             background-color: #fff;
             padding: 40px;
@@ -178,9 +165,6 @@
         }
 
         @media screen and (max-width: 980px) {
-            .main-page-admin {
-                padding: 30px 30px 50px;
-            }
 
             .container {
                 max-width: 680px;
@@ -208,9 +192,6 @@
         }
 
         @media screen and (max-width: 680px) {
-            .main-page-admin {
-                padding: 24px 18px 36px;
-            }
 
             .container {
                 width: 100%;
@@ -234,7 +215,6 @@
             }
 
             .form-group input,
-            .form-group textarea,
             .form-group select {
                 font-size: 15px;
                 padding: 12px 14px;
@@ -242,7 +222,7 @@
 
             .button-group {
                 flex-direction: column;
-                align-items: stretch;
+                text-align: center;
             }
 
             .btn {
@@ -253,33 +233,10 @@
     </style>
 
     <div class="main-page-admin">
-        <div id="popup-category" class="popup-category hidden">
-            <div id="popup-container">
-                <div class="top-card">
-                    <h2>Create New Announcement</h2>
-                </div>
-                <form action="{{ route('admin.announcements.store') }}" method="POST">
-                    @csrf
-                    <div class="form-group">
-                        <label for="name">Announcement Name</label>
-                        <input type="text" id="newCategory" name="newCategory" required>
-                    </div>
-
-                    <div class="button-group">
-                        <button type="button" id="cancel-popup" class="btn btn-cancel">Cancel</button>
-                        <button type="submit" class="btn btn-save">Save Announcement</button>
-                    </div>
-                </form>
-                <div class="popup-overlay"></div>
-            </div>
-        </div>
         <div class="container">
             <div class="top-card">
                 <h2>Create New Announcement</h2>
             </div>
-
-
-
             <form action="{{ route('admin.announcements.store') }}" method="POST" enctype="multipart/form-data">
                 @csrf
 
@@ -308,5 +265,5 @@
                 </div>
             </form>
         </div>
-    </div>  
+    </div>
 @endsection
