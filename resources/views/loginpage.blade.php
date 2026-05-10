@@ -28,10 +28,8 @@
                     <button type="submit" class="login-button-submit">Log In</button>
                 </div>
             </form>
-            <p class="signup-link">Are you new? Let's <a href="/register">Sign up</a></p>
         </div>
-        <h4>© IVRD Copyright 2026 | 
-            <!-- <a href="">About Us</a> -->
+        <h4>© IVRD Copyright 2026
         </h4>
     </div>
 </div>

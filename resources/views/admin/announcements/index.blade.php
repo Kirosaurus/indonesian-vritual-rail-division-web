@@ -5,6 +5,8 @@
 @section('content')
 <style>
     .container {
+        container-type: inline-size;
+        container-name: main-container;
         display: flex;
         flex-direction: column;
         background-color: #fff;
@@ -88,14 +90,19 @@
         object-fit: cover;
     }
 
-    table {
-        overflow-x: auto;
+    .table-wrapper {
         width: 100%;
-        /* height: 736px; */
-        border-collapse: collapse;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
         margin-top: 20px;
         border-radius: 10px;
-        /* border: 1px solid #ddd; */
+    }
+
+    table {
+        width: 100%;
+        min-width: 800px;
+        border-collapse: collapse;
+        border-radius: 10px;
         background-color: #9A9A9A;
         color: #fff;
     }
@@ -166,6 +173,17 @@
     #pagination-section .pagination .page-item:last-child {
         display: none;
     }
+
+    @container main-container (max-width : 750px) {
+        .top-card {
+            flex-direction: column;
+        }
+
+        .top-card h2 {
+            font-size: 32px;
+            text-align: center;
+        }
+    }
 </style>
 <div class="main-page-admin">
     <div class="container">
@@ -179,39 +197,41 @@
             </a>
         </div>
 
-        <table>
-            <thead>
-                <tr>
-                    <th>Image</th>
-                    <th>Announcement ID</th>
-                    <th>Status</th>
-                    <th>Action</th>
-                </tr>
-            </thead>
-            <tbody>
-                @foreach($announcements as $announcement)
-                <tr>
-                    <td>
-                        <div class="announcement-img-container">
-                            <div class="announcement-img-wrapper">
-                                <img
-                                    class="announcement-img"
-                                    src=" {{ asset('storage/'. $announcement->image)}}">
+        <div class="table-wrapper">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Image</th>
+                        <th>Announcement ID</th>
+                        <th>Status</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach($announcements as $announcement)
+                    <tr>
+                        <td>
+                            <div class="announcement-img-container">
+                                <div class="announcement-img-wrapper">
+                                    <img
+                                        class="announcement-img"
+                                        src=" {{ asset('storage/'. $announcement->image)}}">
+                                </div>
                             </div>
-                        </div>
-                    </td>
-                    <td> {{ $announcement->id }}</td>
-                    <td> {{ $announcement->active ? "Aktif" : "Tidak Aktif  " }}</td>
-                    <td>
-                        <a href="" class="edit"><img src="{{ asset('edit_icon.svg') }}" alt="Icon Edit"
-                                style="width: 30px; height: 30px; "></a>
-                        <a href="" class="hapus"><img src="{{ asset('trash_icon.svg') }}" alt="Icon Trash"
-                                style="width: 30px; height: 30px; "></a>
-                    </td>
-                </tr>
-                @endforeach
-            </tbody>
-        </table>
+                        </td>
+                        <td> {{ $announcement->id }}</td>
+                        <td> {{ $announcement->active ? "Aktif" : "Tidak Aktif  " }}</td>
+                        <td>
+                            <a href="" class="edit"><img src="{{ asset('edit_icon.svg') }}" alt="Icon Edit"
+                                    style="width: 30px; height: 30px; "></a>
+                            <a href="" class="hapus"><img src="{{ asset('trash_icon.svg') }}" alt="Icon Trash"
+                                    style="width: 30px; height: 30px; "></a>
+                        </td>
+                    </tr>
+                    @endforeach
+                </tbody>
+            </table>
+        </div>
         <div id="pagination-section">
             {{ $announcements->links('pagination::bootstrap-5') }}
         </div>

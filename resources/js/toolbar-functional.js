@@ -86,6 +86,7 @@ const searchBox = document.querySelector(".search-input")
 const searchIcon = document.querySelector(".search-icon")
 const searchBar = document.querySelector(".search-bar")
 const listSortir = document.querySelector(".list-sortir")
+const titleHeading = document.querySelector(".title")
 // const toolbar = document.querySelectorAll(".toolbar")
 const leftTopContainer = document.querySelector(".left-top-container")
 
@@ -134,7 +135,7 @@ searchBox.addEventListener("focus", () => {
         const topContainer = document.getElementById("top-container")
         if (!search_active) {
             if (topContainer.offsetWidth <= 600) {
-                listSortir.classList.add("hide")
+                titleHeading.classList.add("hide")
                 sortirDropdown.classList.remove("show");
                 document.querySelectorAll(".sort").forEach((item, i) => {
                     item.classList.remove("show");
@@ -151,7 +152,7 @@ searchIcon.addEventListener("click", () => {
         const topContainer = document.getElementById("top-container")
         if (!search_active) {
             if (topContainer.offsetWidth <= 600) {
-                listSortir.classList.add("hide")
+                titleHeading.classList.add("hide")
                 sortirDropdown.classList.remove("show");
                 document.querySelectorAll(".sort").forEach((item, i) => {
                     item.classList.remove("show");
@@ -169,7 +170,7 @@ searchBox.addEventListener("blur", () => {
         searchBox.classList.remove("focus");
         searchBar.classList.remove("focus");
         setTimeout(() => {
-            listSortir.classList.remove("hide");
+            titleHeading.classList.remove("hide");
         }, 1000);
     })
 

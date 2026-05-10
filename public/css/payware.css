@@ -5,6 +5,7 @@
     height: 40px;
     display: flex;
     font-family: "Nexa", sans-serif;
+    align-content: center;
     align-items: center;
     justify-content: center;
     font-weight: 800;
@@ -13,13 +14,13 @@
     transition: 0.5s ease-in-out;
 }
 
-.list-sortir.hide {
+/* .list-sortir.hide {
     scale: 0.9;
     filter: blur(10px);
     position: absolute;
     top: 85px;
     opacity: 0%;
-}
+} */
 
 .sort-button.active {
     min-width: 40px;
@@ -76,11 +77,12 @@
     background-color: transparent;
     padding: 15px;
     border-radius: 15px;
-    z-index: 100;
+    z-index: -1;
     transition: 0.1s ease-in-out;
 }
 
 .sortir.show {
+    z-index: 100;
     display: flex;
     padding: 5px;
     opacity: 1;
@@ -163,7 +165,8 @@
     background-color: white;
     width: auto;
     min-height: 171px;
-    aspect-ratio: 16/9;
+    max-height: 171px;
+    /* aspect-ratio: 16/9; */
     border-radius: 20px;
     display: flex;
     flex-direction: column;
@@ -188,7 +191,7 @@
 
 .modal.hidden {
     scale: 1.1;
-    filter: blur(30px); 
+    filter: blur(30px);
     opacity: 0;
     z-index: -1;
 }
@@ -201,7 +204,17 @@
     transition: all 0.5s ease-in-out;
 }
 
-.modal-overlay.hidden{
+.modal-sizer {
+    container-type: inline-size;
+    container-name: modalSize;
+    display: flex;
+    position: fixed;
+    inset: 0;
+    z-index: 999;
+    transition: all 0.5s ease-in-out;
+}
+
+.modal-overlay.hidden {
     background-color: rgba(0, 0, 0, 0);
 }
 
@@ -213,19 +226,20 @@
     background-color: rgba(0, 0, 0, 0.5);
 }
 
-
 .modal-card {
     font-family: "Nexa", sans-serif;
     padding: 45px;
     border-radius: 50px;
     width: 100%;
-    height: auto;
+    height: 100%;
+    max-height: 750px;
     margin: auto 240px;
     background: linear-gradient(225deg, #78838b, #c07944);
     color: white;
     opacity: 100%;
     display: flex;
     gap: 25px;
+    overflow-y: auto;
     box-shadow: 0px 0px 180px 0px rgba(0, 0, 0, 0.25), 0px 0px 70px 0px #BC7A48;
 }
 
@@ -236,7 +250,7 @@
 }
 
 .left-modal {
-    width: 749px;
+    width: 100%;
     display: flex;
     flex-direction: column;
     gap: 23px;
@@ -248,7 +262,7 @@
 }
 
 #modal-thumb-viewer {
-    width: 749px;
+    width: 100%;
     height: 420px;
 }
 
@@ -283,31 +297,28 @@
     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 0px 30px #FF9B51;
 }
 
-.whatsapp-contact{
-    display: flex;
-    flex-direction: row;
-}
-
 .right-modal {
+    width: 100%;
+    height: 100%;
     display: flex;
     flex-direction: column;
     gap: 15px;
 }
 
-.right-modal span a{
+.right-modal span a {
     font-family: "Nexa", sans-serif;
     font-weight: 800;
     color: #FF9B51;
     text-decoration: underline;
 }
 
-.tag-products{
+.tag-products {
     display: flex;
     flex-direction: row;
     gap: 15px;
 }
 
-.tag{
+.tag {
     font-family: "Nexa", sans-serif;
     font-weight: 800;
     background-color: white;
@@ -317,7 +328,7 @@
     height: 47px;
 }
 
-.S&K{
+.S&K {
     font-family: "Nexa", sans-serif;
     font-weight: 200;
     font-size: 12px;
@@ -367,8 +378,9 @@
     scale: 0.9;
 }
 
-.whatsapp-order-button{
-    width: 100%;
+.whatsapp-order-button {
+
+    flex: 1;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -394,23 +406,31 @@
     scale: 0.95;
 }
 
-.whatsapp-order-button a {
+/* .whatsapp-order-button a {
+    flex: 1;
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 6px;
-}
+} */
 
 
-.whatsapp-contact{
+.whatsapp-contact {
+    width: 100%;
     gap: 10px;
     display: flex;
+    flex-direction: row;
     justify-content: space-between;
 }
 
-.thumbnail-img{
+.whatsapp-contact a {
+    flex: 1;
+    display: flex;
+}
+
+.thumbnail-img {
     width: 100%;
-    height: auto;
+    height: 100%;
     object-fit: cover;
     display: block;
 }
@@ -443,5 +463,42 @@
 @container listProduct (max-width : 500px) {
     .list-product-payware {
         grid-template-columns: repeat(1, auto);
+    }
+}
+
+@media (max-width : 1800px) {
+    .modal-card {
+        flex-direction: column;
+    }
+}
+
+@media (max-width : 1200px) {
+    .modal-card {
+        margin: auto 100px;
+        flex-direction: column;
+    }
+
+    .whatsapp-contact {
+        flex-direction: column;
+    }
+}   
+
+@media (max-width : 600px) {
+    .modal-card {
+        margin: auto 0px;
+        flex-direction: column;
+    }
+
+    .whatsapp-contact {
+        flex-direction: column;
+    }
+}
+
+@media (max-width : 430px) {
+    .modal-card {
+        max-height: 100%;
+        margin: auto 0px;
+        border-radius: 0px;
+        flex-direction: column;
     }
 }

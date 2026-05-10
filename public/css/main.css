@@ -90,6 +90,8 @@ h2 {
 }
 
 .login-button {
+    opacity: 0;
+    display: none;
     min-width: 124px;
     height: 50px;
     font-size: 24px;
@@ -104,14 +106,6 @@ h2 {
     border-radius: 15px;
     cursor: pointer;
     transition: 0.1s ease-in-out;
-}
-
-.login-button:hover {
-    scale: 1.1;
-}
-
-.login-button:active {
-    scale: 0.9;
 }
 
 /* ============================================================
@@ -407,6 +401,14 @@ h2 {
     align-items: center;
     align-content: center;
     justify-content: center;
+    transition: 0.5s ease-in-out;;
+}
+
+.title.hide{
+    scale: 0.9;
+    filter: blur(10px);
+    position: absolute;
+    opacity: 0%;
 }
 
 .toolbar {
@@ -542,7 +544,7 @@ h2 {
 }
 
 .search-input.focus {
-    width: 200px;
+    width: 300px;
     /* padding: 0px 10px; */
 }
 
@@ -639,11 +641,11 @@ h2 {
     }
 
     .search-input {
-        width: 0px;
+        width: 40px;
     }
 
     .search-input.focus {
-        width: 20vw;
+        width: 50vw;
         padding: 0px 10px;
     }
 }

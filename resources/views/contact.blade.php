@@ -29,9 +29,6 @@
 
             </div>
             <div style="width: 100%; display: flex; flex-direction: column; align-items: flex-end;">
-                <a href="{{ url('login') }}">
-                    <button class="login-button">Login</button>
-                </a>
             </div>
         </div>
     </div>

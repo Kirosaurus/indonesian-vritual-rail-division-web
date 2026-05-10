@@ -32,16 +32,13 @@
                         height="50">
                     <h1>Freeware </h1>
                 </div>
+            </div>
+            <div class="right-top-container">
                 <div class="list-sortir">
                     <div style="position: relative;">
                         <button class="sort-button">
                             <img src="{{ asset('sort.svg') }}" height="30" width="30" alt="Filter" />
                         </button>
-                        <!-- <div class="sortir">
-                        <button class="sort"><img src="{{asset('dollarWhite.svg')}}" height="20" width="20"/></button>
-                        <button class="sort">Name</button>
-                        <button class="sort">Rating</button>
-                    </div> -->
                         <div class="sortir">
                             <button class="sort">Price</button>
                             <button class="sort">Name</button>
@@ -54,8 +51,6 @@
                         </span>
                     </button>
                 </div>
-            </div>
-            <div class="right-top-container">
                 <div id="search-container" style="position: relative; display: flex; align-items: center;">
                     {{-- Give the input an id --}}
                     <div class="search-bar">
@@ -63,9 +58,6 @@
                         <img class="search-icon" src="{{ asset('search-icon.svg') }}" height="25" width="25" />
                     </div>
                 </div>
-                <a href="{{ url('login') }}">
-                    <button class="login-button">Login</button>
-                </a>
             </div>
         </div>
     </div>

@@ -23,6 +23,7 @@
             </div>
         </div>
     </main>
+    @vite('resources/js/navbar-dropdown.js')
     @stack('scripts')
 </body>
 
