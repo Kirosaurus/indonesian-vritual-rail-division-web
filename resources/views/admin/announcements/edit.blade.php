@@ -3,319 +3,311 @@
 @section('title', 'Dashboard Admin Edit Announcement')
 
 @section('content')
-    <style>
+<style>
+    .main-page-admin {
+        font-family: "Nexa";
+        display: flex;
+        flex-direction: column;
+        gap: 18px;
+        flex: 1;
+        padding: 41px 90px;
+        z-index: 1;
+        min-height: 100vh;
+        overflow: visible;
+        scroll-behavior: smooth;
+    }
+
+    .container {
+        background-color: #fff;
+        padding: 40px;
+        border-radius: 20px;
+        box-shadow: 0 25px 60px rgba(0, 0, 0, 0.16);
+        width: 100%;
+        max-width: 800px;
+        margin: 0 auto;
+    }
+
+    .top-card {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 30px;
+    }
+
+    .top-card h2 {
+        color: #FF9B51;
+        font-size: 46px;
+        font-weight: 800;
+        margin: 0;
+    }
+
+    .form-group {
+        margin-bottom: 20px;
+    }
+
+    .form-group label {
+        display: block;
+        margin-bottom: 8px;
+        color: #25343f;
+        font-size: 18px;
+        font-weight: 700;
+    }
+
+    .form-group input,
+    .form-group select {
+        width: 100%;
+        padding: 12px 16px;
+        border-radius: 10px;
+        border: 2px solid #e0e0e0;
+        font-size: 16px;
+        font-family: "Nexa";
+        transition: border-color 0.3s ease;
+    }
+
+    .form-group input:focus,
+    .form-group select:focus {
+        outline: none;
+        border-color: #FF9B51;
+    }
+
+
+    .button-group {
+        display: flex;
+        gap: 15px;
+        justify-content: flex-end;
+        margin-top: 30px;
+    }
+
+    .btn {
+        padding: 12px 24px;
+        border-radius: 10px;
+        font-size: 18px;
+        font-weight: 700;
+        font-family: "Nexa";
+        text-decoration: none;
+        display: inline-block;
+        cursor: pointer;
+        border: none;
+        transition: all 0.3s ease;
+    }
+
+    .btn-save {
+        background-color: #FF9B51;
+        color: #fff;
+        box-shadow: 0 0 10px rgba(255, 155, 81, 0.3);
+    }
+
+    .btn-save:hover {
+        background-color: #e68946;
+        box-shadow: 0 0 15px rgba(255, 155, 81, 0.5);
+    }
+
+    .btn-cancel {
+        background-color: #dc3545;
+        color: #fff;
+    }
+
+    .btn-cancel:hover {
+        background-color: #c82333;
+    }
+
+    .row-input {
+        gap: 10px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-items: center;
+        width: 100%;
+    }
+
+    #add-category-btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 50px;
+        height: 50px;
+        background-color: white;
+        border-radius: 10px;
+        border: 2px solid #e0e0e0;
+        transition: all 0.1s ease-in-out;
+    }
+
+    #add-category-btn:hover {
+        scale: 1.05;
+        cursor: pointer;
+    }
+
+    #add-category-btn:active {
+        scale: 0.95;
+        cursor: pointer;
+    }
+
+    .image-thumb-wrapper {
+        position: relative;
+        display: inline-block;
+        border-radius: 10px;
+        overflow: hidden;
+        border: 2px solid #e0e0e0;
+        transition: border-color 0.2s ease;
+    }
+
+    .image-thumb-wrapper:hover {
+        border-color: #FF9B51;
+    }
+
+    .image-thumb-wrapper img {
+        display: block;
+        width: 150px;
+        height: 150px;
+        object-fit: cover;
+    }
+
+    @media screen and (max-width: 980px) {
         .main-page-admin {
-            font-family: "Nexa";
-            display: flex;
-            flex-direction: column;
-            gap: 18px;
-            flex: 1;
-            padding: 41px 90px;
-            z-index: 1;
-            min-height: 100vh;
-            overflow: visible;
-            scroll-behavior: smooth;
+            padding: 30px 30px 50px;
         }
 
         .container {
-            background-color: #fff;
-            padding: 40px;
-            border-radius: 20px;
-            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.16);
-            width: 100%;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .top-card {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            margin-bottom: 30px;
+            max-width: 680px;
+            padding: 30px;
         }
 
         .top-card h2 {
-            color: #FF9B51;
-            font-size: 46px;
-            font-weight: 800;
-            margin: 0;
-        }
-
-        .form-group {
-            margin-bottom: 20px;
+            font-size: 38px;
         }
 
         .form-group label {
-            display: block;
-            margin-bottom: 8px;
-            color: #25343f;
-            font-size: 18px;
-            font-weight: 700;
+            font-size: 16px;
         }
 
         .form-group input,
+        .form-group textarea,
         .form-group select {
-            width: 100%;
-            padding: 12px 16px;
-            border-radius: 10px;
-            border: 2px solid #e0e0e0;
-            font-size: 16px;
-            font-family: "Nexa";
-            transition: border-color 0.3s ease;
-        }
-
-        .form-group input:focus,
-        .form-group select:focus {
-            outline: none;
-            border-color: #FF9B51;
-        }
-
-
-        .button-group {
-            display: flex;
-            gap: 15px;
-            justify-content: flex-end;
-            margin-top: 30px;
+            font-size: 15px;
+            padding: 11px 14px;
         }
 
         .btn {
-            padding: 12px 24px;
-            border-radius: 10px;
-            font-size: 18px;
-            font-weight: 700;
-            font-family: "Nexa";
-            text-decoration: none;
-            display: inline-block;
-            cursor: pointer;
-            border: none;
-            transition: all 0.3s ease;
+            font-size: 16px;
+            padding: 12px 22px;
+        }
+    }
+
+    @media screen and (max-width: 680px) {
+        .main-page-admin {
+            padding: 24px 18px 36px;
         }
 
-        .btn-save {
-            background-color: #FF9B51;
-            color: #fff;
-            box-shadow: 0 0 10px rgba(255, 155, 81, 0.3);
-        }
-
-        .btn-save:hover {
-            background-color: #e68946;
-            box-shadow: 0 0 15px rgba(255, 155, 81, 0.5);
-        }
-
-        .btn-cancel {
-            background-color: #dc3545;
-            color: #fff;
-        }
-
-        .btn-cancel:hover {
-            background-color: #c82333;
-        }
-
-        .row-input {
-            gap: 10px;
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-            justify-items: center;
+        .container {
             width: 100%;
+            max-width: 100%;
+            padding: 24px;
+            border-radius: 18px;
         }
 
-        #add-category-btn {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 50px;
-            height: 50px;
-            background-color: white;
-            border-radius: 10px;
-            border: 2px solid #e0e0e0;
-            transition: all 0.1s ease-in-out;
+        .top-card {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 18px;
         }
 
-        #add-category-btn:hover {
-            scale: 1.05;
-            cursor: pointer;
+        .top-card h2 {
+            font-size: 32px;
         }
 
-        #add-category-btn:active {
-            scale: 0.95;
-            cursor: pointer;
+        .form-group label {
+            font-size: 15px;
         }
 
-        @media screen and (max-width: 980px) {
-            .main-page-admin {
-                padding: 30px 30px 50px;
-            }
-
-            .container {
-                max-width: 680px;
-                padding: 30px;
-            }
-
-            .top-card h2 {
-                font-size: 38px;
-            }
-
-            .form-group label {
-                font-size: 16px;
-            }
-
-            .form-group input,
-            .form-group textarea,
-            .form-group select {
-                font-size: 15px;
-                padding: 11px 14px;
-            }
-
-            .btn {
-                font-size: 16px;
-                padding: 12px 22px;
-            }
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            font-size: 15px;
+            padding: 12px 14px;
         }
 
-        @media screen and (max-width: 680px) {
-            .main-page-admin {
-                padding: 24px 18px 36px;
-            }
-
-            .container {
-                width: 100%;
-                max-width: 100%;
-                padding: 24px;
-                border-radius: 18px;
-            }
-
-            .top-card {
-                flex-direction: column;
-                align-items: flex-start;
-                gap: 18px;
-            }
-
-            .top-card h2 {
-                font-size: 32px;
-            }
-
-            .form-group label {
-                font-size: 15px;
-            }
-
-            .form-group input,
-            .form-group textarea,
-            .form-group select {
-                font-size: 15px;
-                padding: 12px 14px;
-            }
-
-            .button-group {
-                flex-direction: column;
-                align-items: stretch;
-            }
-
-            .btn {
-                width: 100%;
-                font-size: 16px;
-            }
+        .button-group {
+            flex-direction: column;
+            align-items: stretch;
         }
-    </style>
 
-    <div class="main-page-admin">
-        <div class="container">
-            <div class="top-card">
-                <h2>Edit Announcement</h2>
+        .btn {
+            width: 100%;
+            font-size: 16px;
+        }
+
+
+    }
+</style>
+
+<div class="main-page-admin">
+    <div class="container">
+        <div class="top-card">
+            <h2>Edit Announcement</h2>
+        </div>
+
+        <form id="announcementForm" action="{{ route('admin.announcements.update', $announcement->id) }}" method="POST"
+            enctype="multipart/form-data">
+            @csrf
+            @method('PUT')
+
+            @if($announcement->image)
+            <div id="image-preview-container"
+                style="margin-bottom: 10px; display: flex; flex-wrap: wrap; gap: 10px;">
+                <div class="image-thumb-wrapper" data-image-id="{{ $announcement->image }}">
+                    <img src="{{ asset('storage/' . $announcement->image) }}" alt="Current Image">
+                </div>
+            </div>
+            @endif
+            <div class="form-group">
+                <label for="image">Product Image</label>
+                <input type="file" id="image" name="image" accept="image">
             </div>
 
-
-
-            <form action="{{ route('admin.announcements.update', $announcement->id) }}" method="POST"
-                enctype="multipart/form-data">
-                @csrf
-                @method('PUT')
-
-                
-                <div class="form-group">
-                    <label for="image">Product Image</label>
-                    <input type="file" id="images" name="image[]" accept="image/*" multiple>
-                </div>
-
-                <div class="form-group">
-                    <label for="active">Active</label>
-                    <select id="active" name="active">
-                        <option value="1" {{$announcement->active === 1 ? 'selected' : ''}}>Yes</option>
-                        <option value="0" {{$announcement->active === 0 ? 'selected' : ''}}>No</option>
-                    </select>
-                </div>
-                @if ($errors->any())
-                    <div>
-                        @foreach ($errors->all() as $error)
-                            <p>{{ $error }}</p>
-                        @endforeach
-                    </div>
-                @endif
-                <div class="button-group">
-                    <a href="{{ route('admin.announcements.index') }}" class="btn btn-cancel">Cancel</a>
-                    <button type="submit" class="btn btn-save">Edit Announcement</button>
-                </div>
-            </form>
-        </div>
+            <div class="form-group">
+                <label for="active">Active</label>
+                <select id="active" name="active">
+                    <option value="1" {{$announcement->active === 1 ? 'selected' : ''}}>Yes</option>
+                    <option value="0" {{$announcement->active === 0 ? 'selected' : ''}}>No</option>
+                </select>
+            </div>
+            @if ($errors->any())
+            <div>
+                @foreach ($errors->all() as $error)
+                <p>{{ $error }}</p>
+                @endforeach
+            </div>
+            @endif
+            <div class="button-group">
+                <a href="{{ route('admin.announcements.index') }}" class="btn btn-cancel">Cancel</a>
+                <button type="submit" class="btn btn-save">Edit Announcement</button>
+            </div>
+        </form>
     </div>
+</div>
 
-    <script>
-        document.addEventListener("DOMContentLoaded", () => {
-            const type = document.getElementById("type");
-            const price = document.getElementById("price");
+<script>
+    // Handle image update confirmation
+    const announcementForm = document.getElementById('announcementForm');
+    const imageInput = document.getElementById('image');
 
-            const priceState = () => {
-                const isFreeware = type.value === 'freeware';
-                price.disabled = isFreeware;
-                if (isFreeware) {
-                    price.value = 0;
-                    price.removeAttribute('required');
-                } else {
-                    price.disabled = 0;
-                    if (!price.value) {
-                        price.setAttribute('required', 'required');
-                    }
-                }
+    announcementForm.addEventListener('submit', function(e) {
+        e.preventDefault();
 
+        // Check jika ada file baru dan ada gambar lama
+        const hasNewFile = imageInput.files.length > 0;
+        const hasOldImage = document.querySelector('[data-image-id]') !== null;
+
+        if (hasNewFile && hasOldImage) {
+            // Show confirmation
+            const confirmed = confirm('Apakah anda ingin mengganti gambar yang lama menjadi yang baru?');
+            if (!confirmed) {
+                return; 
             }
-            type.addEventListener('change', priceState);
-            priceState();
-        })
+        }
 
-        const popupAddCategory = document.getElementById("popup-category");
-        const addCategoryBtn = document.getElementById("add-category-btn");
-        const cancelPopupBtn = document.getElementById("cancel-popup");
-        const categoryForm = document.querySelector('#popup-category form');
-        const categorySelect = document.getElementById('category');
-
-        addCategoryBtn.addEventListener("click", () => {
-            popupAddCategory.classList.remove("hidden");
-        })
-
-        cancelPopupBtn.addEventListener("click", () => {
-            popupAddCategory.classList.add("hidden");
-        });
-
-        categoryForm.addEventListener('submit', async (e) => {
-            e.preventDefault();
-
-            const formData = new FormData(categoryForm);
-
-            const res = await fetch(categoryForm.action, {
-                method: 'POST',
-                headers: {
-                    'X-Requested-With': 'XMLHttpRequest'
-                },
-                body: formData
-            });
-
-            const data = await res.json();
-
-            const option = new Option(data.name, data.id, true, true);
-            categorySelect.add(option);
-
-            categoryForm.reset();
-            popupAddCategory.classList.add("hidden");
-        });
-    </script>
+        // Submit form
+        this.submit();
+    });
+</script>
 @endsection

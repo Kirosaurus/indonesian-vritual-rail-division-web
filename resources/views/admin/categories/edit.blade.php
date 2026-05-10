@@ -221,28 +221,15 @@
     <div class="main-page-admin">
         <div class="container">
             <div class="top-card">
-                <h2>Edit User</h2>
+                <h2>Edit Category</h2>
             </div>
-
-
-
-            <form action="{{ route('admin.users.update', $user->id) }}" method="POST"
+            <form action="{{ route('admin.categories.update', $category->id) }}" method="POST"
                 enctype="multipart/form-data">
                 @csrf
                 @method('PUT')
                 <div class="form-group">
-                    <label for="name">Name</label>
-                    <input type="text" id="name" name="name" value="{{$user->name}}">
-                </div>
-
-                <div class="form-group">
-                    <label for="email">Email</label>
-                    <input type="email" id="email" name="email" value="{{$user->email}}"required>
-                </div>
-
-                <div class="form-group">
-                    <label for="password">Password</label>
-                    <input type="password" id="password" name="password" placeholder="Masukkan password jika ingin mengganti" required>
+                    <label for="name">Category Name</label>
+                    <input type="text" id="name" name="name" value="{{$category->name}}">
                 </div>
                 @if ($errors->any())
                     <div>
@@ -252,7 +239,7 @@
                     </div>
                 @endif
                 <div class="button-group">
-                    <a href="{{ route('admin.users.index') }}" class="btn btn-cancel">Cancel</a>
+                    <a href="{{ route('admin.categories.index') }}" class="btn btn-cancel">Cancel</a>
                     <button type="submit" class="btn btn-save">Edit User</button>
                 </div>
             </form>
@@ -260,62 +247,5 @@
     </div>
 
     <script>
-        document.addEventListener("DOMContentLoaded", () => {
-            const type = document.getElementById("type");
-            const price = document.getElementById("price");
-
-            const priceState = () => {
-                const isFreeware = type.value === 'freeware';
-                price.disabled = isFreeware;
-                if (isFreeware) {
-                    price.value = 0;
-                    price.removeAttribute('required');
-                } else {
-                    price.disabled = 0;
-                    if (!price.value) {
-                        price.setAttribute('required', 'required');
-                    }
-                }
-
-            }
-            type.addEventListener('change', priceState);
-            priceState();
-        })
-
-        const popupAddCategory = document.getElementById("popup-category");
-        const addCategoryBtn = document.getElementById("add-category-btn");
-        const cancelPopupBtn = document.getElementById("cancel-popup");
-        const categoryForm = document.querySelector('#popup-category form');
-        const categorySelect = document.getElementById('category');
-
-        addCategoryBtn.addEventListener("click", () => {
-            popupAddCategory.classList.remove("hidden");
-        })
-
-        cancelPopupBtn.addEventListener("click", () => {
-            popupAddCategory.classList.add("hidden");
-        });
-
-        categoryForm.addEventListener('submit', async (e) => {
-            e.preventDefault();
-
-            const formData = new FormData(categoryForm);
-
-            const res = await fetch(categoryForm.action, {
-                method: 'POST',
-                headers: {
-                    'X-Requested-With': 'XMLHttpRequest'
-                },
-                body: formData
-            });
-
-            const data = await res.json();
-
-            const option = new Option(data.name, data.id, true, true);
-            categorySelect.add(option);
-
-            categoryForm.reset();
-            popupAddCategory.classList.add("hidden");
-        });
     </script>
 @endsection

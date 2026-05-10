@@ -465,13 +465,14 @@
             <p id="deleteConfirmationText">Apakah anda yakin ingin menghapus product <strong id="productNameDisplay"></strong>?</p>
             <div class="delete-confirmation-actions">
                 <button class="btn-delete-cancel" id="btnDeleteCancel">Tidak</button>
-                <button class="btn-delete-confirm" id="btnDeleteConfirm">Ya</button>
+                <a href="{{route('admin.products.destroy', $product->id)}}" class="btn-delete-confirm" id="btnDeleteConfirm">Ya</a>
             </div>
         </div>
     </div>
 
     <script>
-          document.addEventListener('DOMContentLoaded', function () {
+            document.addEventListener('DOMContentLoaded', function () {
+            // View Popup Logic
             const viewLinks = document.querySelectorAll('.product-view-link');
             const viewPopup = document.getElementById('product-view-popup');
             const closeViewBtn = document.getElementById('close-view-popup');
@@ -496,6 +497,62 @@
 
             closeViewBtn.addEventListener('click', closeViewPopup);
             viewOverlay.addEventListener('click', closeViewPopup);
+
+            // Delete Button Logic
+            const deleteModal = document.getElementById('deleteConfirmationModal');
+            const btnDeleteCancel = document.getElementById('btnDeleteCancel');
+            const btnDeleteConfirm = document.getElementById('btnDeleteConfirm');
+            const deleteConfirmationText = document.getElementById('deleteConfirmationText');
+            const productNameDisplay = document.getElementById('productNameDisplay');
+            const deleteButtons = document.querySelectorAll('.hapus-btn');
+
+            let currentProductId = null;
+
+            // Buka modal konfirmasi delete
+            deleteButtons.forEach(btn => {
+                btn.addEventListener('click', function(event) {
+                    event.preventDefault();
+                    currentProductId = this.dataset.productId;
+                    const productName = this.dataset.productName;
+                    
+                    productNameDisplay.textContent = productName;
+                    deleteModal.classList.add('active');
+                });
+            });
+
+            // Tutup modal ketika klik "Tidak"
+            btnDeleteCancel.addEventListener('click', function() {
+                deleteModal.classList.remove('active');
+                currentProductId = null;
+            });
+
+            // Hapus produk ketika klik "Ya"
+            btnDeleteConfirm.addEventListener('click', function() {
+                if (currentProductId) {
+                    // Buat form dan submit ke route destroy
+                    const form = document.createElement('form');
+                    form.method = 'POST';
+                    form.action = `/admin/products/${currentProductId}`;
+                    
+                    // Tambah CSRF token
+                    const csrfToken = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
+                    const csrfInput = document.createElement('input');
+                    csrfInput.type = 'hidden';
+                    csrfInput.name = '_token';
+                    csrfInput.value = csrfToken;
+                    
+                    // Tambah method DELETE
+                    const methodInput = document.createElement('input');
+                    methodInput.type = 'hidden';
+                    methodInput.name = '_method';
+                    methodInput.value = 'DELETE';
+                    
+                    form.appendChild(csrfInput);
+                    form.appendChild(methodInput);
+                    document.body.appendChild(form);
+                    form.submit();
+                }
+            });
         });
     </script>
 @endsection

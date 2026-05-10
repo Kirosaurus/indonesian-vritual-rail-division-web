@@ -349,7 +349,7 @@
                                 <div class="image-thumb-wrapper" data-image-id="{{ $image->id }}">
                                     <img src="{{ asset('storage/' . $image->path) }}" alt="Current Image">
                                     <button type="button" class="delete-image-btn"
-                                        onclick="removeImage(this, {{ $image->id }})">✕</button>
+                                        onclick="removeImage({{ $image->id }})">✕</button>
                                 </div>
                             @endforeach
                         </div>
@@ -483,5 +483,35 @@
             categoryForm.reset();
             popupAddCategory.classList.add("hidden");
         });
+
+        const removeImage = (imageID) => {
+            if (confirm('Yakin ingin menghapus image ini?')) {
+                const csrfToken = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
+                
+                fetch(`/admin/images/${imageID}`, {
+                    method: 'DELETE',
+                    headers: {
+                        'X-CSRF-TOKEN': csrfToken,
+                        'Content-Type': 'application/json',
+                    }
+                })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        // Hapus elemen dari DOM
+                        const imageWrapper = document.querySelector(`[data-image-id="${imageID}"]`);
+                        if (imageWrapper) {
+                            imageWrapper.remove();
+                        }
+                    } else {
+                        alert('Gagal menghapus image');
+                    }
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    alert('Terjadi kesalahan saat menghapus image');
+                });
+            }
+        }
     </script>
 @endsection
