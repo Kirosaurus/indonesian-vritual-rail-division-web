@@ -32,3 +32,32 @@
     transform: translateY(20px);
     transition: all 0.3s linear(0 0%, 0 1.8%, 0.01 3.6%, 0.03 6.35%, 0.07 9.1%, 0.13 11.4%, 0.19 13.4%, 0.27 15%, 0.34 16.1%, 0.54 18.35%, 0.66 20.6%, 0.72 22.4%, 0.77 24.6%, 0.81 27.3%, 0.85 30.4%, 0.88 35.1%, 0.92 40.6%, 0.94 47.2%, 0.96 55%, 0.98 64%, 0.99 74.4%, 1 86.4%, 1 100%);;
 }
+
+.left-contact-section, 
+.social-media-contact {
+    opacity: 0 !important;
+    transform: translateY(30px); /* Muncul dari bawah ke atas */
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out !important;
+}
+
+/* State Akhir: Saat class .reveal ditambahkan via JS */
+.left-contact-section.reveal, 
+.social-media-contact.reveal {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+}
+
+/* State Awal: Hidden */
+.special-box, 
+.step-card {
+    opacity: 0;
+    transform: translateY(25px);
+    transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+}
+
+/* State Akhir: Muncul */
+.special-box.is-visible, 
+.step-card.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
