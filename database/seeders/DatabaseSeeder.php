@@ -63,7 +63,7 @@ class DatabaseSeeder extends Seeder
                 'id' => 3,
                 'name' => 'Daerah Operasi 6-4-7-8 (YK-SLO-SMC-MN-SGU) - Android',
                 'type' => 'payware',
-                'description' => 'Rute Daerah Operasi 6–4–7–8 (YK–SLO–SMC–MN–SGU) menghadirkan pengalaman dinasan yang kaya variasi...',
+                'description' => 'Stasiun Garum adalah sebuah stasiun kereta api yang terletak di Kecamatan Garum, Kabupaten Blitar, Jawa Timur. Stasiun ini berada di bawah pengelolaan PT Kereta Api Indonesia (KAI) dan termasuk dalam wilayah operasional Daerah Operasi VII Madiun. Stasiun Garum melayani perjalanan kereta api penumpang di lintas selatan Jawa, yang menghubungkan berbagai kota penting seperti Blitar, Malang, dan Surabaya. Meskipun tidak sebesar stasiun utama di sekitarnya, Stasiun Garum memiliki peran penting sebagai titik naik-turun penumpang bagi masyarakat lokal, terutama warga sekitar Kecamatan Garum dan wilayah Blitar bagian timur. \r\nnote: Non PBR',
                 'price' => 150000.00,
                 'category_id' => 2,
                 'active' => 1,
@@ -72,7 +72,7 @@ class DatabaseSeeder extends Seeder
                 'id' => 4,
                 'name' => 'Daerah Operasi 8-7 (Lawang-Malang-Blitar)',
                 'type' => 'payware',
-                'description' => 'Rute Daerah Operasi 8–7 (Lawang–Malang–Blitar) memiliki skala jarak antar stasiun 1:1...',
+                'description' => 'Rute Daerah Operasi 8–7 (Lawang–Malang–Blitar) memiliki skala jarak antar stasiun 1:1, sehingga setiap segmen lintasan direpresentasikan secara realistis sesuai kondisi operasional sebenarnya tanpa penyederhanaan jarak. Hal ini membuat pengalaman perjalanan terasa lebih autentik, karena perubahan kontur dari perbukitan, area perkotaan, hingga pedesaan benar-benar mencerminkan kondisi nyata di lapangan. Jalur ini didominasi oleh variasi elevasi yang cukup terasa, tikungan di kawasan berbukit, serta transisi yang jelas antara wilayah padat aktivitas dan area yang lebih tenang. Salah satu ciri khasnya adalah keberadaan dua terowongan di petak Pohgajih–Sumberpucung yang menjadi representasi unik kondisi geografis jalur selatan. Dengan pendekatan 1:1 ini, keseluruhan lintasan memberikan pengalaman dinasan yang imersif, realistis, dan sesuai karakter asli Malang Raya hingga Blitar.',
                 'price' => 40000.00,
                 'category_id' => 2,
                 'active' => 1,
@@ -81,7 +81,7 @@ class DatabaseSeeder extends Seeder
                 'id' => 5,
                 'name' => 'Daerah Operasi 6-4-7-8 (YK-SLO-SMC-MN-SGU) - Tane Up',
                 'type' => 'payware',
-                'description' => 'Rute Daerah Operasi 6–4–7–8 (YK–SLO–SMC–MN–SGU) menghadirkan pengalaman dinasan yang kaya variasi...',
+                'description' => 'Rute Daerah Operasi 6–4–7–8 (YK–SLO–SMC–MN–SGU) menghadirkan pengalaman dinasan yang kaya variasi, dimulai dari Yogyakarta dengan suasana jalur yang ramai perlintasan sebidang, aktivitas warga yang dekat rel, serta panorama Gunung Merapi yang menjadi latar khas perjalanan, sehingga sejak awal menuntut ketelitian dan kewaspadaan tinggi. Memasuki Solo, lintasan menjadi lebih dinamis dengan banyak sinyal, stasiun yang berdekatan, serta perpaduan kawasan perkotaan dan pinggiran yang membuat ritme perjalanan harus dijaga dengan presisi. Perjalanan menuju Semarang menghadirkan tantangan tersendiri dengan kontur jalur berbukit dan berkelok di lintas tengah Jawa, disertai pemandangan lembah, struktur jalur yang bervariasi, serta keberadaan Stasiun Tanggung yang dikenal sebagai salah satu stasiun pertama di Indonesia, menambah nilai historis dalam lintasan ini. Di wilayah Madiun, suasana berubah lebih tenang dengan hamparan sawah luas, namun tetap menjadi simpul penting perkeretaapian yang padat aktivitas, sekaligus dilewati kawasan industri dan keberadaan pabrik kereta api PT INKA di Madiun yang menjadi pusat produksi sarana perkeretaapian nasional, memberikan nuansa kuat jalur industri dan teknologi transportasi. Hingga Surabaya Gubeng, perjalanan memasuki kawasan metropolitan dengan intensitas pergerakan kereta yang tinggi, kompleksitas jalur masuk stasiun besar, serta dinamika operasional yang padat, menjadikan keseluruhan rute ini sebagai pengalaman perjalanan yang lengkap, bersejarah, dan penuh variasi lanskap dari Yogyakarta hingga Surabaya.',
                 'price' => 170000.00,
                 'category_id' => 2,
                 'active' => 1,
@@ -90,7 +90,7 @@ class DatabaseSeeder extends Seeder
                 'id' => 6,
                 'name' => 'Daerah Operasi 6-4-7-8 (YK-SLO-SMC-MN-SGU) - TS12',
                 'type' => 'payware',
-                'description' => 'Rute Daerah Operasi 6–4–7–8 (YK–SLO–SMC–MN–SGU) menghadirkan pengalaman dinasan yang kaya variasi...',
+                'description' => 'Rute Daerah Operasi 6–4–7–8 (YK–SLO–SMC–MN–SGU) menghadirkan pengalaman dinasan yang kaya variasi, dimulai dari Yogyakarta dengan suasana jalur yang ramai perlintasan sebidang, aktivitas warga yang dekat rel, serta panorama Gunung Merapi yang menjadi latar khas perjalanan, sehingga sejak awal menuntut ketelitian dan kewaspadaan tinggi. Memasuki Solo, lintasan menjadi lebih dinamis dengan banyak sinyal, stasiun yang berdekatan, serta perpaduan kawasan perkotaan dan pinggiran yang membuat ritme perjalanan harus dijaga dengan presisi. Perjalanan menuju Semarang menghadirkan tantangan tersendiri dengan kontur jalur berbukit dan berkelok di lintas tengah Jawa, disertai pemandangan lembah, struktur jalur yang bervariasi, serta keberadaan Stasiun Tanggung yang dikenal sebagai salah satu stasiun pertama di Indonesia, menambah nilai historis dalam lintasan ini. Di wilayah Madiun, suasana berubah lebih tenang dengan hamparan sawah luas, namun tetap menjadi simpul penting perkeretaapian yang padat aktivitas, sekaligus dilewati kawasan industri dan keberadaan pabrik kereta api PT INKA di Madiun yang menjadi pusat produksi sarana perkeretaapian nasional, memberikan nuansa kuat jalur industri dan teknologi transportasi. Hingga Surabaya Gubeng, perjalanan memasuki kawasan metropolitan dengan intensitas pergerakan kereta yang tinggi, kompleksitas jalur masuk stasiun besar, serta dinamika operasional yang padat, menjadikan keseluruhan rute ini sebagai pengalaman perjalanan yang lengkap, bersejarah, dan penuh variasi lanskap dari Yogyakarta hingga Surabaya.',
                 'price' => 160000.00,
                 'category_id' => 2,
                 'active' => 1,
@@ -99,7 +99,7 @@ class DatabaseSeeder extends Seeder
                 'id' => 7,
                 'name' => 'Daerah Operasi 2-5 (Indihiang-Banjar-Sidareja)',
                 'type' => 'payware',
-                'description' => 'Daop 5–Daop 2 (Sidareja–Banjar–Indihiang) menghadirkan pengalaman dinasan yang khas...',
+                'description' => 'Daop 5–Daop 2 (Sidareja–Banjar–Indihiang) menghadirkan pengalaman dinasan yang khas dengan karakter lintasan selatan yang didominasi perbukitan, lembah, serta jembatan panjang yang melintasi alur sungai dan kawasan hijau alami. Perjalanan di rute ini terasa dinamis karena perubahan elevasi yang cukup sering, tikungan yang mengikuti kontur alam, serta jalur yang membelah area berbukit dan lembah sempit sehingga memberikan sensasi perjalanan yang stabil namun tetap menantang. Memasuki wilayah Banjar, lintasan mulai bertransisi menjadi lebih terbuka dengan hamparan sawah dan pemukiman yang tersebar, lalu berlanjut menuju Sidareja hingga Indihiang yang didominasi suasana pedesaan yang tenang dan area dataran yang lebih luas. Kombinasi jalur berkelok, jembatan ikonik, serta perubahan lanskap dari perbukitan menuju dataran rendah menjadikan rute ini sebagai perjalanan yang imersif, seimbang antara tantangan teknis dan keindahan panorama alam.',
                 'price' => 35000.00,
                 'category_id' => 2,
                 'active' => 1,
@@ -108,7 +108,7 @@ class DatabaseSeeder extends Seeder
                 'id' => 8,
                 'name' => 'Daerah Operasi 7-8 (Kertosono-Mojokerto-Sidotopo)',
                 'type' => 'payware',
-                'description' => 'Daop 7–8 (Kertosono–Mojokerto–Sidotopo) menghadirkan pengalaman dinasan yang khas...',
+                'description' => 'Daop 7–8 (Kertosono–Mojokerto–Sidotopo) menghadirkan pengalaman dinasan yang khas dengan karakter lintasan dataran rendah yang relatif padat aktivitas, didominasi jalur panjang yang stabil namun diselingi banyak perlintasan sebidang, persinyalan aktif, serta lalu lintas kereta yang cukup intens karena merupakan koridor penting penghubung antar wilayah di Jawa Timur. Perjalanan di rute ini terasa dinamis bukan dari kontur ekstrem, melainkan dari ritme operasional yang rapat, terutama saat memasuki area perkotaan dan jalur menuju Surabaya yang semakin sibuk. Di beberapa segmen, suasana pedesaan masih terasa dengan hamparan sawah dan pemukiman yang mengikuti jalur rel, sebelum akhirnya berubah menjadi kawasan urban padat saat mendekati Sidotopo. Kombinasi antara jalur datar yang panjang, aktivitas operasional tinggi, serta transisi dari area semi-rural ke perkotaan menjadikan rute ini sebagai pengalaman dinasan yang fokus, ritmis, dan mencerminkan intensitas operasional jalur utara–timur Jawa.',
                 'price' => 40000.00,
                 'category_id' => 2,
                 'active' => 1,
@@ -117,7 +117,7 @@ class DatabaseSeeder extends Seeder
                 'id' => 9,
                 'name' => 'NEW ENGINESOUND 2025 HD Pack',
                 'type' => 'payware',
-                'description' => '**NEW ENGINESOUND 2025 HD Pack** adalah paket sound untuk simulator kereta...',
+                'description' => '**NEW ENGINESOUND 2025 HD Pack** adalah paket sound untuk simulator kereta yang menghadirkan suara mesin lokomotif dengan kualitas tinggi dan lebih realistis dibanding versi standar.\r\n\r\nPack ini menonjolkan:\r\n\r\n* **Suara mesin HD (high definition)** yang lebih jernih dan detail\r\n* **Variasi suara CC 201/203 dan lokomotif lainnya**, mulai dari idle hingga notch tinggi\r\n* **Transisi suara yang halus** saat akselerasi dan deselerasi sehingga perubahan tenaga terasa natural\r\n* **Efek turbo dan exhaust** yang lebih hidup saat beban kerja meningkat\r\n* **Getaran dan karakter mesin** yang lebih terasa, mendukung pengalaman dinasan yang imersif\r\n\r\nDengan karakter suara yang lebih dalam dan realistis, pack ini sering digunakan untuk meningkatkan sensasi perjalanan agar terasa seperti operasi kereta sebenarnya di lintasan.',
                 'price' => 50000.00,
                 'category_id' => 3,
                 'active' => 1,
@@ -126,7 +126,7 @@ class DatabaseSeeder extends Seeder
                 'id' => 10,
                 'name' => '2026 New Enginesound Pack Api api🔥🔥',
                 'type' => 'payware',
-                'description' => '**2026 New Enginesound Pack Api Api 🔥🔥** adalah paket sound simulator kereta...',
+                'description' => '**2026 New Enginesound Pack Api Api 🔥🔥** adalah paket sound simulator kereta yang dirancang untuk menghadirkan pengalaman dinasan yang lebih hidup, intens, dan berenergi. Pack ini menonjolkan efek suara yang lebih tegas, transisi audio yang halus, serta nuansa perjalanan yang terasa lebih dinamis di setiap lintasan. Dengan karakter sound yang lebih dramatis dan imersif, paket ini membuat pengalaman perjalanan kereta terasa lebih seru, realistis, dan tidak monoton di berbagai rute.',
                 'price' => 30000.00,
                 'category_id' => 3,
                 'active' => 1,
@@ -186,7 +186,7 @@ class DatabaseSeeder extends Seeder
             [9, 1],  // Enginesound 2025 -> All Support
             [10, 1], // Enginesound Api -> All Support
         ];
-        
+
         foreach ($productTags as [$productId, $tagId]) {
             // Attach tag ke product menggunakan pivot table
             Products::find($productId)->tags()->attach($tagId);
