@@ -43,7 +43,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // Fetch products from backend
     function fetchProducts(filters) {
         const params = new URLSearchParams(filters);
-        
+
         fetch(`/payware?${params.toString()}`, {
             headers: {
                 'X-Requested-With': 'XMLHttpRequest'
@@ -75,12 +75,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
             const text = `Halo minn, saya tertarik untuk melakukan pembelian dari katalog dengan nama item '${product.name}' Mau tanya-tanya dulu dong minn 🙌🙌`;
 
+            const formatedPrice = formatPrice(product.price)
+
             const productCard = document.createElement('div');
             productCard.className = 'product-card';
             productCard.id = 'product';
             productCard.setAttribute('data-name', product.name);
             productCard.setAttribute('data-desc', product.description);
-            productCard.setAttribute('data-price', `Rp ${product.price}`);
+            productCard.setAttribute('data-price', product.price);
             productCard.setAttribute('data-img', JSON.stringify(imagePaths));
             productCard.setAttribute('data-tags', JSON.stringify(tags));
             productCard.setAttribute('data-text', text);
@@ -92,11 +94,22 @@ document.addEventListener("DOMContentLoaded", () => {
             <p class="nama-produk">${product.name}</p>
             <p class="deskripsi-singkat-produk">${product.description}</p>
             <div class="container-harga">
-                <span>Rp. ${product.price}</span>
+                <span>Rp ${formatedPrice}</span>
             </div>
         `;
 
             productList.appendChild(productCard);
         });
     }
+
 });
+
+function formatPrice(price) {
+    if (!price || price === 'FREE' || price === 0) return 'FREE';
+    price = parseInt(price);
+    price = price.toLocaleString('id-ID', {
+        minimumFractionDigits: 2,
+        maximumFractionDigits: 2
+    })
+    return price;
+}

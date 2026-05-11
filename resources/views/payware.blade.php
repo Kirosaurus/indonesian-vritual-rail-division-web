@@ -140,7 +140,7 @@ function formatPrice($price) {
             <div class="product-card" id="product"
                 data-name="{{ $product->name }}"
                 data-desc="{{ $product->description }}"
-                data-price="{{ 'Rp '. formatPrice($product->price) ? formatPrice($product->price) : 'FREE' }}"
+                data-price="{{ $product->price ? $product->price : 'FREE' }}"
                 data-img="{{ json_encode($imagePaths) }}"
                 data-tags=" {{json_encode($tags)}} "
                 data-text="{{ $text }}">
@@ -153,11 +153,24 @@ function formatPrice($price) {
                     {{$product->description}}
                 </p>
                 <div class="container-harga">
-                    <span>Rp {{ formatPrice($product->price) }}</span>
+                    <span>Rp {{ $product->price }}</span>
                 </div>
             </div>
             @endforeach
         </div>
     </div>
 </div>
+
+<script>
+    const containerHarga = document.querySelectorAll('.container-harga > span')
+    document.querySelectorAll('.product-card').forEach((item, i) =>{
+        let price = item.dataset.price
+        price = parseInt(price)
+        price = price.toLocaleString('id-ID',{
+        minimumFractionDigits: 2,
+        maximumFractionDigits: 2
+    });
+        containerHarga[i].textContent = 'Rp ' + price; 
+    })
+</script>
 @endsection

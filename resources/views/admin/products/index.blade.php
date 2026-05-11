@@ -465,7 +465,7 @@
             <p id="deleteConfirmationText">Apakah anda yakin ingin menghapus product <strong id="productNameDisplay"></strong>?</p>
             <div class="delete-confirmation-actions">
                 <button class="btn-delete-cancel" id="btnDeleteCancel">Tidak</button>
-                <a href="{{route('admin.products.destroy', $product->id)}}" class="btn-delete-confirm" id="btnDeleteConfirm">Ya</a>
+                <button class="btn-delete-confirm" id="btnDeleteConfirm">Ya</button>
             </div>
         </div>
     </div>
