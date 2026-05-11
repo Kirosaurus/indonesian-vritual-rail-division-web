@@ -5,7 +5,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>IVRD – @yield('title', 'Login Page')</title>
-    <link rel="stylesheet" href="{{ asset('css/ivrd.css') }}" />
+    <link rel="stylesheet" href="{{ asset('css/loginPage.css') }}" />
     <link rel="stylesheet" href="{{ asset('css/animation.css') }}" />
     <link rel="stylesheet" href="{{ asset('css/main.css') }}" />
 </head>

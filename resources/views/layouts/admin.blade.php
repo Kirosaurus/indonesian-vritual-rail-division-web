@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="{{ asset('css/animation.css') }}" />
     <link rel="stylesheet" href="{{ asset('css/main.css') }}" />
     <link rel="stylesheet" href="{{ asset('css/adminLayout.css') }}" />
+    @yield('css')
 </head>
 
 <body>

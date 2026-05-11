@@ -1,0 +1,432 @@
+.container {
+    container-type: inline-size;
+    container-name: main-container;
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    padding: 30px 40px;
+    border-radius: 10px;
+    width: 100%;
+    height: 100%;
+    /* max-width: 1738px; */
+    max-height: 891px;
+    overflow-y: auto;
+}
+
+.product-view-popup {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    overflow-y: auto;
+    padding: 20px;
+    transition:
+        opacity 0.3s ease,
+        transform 0.3s ease;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.product-view-popup.visible {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.product-view-card {
+    width: min(100%, 920px);
+    max-height: calc(100vh - 40px);
+    overflow-y: auto;
+    background-color: #ffffff;
+    border-radius: 28px;
+    box-shadow: 0 25px 70px rgba(0, 0, 0, 0.18);
+    padding: 32px;
+    position: relative;
+    transform: translateY(20px);
+    margin: auto;
+}
+
+.product-view-popup.visible .product-view-card {
+    transform: translateY(0);
+}
+
+.product-view-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    margin-bottom: 24px;
+}
+
+.product-view-title {
+    margin: 0;
+    font-size: 30px;
+    font-weight: 800;
+    color: #0d171f;
+}
+
+.product-view-close {
+    border: none;
+    background: transparent;
+    font-size: 32px;
+    color: #555;
+    cursor: pointer;
+    line-height: 1;
+}
+
+.product-view-main {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr;
+    gap: 24px;
+}
+
+.product-view-image {
+    height: 380px;
+    border-radius: 24px;
+    background: #f4f4f4;
+    border: 2px dashed #d4d4d4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.product-view-image img {
+    border-radius: 24px;
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+}
+
+.product-view-thumbs {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+    max-height: 380px;
+    overflow-y: auto;
+    align-content: start;
+    padding-right: 4px;
+}
+
+.product-view-thumb {
+    height: 120px;
+    border-radius: 18px;
+    background: #f8f8f8;
+    border: 1px dashed #d7d7d7;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.product-view-thumb img {
+    border-radius: 18px;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+@media screen and (max-width: 880px) {
+    .product-view-main {
+        grid-template-columns: 1fr;
+    }
+
+    .product-view-image {
+        height: 280px;
+    }
+
+    .product-view-thumbs {
+        grid-template-columns: repeat(4, minmax(100px, 1fr));
+        max-height: none;
+        overflow-y: visible;
+        overflow-x: auto;
+    }
+
+    .product-view-thumb {
+        height: 100px;
+    }
+}
+
+@media screen and (max-width: 620px) {
+    .product-view-popup {
+        align-items: flex-start;
+        padding: 16px;
+    }
+
+    .product-view-card {
+        padding: 20px;
+        border-radius: 20px;
+        max-height: none;
+        overflow-y: visible;
+    }
+
+    .product-view-image {
+        height: 220px;
+    }
+
+    .product-view-title {
+        font-size: 20px;
+    }
+
+    .product-view-thumbs {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        max-height: 260px;
+        overflow-y: auto;
+        overflow-x: visible;
+    }
+
+    .product-view-thumb {
+        height: 100px;
+    }
+}
+
+.top-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.top-card h2 {
+    display: inline-block;
+    margin-bottom: 6px;
+    color: #ff9b51;
+    font-size: 46px;
+}
+
+.top-card a {
+    display: inline-block;
+    margin-bottom: 6px;
+    color: #fff;
+    font-size: 24px;
+    font-weight: 800;
+}
+
+.btn-add {
+    display: flex;
+    font-family: "Nexa";
+}
+
+.create-product {
+    background-color: #ff9b51;
+    color: white;
+    border: none;
+    font-family: "Nexa";
+    font-weight: 800;
+    font-size: 24px;
+    display: flex;
+    padding: 4px 21px;
+    border-radius: 10px;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    cursor: pointer;
+    transition: 0.1s ease-in-out;
+}
+
+.create-product:hover {
+    scale: 1.05;
+    box-shadow:
+        0 0 5px #ff9b51,
+        0 0 10px #ff9b51,
+        0 0 15px #ff9b51;
+}
+
+.table-wrapper {
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    margin-top: 20px;
+    border-radius: 10px;
+}
+
+table {
+    width: 100%;
+    min-width: 800px;
+    border-collapse: collapse;
+    border-radius: 10px;
+    background-color: #9a9a9a;
+    color: #fff;
+}
+
+table th,
+table td {
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    text-align: center;
+}
+
+tr {
+    width: 100px;
+}
+
+table th {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+#pagination-section {
+    display: flex;
+    justify-content: center;
+    height: auto;
+    margin-top: auto;
+    height: auto;
+}
+
+.pagination {
+    display: flex;
+    gap: 8px;
+    list-style: none;
+    padding: 0;
+    margin: 12px 0 0;
+    justify-content: center;
+}
+
+.page-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 34px;
+    height: 34px;
+    padding: 0 10px;
+    border-radius: 8px;
+    background: #f3f3f3;
+    color: #333;
+    text-decoration: none;
+}
+
+.page-item.active .page-link {
+    background: #ff9b51;
+    color: #fff;
+}
+
+.page-link svg {
+    width: 14px;
+    height: 14px;
+}
+
+#pagination-section .pagination .page-item:first-child,
+#pagination-section .pagination .page-item:last-child {
+    display: none;
+}
+
+@container main-container (max-width : 500px) {
+    .top-card {
+        flex-direction: column;
+    }
+}
+
+/* Delete Confirmation Modal */
+.delete-confirmation-modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 2000;
+    align-items: center;
+    justify-content: center;
+    animation: fadeIn 0.3s ease;
+}
+
+.delete-confirmation-modal.active {
+    display: flex;
+    animation: fadeIn 0.3s ease;
+}
+
+.delete-confirmation-card {
+    background: #ffffff;
+    border-radius: 20px;
+    padding: 40px;
+    max-width: 500px;
+    width: 90%;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.25);
+    animation: slideUp 0.3s ease;
+}
+
+.delete-confirmation-card h3 {
+    margin: 0 0 20px 0;
+    font-size: 24px;
+    font-weight: 800;
+    color: #25343f;
+    font-family: "Nexa", sans-serif;
+}
+
+.delete-confirmation-card p {
+    margin: 0 0 30px 0;
+    font-size: 16px;
+    color: #666;
+    font-family: "Nexa", sans-serif;
+    line-height: 1.5;
+}
+
+.delete-confirmation-actions {
+    display: flex;
+    gap: 15px;
+    justify-content: flex-end;
+}
+
+.btn-delete-cancel {
+    padding: 12px 30px;
+    border: none;
+    border-radius: 10px;
+    font-family: "Nexa", sans-serif;
+    font-weight: 800;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #4caf50;
+    color: white;
+    transition: all 0.2s ease;
+}
+
+.btn-delete-cancel:hover {
+    background-color: #45a049;
+    transform: scale(1.05);
+}
+
+.btn-delete-confirm {
+    padding: 12px 30px;
+    border: none;
+    border-radius: 10px;
+    font-family: "Nexa", sans-serif;
+    font-weight: 800;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #f44336;
+    color: white;
+    transition: all 0.2s ease;
+}
+
+.btn-delete-confirm:hover {
+    background-color: #da190b;
+    transform: scale(1.05);
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(50px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* table tr:nth-child(even) {
+                                                                color: black    ;
+                                                                background-color: #f2f2f2;
+                                                            } */
