@@ -17,13 +17,6 @@
 .sort-wrapper {
     position: relative;
 }
-/* .list-sortir.hide {
-    scale: 0.9;
-    filter: blur(10px);
-    position: absolute;
-    top: 85px;
-    opacity: 0%;
-} */
 
 .sort-button.active {
     min-width: 40px;
@@ -170,7 +163,6 @@
     width: auto;
     min-height: 171px;
     max-height: 171px;
-    /* aspect-ratio: 16/9; */
     border-radius: 20px;
     display: flex;
     flex-direction: column;
@@ -214,7 +206,7 @@
 }
 
 .modal-sizer {
-     container-type: inline-size;
+    container-type: inline-size;
     container-name: modalSize;
     display: flex;
     justify-content: center;  /* ← horizontal center */
@@ -222,7 +214,6 @@
     position: fixed;
     inset: 0;
     z-index: 999;
-    /* padding: 20px;            ← ganti margin jadi padding di sini */
     transition: all 0.5s ease-in-out;
 }
 

@@ -1,3 +1,7 @@
+/* ============================================================
+    How To Order
+   ============================================================ */
+
 .container {
     font-family: "Nexa";
     display: flex;
@@ -47,6 +51,21 @@
     z-index: 2;
 }
 
+.step-card h3{
+    font-size: 22px;
+    font-weight: 800;
+    margin-bottom: 12px;
+}
+
+
+.step-card p{
+    font-size: 16px;
+    line-height: 1.7;
+    color: #f2eded;
+    margin: 0;
+}
+
+
 .step-number{
     padding: 12px;
     width: 46px;
@@ -59,19 +78,6 @@
     font-weight: bold;
     display: flex;
     align-items: center;
-}
-
-.step-card h3{
-    font-size: 22px;
-    font-weight: 800;
-    margin-bottom: 12px;
-}
-
-.step-card p{
-    font-size: 16px;
-    line-height: 1.7;
-    color: #f2eded;
-    margin: 0;
 }
 
 @media (max-width: 900px) {

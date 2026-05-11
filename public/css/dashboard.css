@@ -1,18 +1,3 @@
-/* ============================================================
-   DASHBOARD  (dashboard.tsx → dashboard.blade.php)
-   ============================================================ */
-.main-dashboard {
-    display: flex;
-    flex-direction: column;
-    gap: 18px;
-    flex: 1;
-    padding: 30px 54px 54px 54px;
-    z-index: 1;
-    height: 100vh;
-    overflow-y: auto;
-    scroll-behavior: smooth;
-}
-
 /* Announcement banner */
 #announce {
     /* max-width: 840px; */
@@ -64,7 +49,7 @@
             0.99 74.4%,
             1 86.4%,
             1 100%
-        ); 
+        );
 }
 
 .announcement {
@@ -79,28 +64,9 @@
     opacity: 1;
 }
 
-/* Horizontal product scroller */
-#list-product {
-    width: 100%;
-    height: auto;
-    font-family: "Nexa";
-    display: grid;
-    grid-template-columns: repeat(4, auto);
-    grid-auto-rows: 400px;
-    gap: 30px;
-    overflow-y: auto;
-    padding: 10px 25px;
-    flex-shrink: 0;
-    scrollbar-width: none;
-}
-
-#list-product::-webkit-scrollbar {
-    display: none;
-}
-
 /* Product thumbnail area */
 .thumbnail-product {
-    background-color: white;
+    background-color: rgb(255, 255, 255);
     width: auto;
     height: 171px;
     border-radius: 20px;

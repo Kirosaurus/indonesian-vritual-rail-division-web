@@ -14,7 +14,7 @@
 @section('css')
 
     <link rel="stylesheet" href="{{ asset('css/main.css') }}" />
-    <link rel="stylesheet" href="{{ asset('css/payware.css') }}" />
+    <link rel="stylesheet" href="{{ asset('css/products.css') }}" />
     <link rel="stylesheet" href="{{ asset('css/animation.css') }}" />
 @endsection
 
@@ -28,6 +28,10 @@
 @endphp
 
 @section('content')
+<style>
+
+</style>
+
     <div class="main-page">
         {{-- Top bar --}}
         <div id="top-container" class="top-bar-element">

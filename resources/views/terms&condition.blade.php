@@ -14,6 +14,7 @@
 @endsection
 
 @section('content')
+
     <div class="main-terms">
         {{-- Top bar --}}
         <div id="top-container">

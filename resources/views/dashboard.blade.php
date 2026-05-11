@@ -3,39 +3,40 @@
 @section('title', 'Dashboard')
 
 @push('scripts')
-@vite('resources/js/products-popup.js')
-@vite('resources/js/topbar-functional.js')
-@vite('resources/js/animation/dashboard.js')
-@vite('resources/js/animation/announcements-animation.js')
-@vite('resources/js/animation/pay-free.js')
-@vite('resources/js/sidebar-functional.js')
+    @vite('resources/js/products-popup.js')
+    @vite('resources/js/topbar-functional.js')
+    @vite('resources/js/animation/dashboard.js')
+    @vite('resources/js/animation/announcements-animation.js')
+    @vite('resources/js/animation/pay-free.js')
+    @vite('resources/js/sidebar-functional.js')
 @endpush
 
 @section('css')
-<link rel="stylesheet" href="{{ asset('css/animation.css') }}" />
-<link rel="stylesheet" href="{{ asset('css/main.css') }}" />
-<link rel="stylesheet" href="{{ asset('css/dashboard.css') }}" />
-<link rel="stylesheet" href="{{ asset('css/payware.css') }}" />
+    <link rel="stylesheet" href="{{ asset('css/animation.css') }}" />
+    <link rel="stylesheet" href="{{ asset('css/main.css') }}" />
+    <link rel="stylesheet" href="{{ asset('css/dashboard.css') }}" />
+    <link rel="stylesheet" href="{{ asset('css/products.css') }}" />
 @endsection
 
 @section('content')
-<div class="main-page">
 
-    {{-- Top bar --}}
-    <div id="top-container">
-        <div class="heading">
-            <div class="title">
-                <button class="top-bar-element" id="sidebar-button">
-                    <img src="{{ asset('icons/menu.svg') }}" height="25" width="25" alt="Menu" />
-                </button>
-                <img
-                    src="{{ asset('icons/dashboardWhite_icon.svg') }}">
-                <h1 class="top-bar-element">Dashboard</h1>
-            </div>
-            <div class="top-bar-element" style="width: 100%; display: flex; flex-direction: column; align-items: flex-end;">
+    <div class="main-page">
+
+        {{-- Top bar --}}
+        <div id="top-container">
+            <div class="heading">
+                <div class="title">
+                    <button class="top-bar-element" id="sidebar-button">
+                        <img src="{{ asset('icons/menu.svg') }}" height="25" width="25" alt="Menu" />
+                    </button>
+                    <img src="{{ asset('icons/dashboardWhite_icon.svg') }}">
+                    <h1 class="top-bar-element">Dashboard</h1>
+                </div>
+                <div class="top-bar-element"
+                    style="width: 100%; display: flex; flex-direction: column; align-items: flex-end;">
+                </div>
             </div>
         </div>
-    </div>
 
     <div id="product-modal" class="modal hidden" aria-hidden="true">
         <div class="modal-sizer">
@@ -93,39 +94,34 @@
         <div class="modal-overlay" data-close="true"></div>
     </div>
 
-    {{-- Announcement banner --}}
-    <div class="body-element" id="announce">
-        <div class="announcement-container">
-            <div class="announcement-wrapper">
-                @foreach ($announcements as $announcement)
-                <img
-                    class="announcement"
-                    src="{{ asset('storage/'. $announcement->image) }}"
-                    alt="Announcement">
-                @endforeach
-                {{-- Duplicate first image untuk seamless loop --}}
-                @if($announcements->count() > 0)
-                <img
-                    class="announcement"
-                    src="{{ asset('storage/'. $announcements->first()->image) }}"
-                    alt="Announcement">
-                @endif
+        {{-- Announcement banner --}}
+        <div class="body-element" id="announce">
+            <div class="announcement-container">
+                <div class="announcement-wrapper">
+                    @foreach ($announcements as $announcement)
+                        <img class="announcement" src="{{ asset('storage/' . $announcement->image) }}" alt="Announcement">
+                    @endforeach
+                    {{-- Duplicate first image untuk seamless loop --}}
+                    @if($announcements->count() > 0)
+                        <img class="announcement" src="{{ asset('storage/' . $announcements->first()->image) }}"
+                            alt="Announcement">
+                    @endif
+                </div>
             </div>
         </div>
-    </div>
 
-    {{-- New Products --}}
-    <div class="body-element">
-        <h2>New Product</h2>
-    </div>
-    <!-- <div class="body-element" id="list-product"> -->
-    <div class="list-product-container">
-        <div id="list-product-pay-free" class="list-product-payware">
-            @foreach ($products as $product)
-            @php
-            $text = "Halo minn, saya tertarik untuk melakukan pembelian dari katalog dengan nama item '$product->name' Mau tanya-tanya dulu dong minn 🙌🙌";
+        {{-- New Products --}}
+        <div class="body-element">
+            <h2>New Product</h2>
+        </div>
+        <!-- <div class="body-element" id="list-product"> -->
+        <div class="list-product-container">
+            <div id="list-product-pay-free" class="list-product-payware">
+                @foreach ($products as $product)
+                    @php
+                        $text = "Halo minn, saya tertarik untuk melakukan pembelian dari katalog dengan nama item '$product->name' Mau tanya-tanya dulu dong minn 🙌🙌";
 
-            $tags = $product->tags->pluck('name')->toArray();
+                        $tags = $product->tags->pluck('name')->toArray();
 
             $imagePaths = $product->images->pluck('path')->map(fn($path) => asset('storage/' . $path))->toArray();
             $imageSrc = count($imagePaths) > 0 ? $imagePaths[0] : asset('storage/image-products/unknownThumbnail.png');
@@ -133,7 +129,7 @@
             <div class="product-card" id="product"
                 data-name="{{ $product->name }}"
                 data-desc="{{ $product->description }}"
-                data-price="{{ $product->price }}"
+                data-price="{{ 'Rp '. $product->price ? $product->price : 'FREE' }}"
                 data-img="{{ json_encode($imagePaths) }}"
                 data-tags=" {{json_encode($tags)}} "
                 data-text="{{ $text }}">
@@ -153,22 +149,4 @@
     </div>
     <!-- </div> -->
 </div>
-
- <script>
-        const containerHarga = document.querySelectorAll('.container-harga > span')
-        document.querySelectorAll('.product-card').forEach((item, i) => {
-            let price = item.dataset.price
-            if(price){
-                price = parseInt(price)
-                price = price.toLocaleString('id-ID', {
-                    minimumFractionDigits: 2,
-                    maximumFractionDigits: 2
-                });
-                containerHarga[i].textContent = 'Rp ' + price;
-            }
-            else{
-                containerHarga[i].textContent = 'FREE';
-            }
-        })
-    </script>
 @endsection
