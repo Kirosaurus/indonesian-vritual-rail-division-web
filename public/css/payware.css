@@ -190,7 +190,7 @@
     color: white;
     max-height: 100px;
     margin: 10px 0px;
-    mask-image: linear-gradient(to bottom, #ffffff 20%, transparent);
+    mask-image: linear-gradient(to bottom, #ffffff 60%, transparent);
     overflow-y: hidden;
 }
 
@@ -370,32 +370,31 @@
 }
 
 .tag-products {
-    background-color: red;
     width: 100%;
-    min-width: 750px;
-    display: grid;
-    grid-template-columns: auto auto;
-    grid-auto-flow: dense;
-    /* flex-direction: row;     */
+    min-width: 400px;
+    padding: auto;
+    display: flex;
+    flex-wrap: wrap;
     gap: 15px;
     height: 100%;
 }
 
 .tag {
-    display: flex;
+    display: inline-flex;
     justify-content: center;
+    align-items: center;
     font-family: "Nexa", sans-serif;
     font-weight: 800;
     background-color: white;
     color: black;
     border-radius: 15px;
-    padding: 12px 0px;
+    padding: 12px 10px;
     height: 47px;
-    width: auto;
 }
 
 .tag span {
     white-space: nowrap;
+    font-size: 15px;
 }
 
 .S&K {
@@ -419,6 +418,13 @@
     height: 800px;
     overflow-y: auto;
     text-align: justify;
+    mask-image: linear-gradient(
+        to bottom,
+        transparent,
+        #ffffff 10%,
+        #ffffff 90%,
+        transparent
+    );
 }
 #modal-desc::-webkit-scrollbar {
     display: none;
@@ -550,7 +556,7 @@
 
 @media (max-width: 1200px) {
     .modal-card {
-        margin: auto 100px;
+        margin: auto 10px;
     }
 
     .modal-contain {

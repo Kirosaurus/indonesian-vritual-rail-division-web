@@ -63,7 +63,7 @@
                         </div>
                         <p id="modal-desc"></p>
                         <div class="tag-products" id="tag-products">
-    
+                            {{-- Generated dinamis via JavaScript --}}
                         </div>
                         <div class="action-container">
                             <span>Mau tanya-tanya atau mau beli produknya? Hubungi kontak di bawah ini.</span>
