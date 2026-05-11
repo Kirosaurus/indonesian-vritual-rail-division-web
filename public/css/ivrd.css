@@ -65,64 +65,6 @@
     color: white;
 }
 
-/* ============================================================
-   Freeware  (freeware.blade.php)
-   ============================================================ */
-
-.main-freeware {
-    display: flex;
-    flex-direction: column;
-    gap: 18px;
-    flex: 1;
-    padding: 30px 54px 54px 54px;
-    z-index: 1;
-    height: 100vh;
-    /* overflow-y: auto; */
-    scroll-behavior: smooth;
-}
-
-#list-product-freeware {
-    width: 100%;
-    height: auto;
-    display: grid;
-    grid-template-columns: repeat(4, 335px);
-    grid-auto-rows: 363px;
-    gap: 29px;
-    padding: 20px 25px;
-    /* flex-shrink: 0; */
-    /* scrollbar-width: none; */
-    overflow-y: auto;
-    mask-image: linear-gradient(
-        to bottom,
-        transparent 0%,
-        black 5%,
-        black 95%,
-        transparent 100%
-    );
-}
-#list-product-freeware::-webkit-scrollbar {
-    display: none;
-    scroll-behavior: smooth;
-}
-
-.main-freeware {
-    display: flex;
-    flex-direction: column;
-    gap: 18px;
-    flex: 1;
-    padding: 30px 54px 54px 54px;
-    z-index: 1;
-    height: 100vh;
-    /* overflow-y: auto; */
-    scroll-behavior: smooth;
-}
-
-.contaner-harga-freeware {
-    color: white;
-    font-family: "Nexa";
-    font-size: 20px;
-    font-weight: 800;
-}
 
 
 /* ============================================================

@@ -42,8 +42,7 @@ p {
     gap: 40px;
 }
 
-
-.social-media-section.compact{
+.social-media-section.compact {
     flex-direction: column;
 }
 
@@ -80,11 +79,12 @@ p {
     scale: 0.9;
 }
 
-@media screen and (max-width : 1500px) {
+@media screen and (max-width: 1500px) {
     .body-container {
         padding: 0px 20px;
         display: flex;
         flex-direction: column;
+        gap: 40px;
     }
     .left-contact-section {
         width: 100%;
@@ -101,5 +101,45 @@ p {
         flex-direction: column;
         justify-content: center;
         gap: 10px;
+    }
+}
+@media screen and (max-width: 480px) {
+    .body-container {
+        padding: 16px; /* padding kecil biar gak overflow */
+        flex-direction: column;
+        gap: 24px;
+        box-sizing: border-box; /* penting! padding gak nambah lebar */
+        overflow-x: hidden;
+    }
+
+    p {
+        font-size: 16px; /* turunkan font size */
+    }
+
+    .left-contact-section h2 {
+        font-size: 20px;
+        text-align: center;
+    }
+
+    .left-contact-section p {
+        font-size: 14px;
+        text-align: center;
+    }
+
+    .social-media-section {
+        gap: 16px; /* kurangi jarak antar button */
+    }
+
+    .social-media-contact {
+        font-size: 18px; /* turunkan font button */
+        padding: 14px 20px; /* kurangi padding */
+        border-radius: 20px;
+        width: 100%; /* full width biar gak overflow */
+        box-sizing: border-box;
+    }
+
+    .social-media-contact img {
+        width: 24px;
+        height: 24px;
     }
 }
