@@ -66,7 +66,7 @@ $links = [
             <div class="profile-card-content">
                 <form action="/logout" method="POST" style="display: inline;">
                     @csrf
-                    <button type="submit" style="background: none; border: none; cursor: pointer; display: flex; align-items: center; gap: 8px;">
+                    <button type="submit" style="font-family:'Nexa'; color: white; background: none; border: none; cursor: pointer; display: flex; align-items: center; gap: 8px;">
                         <img src="{{ asset('icons/logout_icon.svg') }}" alt="logout Icon" style="width: 20px; height: 20px;">
                         Logout
                     </button>

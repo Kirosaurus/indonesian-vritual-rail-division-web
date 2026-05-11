@@ -41,7 +41,6 @@
                                     <img src="{{ asset('icons/sort.svg') }}" height="30" width="30" alt="Filter" />
                                 </button>
                                 <div class="sortir">
-                                    <button class="sort">Price</button>
                                     <button class="sort">Name</button>
                                 </div>
                             </div>

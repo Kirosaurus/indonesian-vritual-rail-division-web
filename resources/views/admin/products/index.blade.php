@@ -403,7 +403,7 @@
 
         <div class="container">
             <div class="top-card">
-                <h2 class="page-title">Product</h2>
+                <h2 class="page-title">List Products</h2>
                 <a href="{{ route('admin.products.create')}}" class="btn-add">
                     <button class="create-product">
                         <img src="{{ asset('icons/plus_icon.svg') }}" alt="Icon Plus" style="width: 32px; height: 32px;">

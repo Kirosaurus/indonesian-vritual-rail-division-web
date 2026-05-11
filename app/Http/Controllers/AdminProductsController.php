@@ -12,7 +12,7 @@ class AdminProductsController extends Controller
 {
     public function index()
     {
-        $products = Products::with('category')->paginate(9);
+        $products = Products::with(['category', 'images'])->paginate(9);
         $categories = Categories::pluck('name', 'id');
 
         return view('admin.products.index', [
