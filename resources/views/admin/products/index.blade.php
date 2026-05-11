@@ -27,6 +27,8 @@
             position: fixed;
             inset: 0;
             z-index: 1000;
+            overflow-y: auto;
+            padding: 20px;
             transition: opacity 0.3s ease, transform 0.3s ease;
             opacity: 0;
             pointer-events: none;
@@ -39,12 +41,15 @@
 
         .product-view-card {
             width: min(100%, 920px);
+            max-height: calc(100vh - 40px);
+            overflow-y: auto;
             background-color: #ffffff;
             border-radius: 28px;
             box-shadow: 0 25px 70px rgba(0, 0, 0, 0.18);
             padding: 32px;
             position: relative;
             transform: translateY(20px);
+            margin: auto;
         }
 
         .product-view-popup.visible .product-view-card {
@@ -82,53 +87,105 @@
         }
 
         .product-view-image {
-            min-height: 380px;
+            height: 380px;
             border-radius: 24px;
             background: #f4f4f4;
             border: 2px dashed #d4d4d4;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: #777;
-            font-weight: 700;
-            font-size: 18px;
-            text-align: center;
-            padding: 24px;
+            overflow: hidden;
+        }
+
+        .product-view-image img {
+            border-radius: 24px;
+            width: 100%;
+            height: 100%;
+            display: block;
+            object-fit: cover
         }
 
         .product-view-thumbs {
             display: grid;
             grid-template-columns: repeat(2, minmax(0, 1fr));
             gap: 16px;
+            max-height: 380px;
+            overflow-y: auto;
+            align-content: start;
+            padding-right: 4px;
         }
 
+
         .product-view-thumb {
-            min-height: 120px;
+            height: 120px;
             border-radius: 18px;
             background: #f8f8f8;
             border: 1px dashed #d7d7d7;
+            overflow: hidden;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: #999;
-            font-weight: 700;
-            font-size: 14px;
-            padding: 14px;
-            text-align: center;
+        }
+
+        .product-view-thumb img {
+            border-radius: 18px;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
         }
 
         @media screen and (max-width: 880px) {
             .product-view-main {
                 grid-template-columns: 1fr;
             }
+
+            .product-view-image {
+                height: 280px;
+            }
+
+            .product-view-thumbs {
+                grid-template-columns: repeat(4, minmax(100px, 1fr));
+                max-height: none;
+                overflow-y: visible;
+                overflow-x: auto;
+            }
+
+            .product-view-thumb {
+                height: 100px;
+            }
         }
 
         @media screen and (max-width: 620px) {
-            .product-view-card {
-                padding: 22px;
+            .product-view-popup {
+                align-items: flex-start;
+                padding: 16px;
             }
+
+            .product-view-card {
+                padding: 20px;
+                border-radius: 20px;
+                max-height: none;
+                overflow-y: visible;
+            }
+
+            .product-view-image {
+                height: 220px;
+            }
+
+            .product-view-title {
+                font-size: 20px;
+            }
+
             .product-view-thumbs {
-                grid-template-columns: 1fr;
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+                max-height: 260px;
+                overflow-y: auto;
+                overflow-x: visible;
+            }
+
+            .product-view-thumb {
+                height: 100px;
             }
         }
 
@@ -263,8 +320,8 @@
             display: none;
         }
 
-        @container main-container (max-width : 500px){
-            .top-card{
+        @container main-container (max-width : 500px) {
+            .top-card {
                 flex-direction: column;
             }
         }
@@ -358,6 +415,7 @@
             from {
                 opacity: 0;
             }
+
             to {
                 opacity: 1;
             }
@@ -368,6 +426,7 @@
                 transform: translateY(50px);
                 opacity: 0;
             }
+
             to {
                 transform: translateY(0);
                 opacity: 1;
@@ -375,26 +434,27 @@
         }
 
         /* table tr:nth-child(even) {
-                color: black    ;
-                background-color: #f2f2f2;
-            } */
+                                                                color: black    ;
+                                                                background-color: #f2f2f2;
+                                                            } */
     </style>
     <div class="main-page-admin">
-         <div id="product-view-popup" class="product-view-popup">
+        <div id="product-view-popup" class="product-view-popup">
             <div class="product-view-card">
                 <div class="product-view-header">
                     <h2 class="product-view-title">Product Images</h2>
                     <button type="button" id="close-view-popup" class="product-view-close">×</button>
                 </div>
                 <div class="product-view-main">
-                    <div class="product-view-image">
-                        Tempat menyimpan gambar utama
+                    <div id="main-image" class="product-view-image">
+                        <img>
+                        {{-- Tempat menyimpan gambar utama --}}
                     </div>
-                    <div class="product-view-thumbs">
-                        <div class="product-view-thumb">Placeholder 1</div>
-                        <div class="product-view-thumb">Placeholder 2</div>
-                        <div class="product-view-thumb">Placeholder 3</div>
-                        <div class="product-view-thumb">Placeholder 4</div>
+                    <div id="list-images" class="product-view-thumbs">
+                        <div class="product-view-thumb">
+
+                        </div>
+
                     </div>
                 </div>
             </div>
@@ -404,7 +464,7 @@
         <div class="container">
             <div class="top-card">
                 <h2 class="page-title">List Products</h2>
-                <a href="{{ route('admin.products.create')}}" class="btn-add">
+                <a href="{{ route('admin.products.create') }}" class="btn-add">
                     <button class="create-product">
                         <img src="{{ asset('icons/plus_icon.svg') }}" alt="Icon Plus" style="width: 32px; height: 32px;">
                         Add Product
@@ -415,41 +475,51 @@
             <div class="table-wrapper">
                 <table>
                     <thead>
-                    <tr>
-                        <th>Image</th>
-                        <th>Product Name</th>
-                        <th>Product ID</th>
-                        <th>Price</th>
-                        <th>Category</th>
-                        <th>Description</th>
-                        <th>Status</th>
-                        <th>Actions</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    @foreach ($products as $product)
                         <tr>
-                            <td>
-                                <a href="#" class="product-view-link" data-name="{{ $product->name }}">View</a>
-                            </td>
-                            <td>{{$product->name}}</td>
-                            <td>{{$product->id}}</td>
-                            <td>{{$product->price ? 'Rp ' . $product->price : 'FREE'}}</td>
-                            <td>{{$product->category->name ?? '-' }}</td>
-                            <td>{{$product->description}}</td>
-                            <td>{{$product->active ? "Aktif" : "Tidak Aktif"}}</td>
-                            <td>
-                                <a href="{{ route('admin.products.edit', $product->id) }}" class="edit"><img
-                                        src="{{ asset('icons/edit_icon.svg') }}" alt="Icon Edit"
-                                        style="width: 30px; height: 30px; "></a>
-                                <button class="hapus-btn" data-product-id="{{ $product->id }}" data-product-name="{{ $product->name }}" style="background: none; border: none; cursor: pointer; padding: 0;">
-                                    <img src="{{ asset('icons/trash_icon.svg') }}" alt="Icon Trash"
-                                        style="width: 30px; height: 30px; ">
-                                </button>
-                            </td>
+                            <th>Image</th>
+                            <th>Product Name</th>
+                            <th>Product ID</th>
+                            <th>Price</th>
+                            <th>Category</th>
+                            <th>Description</th>
+                            <th>Status</th>
+                            <th>Actions</th>
                         </tr>
-                    @endforeach
-                </tbody>
+                    </thead>
+                    <tbody>
+                        @foreach ($products as $product)
+                            @php
+                                $imagePaths = $product->images
+                                    ->pluck('path')
+                                    ->map(fn($path) => asset('storage/' . $path))
+                                    ->toArray();
+                                $imageSrc = count($imagePaths) > 0 ? $imagePaths[0] : asset('unknownThumbnail.png');
+                            @endphp
+                            <tr>
+                                <td>
+                                    <a href="#" class="product-view-link" data-name="{{ $product->name }}"
+                                        data-img="{{ json_encode($imagePaths) }}">View</a>
+                                </td>
+                                <td>{{ $product->name }}</td>
+                                <td>{{ $product->id }}</td>
+                                <td>{{ $product->price ? 'Rp ' . $product->price : 'FREE' }}</td>
+                                <td>{{ $product->category->name ?? '-' }}</td>
+                                <td>{{ $product->description }}</td>
+                                <td>{{ $product->active ? 'Aktif' : 'Tidak Aktif' }}</td>
+                                <td>
+                                    <a href="{{ route('admin.products.edit', $product->id) }}" class="edit"><img
+                                            src="{{ asset('icons/edit_icon.svg') }}" alt="Icon Edit"
+                                            style="width: 30px; height: 30px; "></a>
+                                    <button class="hapus-btn" data-product-id="{{ $product->id }}"
+                                        data-product-name="{{ $product->name }}"
+                                        style="background: none; border: none; cursor: pointer; padding: 0;">
+                                        <img src="{{ asset('icons/trash_icon.svg') }}" alt="Icon Trash"
+                                            style="width: 30px; height: 30px; ">
+                                    </button>
+                                </td>
+                            </tr>
+                        @endforeach
+                    </tbody>
                 </table>
             </div>
             <div id="pagination-section">
@@ -462,7 +532,8 @@
     <div id="deleteConfirmationModal" class="delete-confirmation-modal">
         <div class="delete-confirmation-card">
             <h3>Konfirmasi Penghapusan</h3>
-            <p id="deleteConfirmationText">Apakah anda yakin ingin menghapus product <strong id="productNameDisplay"></strong>?</p>
+            <p id="deleteConfirmationText">Apakah anda yakin ingin menghapus product <strong
+                    id="productNameDisplay"></strong>?</p>
             <div class="delete-confirmation-actions">
                 <button class="btn-delete-cancel" id="btnDeleteCancel">Tidak</button>
                 <button class="btn-delete-confirm" id="btnDeleteConfirm">Ya</button>
@@ -471,7 +542,7 @@
     </div>
 
     <script>
-            document.addEventListener('DOMContentLoaded', function () {
+        document.addEventListener('DOMContentLoaded', function() {
             // View Popup Logic
             const viewLinks = document.querySelectorAll('.product-view-link');
             const viewPopup = document.getElementById('product-view-popup');
@@ -479,8 +550,27 @@
             const viewOverlay = document.getElementById('view-popup-overlay');
             const popupTitle = document.querySelector('.product-view-title');
 
-            function openViewPopup(name) {
-                popupTitle.textContent = name ? `${name} - Image Template` : 'Product Images';
+            function openViewPopup(name, images) {
+                popupTitle.textContent = name ? `${name}` : 'Product Images';
+                const mainImage = document.querySelector("#main-image img");
+                mainImage.src = images.length > 0 ? images[0] : 'storage/image-products/unknownThumbnail.png';
+
+                const listImages = document.querySelector('#list-images');
+
+                listImages.innerHTML = images.map((img, index) => `
+                <div class="product-view-thumb">
+                    <img  src="${img}" alt="Product image" data-index="${index}" />
+                </div>
+                `).join('');
+
+                listImages.querySelectorAll('img').forEach(thumb => {
+                    thumb.addEventListener('click', function() {
+                        mainImage.src = this.src;
+                        listImages.querySelectorAll('img').forEach(t => t.style.opacity = '0.6');
+                        this.style.opacity = '1';
+                    });
+                });
+
                 viewPopup.classList.add('visible');
             }
 
@@ -489,9 +579,10 @@
             }
 
             viewLinks.forEach(link => {
-                link.addEventListener('click', function (event) {
+                link.addEventListener('click', function(event) {
                     event.preventDefault();
-                    openViewPopup(this.dataset.name);
+                    const imageParse = JSON.parse(this.dataset.img || [])
+                    openViewPopup(this.dataset.name, imageParse);
                 });
             });
 
@@ -514,7 +605,7 @@
                     event.preventDefault();
                     currentProductId = this.dataset.productId;
                     const productName = this.dataset.productName;
-                    
+
                     productNameDisplay.textContent = productName;
                     deleteModal.classList.add('active');
                 });
@@ -533,20 +624,21 @@
                     const form = document.createElement('form');
                     form.method = 'POST';
                     form.action = `/admin/products/${currentProductId}`;
-                    
+
                     // Tambah CSRF token
-                    const csrfToken = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
+                    const csrfToken = document.querySelector('meta[name="csrf-token"]').getAttribute(
+                        'content');
                     const csrfInput = document.createElement('input');
                     csrfInput.type = 'hidden';
                     csrfInput.name = '_token';
                     csrfInput.value = csrfToken;
-                    
+
                     // Tambah method DELETE
                     const methodInput = document.createElement('input');
                     methodInput.type = 'hidden';
                     methodInput.name = '_method';
                     methodInput.value = 'DELETE';
-                    
+
                     form.appendChild(csrfInput);
                     form.appendChild(methodInput);
                     document.body.appendChild(form);

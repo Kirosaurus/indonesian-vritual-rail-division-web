@@ -12,18 +12,18 @@ const productListContainer = document.getElementById('list-product-pay-free');
 
 // Utility function untuk format harga dengan separator
 
-productListContainer.addEventListener('click', function(e) {
+productListContainer.addEventListener('click', function (e) {
     // Cari product card terdekat yang diklik
     const card = e.target.closest('.product-card');
     if (!card) return;
-    
+
     const name = card.dataset.name;
     const desc = card.dataset.desc;
     let price = card.dataset.price;
     const text = card.dataset.text;
-    if(price){
+    if (price) {
         price = parseInt(price)
-            price = price.toLocaleString('id-ID',{
+        price = price.toLocaleString('id-ID', {
             minimumFractionDigits: 2,
             maximumFractionDigits: 2
         });
@@ -43,9 +43,9 @@ productListContainer.addEventListener('click', function(e) {
 
     const formattedPrice = price ? 'Rp ' + price : 'FREE';
     document.querySelector('#modal-price').textContent = formattedPrice;
-    
+
     document.querySelector('#modal-desc').textContent = desc;
-    
+
     // Update thumbnail utama
     const mainThumb = document.querySelector('#modal-thumb-viewer img');
     mainThumb.src = images.length > 0 ? images[0] : 'storage/image-products/unknownThumbnail.png';

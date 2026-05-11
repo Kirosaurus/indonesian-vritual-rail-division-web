@@ -232,6 +232,7 @@
 }
 
 .profile-card {
+    font-family: "Nexa";
     display: flex;
     align-items: center;
     gap: 14px;
