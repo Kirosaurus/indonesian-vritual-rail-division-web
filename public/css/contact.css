@@ -21,6 +21,7 @@ p {
     height: 100%;
     display: flex;
     flex-direction: column;
+    align-items: center;
     justify-content: center;
 }
 
@@ -40,6 +41,7 @@ p {
     justify-content: center;
     gap: 40px;
 }
+
 
 .social-media-section.compact{
     flex-direction: column;
@@ -174,5 +176,21 @@ p {
         padding: 0px 20px;
         display: flex;
         flex-direction: column;
+    }
+    .left-contact-section {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-end;
+    }
+    .right-contact-section {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 10px;
     }
 }

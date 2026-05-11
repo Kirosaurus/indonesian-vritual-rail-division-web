@@ -5,6 +5,7 @@
 @push('scripts')
     @vite('resources/js/topbar-functional.js')
     @vite('resources/js/sidebar-functional.js')
+    @vite('resources/js/animation/how2order.js')
 @endpush
 
 @section('css')

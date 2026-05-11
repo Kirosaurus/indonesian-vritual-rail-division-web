@@ -116,7 +116,7 @@
     font-size: 20px;
     font-weight: 800;
     display: flex;
-    justify-items: flex-start;
+    justify-items: flex-end;
     align-items: flex-end;
 }
 
@@ -183,10 +183,15 @@
 }
 
 .deskripsi-singkat-produk {
+    text-align: justify;
     font-size: 15px;
     font-family: "Nexa", sans-serif;
     font-weight: 200;
     color: white;
+    max-height: 100px;
+    margin: 10px 0px;
+    mask-image: linear-gradient(to bottom, #ffffff 20%, transparent);
+    overflow-y: hidden;
 }
 
 .modal.hidden {
@@ -240,8 +245,9 @@
     display: flex;
     flex-direction: column;
     gap: 25px;
-    overflow-y: auto;
-    box-shadow: 0px 0px 180px 0px rgba(0, 0, 0, 0.25), 0px 0px 70px 0px #BC7A48;
+    box-shadow:
+        0px 0px 180px 0px rgba(0, 0, 0, 0.25),
+        0px 0px 70px 0px #bc7a48;
 }
 
 .modal-card::-webkit-scrollbar {
@@ -249,10 +255,11 @@
     scroll-behavior: smooth;
 }
 
-.modal-contain{
+.modal-contain {
     display: flex;
     flex-direction: row;
     gap: 25px;
+    overflow-y: auto;
 }
 
 .modal-contain::-webkit-scrollbar {
@@ -274,9 +281,9 @@
     transition: 0.1s ease-in-out;
 }
 
-.modal-close:hover{
+.modal-close:hover {
     scale: 1.1;
-}   
+}
 
 .modal-close img {
     pointer-events: auto;
@@ -284,7 +291,7 @@
     display: block;
 }
 
-.close-container{
+.close-container {
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
@@ -299,8 +306,14 @@
 }
 
 .list-thumbnail {
+    width: 841px;
     display: flex;
     gap: 15px;
+    overflow-x: auto;
+}
+.list-thumbnail::-webkit-scrollbar {
+    display: none;
+    scroll-behavior: smooth;
 }
 
 #modal-thumb-viewer {
@@ -335,8 +348,10 @@
 #modal-price {
     font-size: 24px;
     font-weight: 800;
-    color: #FF9B51;
-    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 0px 30px #FF9B51;
+    color: #ff9b51;
+    text-shadow:
+        0px 4px 4px rgba(0, 0, 0, 0.25),
+        0px 0px 30px #ff9b51;
 }
 
 .right-modal {
@@ -350,24 +365,37 @@
 .right-modal span a {
     font-family: "Nexa", sans-serif;
     font-weight: 800;
-    color: #FF9B51;
+    color: #ff9b51;
     text-decoration: underline;
 }
 
 .tag-products {
-    display: flex;
-    flex-direction: row;
+    background-color: red;
+    width: 100%;
+    min-width: 750px;
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-auto-flow: dense;
+    /* flex-direction: row;     */
     gap: 15px;
+    height: 100%;
 }
 
 .tag {
+    display: flex;
+    justify-content: center;
     font-family: "Nexa", sans-serif;
     font-weight: 800;
     background-color: white;
     color: black;
     border-radius: 15px;
-    padding: 12px 20px;
+    padding: 12px 0px;
     height: 47px;
+    width: auto;
+}
+
+.tag span {
+    white-space: nowrap;
 }
 
 .S&K {
@@ -378,13 +406,22 @@
 }
 
 .action-container {
-    height: 100%;
+    height: 150px;
     width: 100%;
     justify-content: flex-end;
     display: flex;
     flex-direction: column;
     gap: 15px;
     margin-top: 20px;
+}
+
+#modal-desc {
+    height: 800px;
+    overflow-y: auto;
+    text-align: justify;
+}
+#modal-desc::-webkit-scrollbar {
+    display: none;
 }
 
 .social-media-contact {
@@ -421,7 +458,6 @@
 }
 
 .whatsapp-order-button {
-
     flex: 1;
     display: flex;
     flex-direction: row;
@@ -433,7 +469,7 @@
     font-size: 20px;
     padding: 14px 30px;
     border-radius: 30px;
-    background-color: #FF9B51;
+    background-color: #ff9b51;
     color: white;
     border: none;
     transition: 0.1s ease-in-out;
@@ -455,7 +491,6 @@
     align-items: center;
     gap: 6px;
 } */
-
 
 .whatsapp-contact {
     width: 100%;
@@ -489,7 +524,6 @@
     opacity: 1;
 }
 
-
 @container listProduct (max-width : 1000px) {
     .list-product-payware {
         grid-template-columns: repeat(3, auto);
@@ -508,33 +542,18 @@
     }
 }
 
-@media (max-width : 1800px) {
-
-    .modal-contain{
+@media (max-width: 1800px) {
+    .modal-contain {
         flex-direction: column;
     }
 }
 
-@media (max-width : 1200px) {
+@media (max-width: 1200px) {
     .modal-card {
         margin: auto 100px;
     }
 
-    .modal-contain{
-        flex-direction: column;
-    }
-
-    .whatsapp-contact {
-        flex-direction: column;
-    }
-}   
-
-@media (max-width : 600px) {
-    .modal-card {
-        margin: auto 0px;
-    }
-
-    .modal-contain{
+    .modal-contain {
         flex-direction: column;
     }
 
@@ -543,14 +562,28 @@
     }
 }
 
-@media (max-width : 430px) {
+@media (max-width: 600px) {
+    .modal-card {
+        margin: auto 0px;
+    }
+
+    .modal-contain {
+        flex-direction: column;
+    }
+
+    .whatsapp-contact {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 430px) {
     .modal-card {
         max-height: 100%;
         margin: auto 0px;
         border-radius: 0px;
     }
 
-    .modal-contain{
+    .modal-contain {
         flex-direction: column;
     }
 }
