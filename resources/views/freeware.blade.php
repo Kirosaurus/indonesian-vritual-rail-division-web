@@ -133,7 +133,7 @@
             <div class="product-card" id="product"
                 data-name="{{ $product->name }}"
                 data-desc="{{ $product->description }}"
-                data-price="{{ $product->price ? $product->price : 'FREE' }}"
+                data-price="{{ $product->price }}"
                 data-img="{{ json_encode($imagePaths) }}"
                 data-tags=" {{json_encode($tags)}} "
                 data-text="{{ $text }}">

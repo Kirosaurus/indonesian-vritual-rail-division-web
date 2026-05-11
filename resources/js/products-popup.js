@@ -21,12 +21,13 @@ productListContainer.addEventListener('click', function(e) {
     const desc = card.dataset.desc;
     let price = card.dataset.price;
     const text = card.dataset.text;
-
-    price = parseInt(price)
-        price = price.toLocaleString('id-ID',{
-        minimumFractionDigits: 2,
-        maximumFractionDigits: 2
-    });
+    if(price){
+        price = parseInt(price)
+            price = price.toLocaleString('id-ID',{
+            minimumFractionDigits: 2,
+            maximumFractionDigits: 2
+        });
+    }
 
     // Update WhatsApp links
     whatsappList.forEach((item, i) => {
